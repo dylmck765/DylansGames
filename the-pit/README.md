@@ -18,7 +18,7 @@ ESPN energy. Six seasons of curriculum. Daily habit loops, streaks, badges, duel
 | **XP & Ranks** | Quiz answers (100), paper trades (250), scenarios (300), perfect-episode bonus (500), duel wins (750), boss challenges (up to 2,000). Seven ranks: Bench Warmer → Practice Squad → Starter → All-Star → MVP → Hall of Famer → GOAT. |
 | **Streaks** | Daily login bonus starts at 50 XP and doubles every consecutive day, capped at 1,600. |
 | **Badges** | 26 badges from "First Blood" to "The GOAT," evaluated automatically after every action. |
-| **Competition** | Global top-100 leaderboard, 30-day Season rankings (auto-reset), streak leaderboard, weekly 5-challenge tournaments (Mon–Sun, top 3 medal), and head-to-head duels (same 5 questions, most correct wins, time breaks ties). |
+| **Competition** | Global top-100 leaderboard, 30-day Season rankings (auto-reset), streak leaderboard, weekly 5-challenge tournaments (Mon–Sun, top 3 medal), head-to-head duels vs real players' recorded runs (same 5 questions, most correct wins, time breaks ties), and a global chat room. |
 | **Daily Loop** | Daily Blitz (60-second shot clock), Market Read (call the direction + write your reasoning), Film Room (case study), and a daily Boss Challenge worth up to 2,000 XP. |
 | **Community** | Reddit-style feed of structured Trade Theses (ticker / direction / catalyst / max loss), votes, comments, and a weekly "Analyst of the Week" badge. |
 | **Onboarding** | Hype welcome → 5-question placement quiz → animated rank reveal → first episode auto-queued. High scorers skip Season 1 (or 1–2) and start with bonus XP. |
@@ -28,7 +28,7 @@ ESPN energy. Six seasons of curriculum. Daily habit loops, streaks, badges, duel
 
 - **Next.js 15** (App Router) + **React 19** + **TypeScript** — that's it. No database, no auth service, no paid APIs.
 - All player state persists in `localStorage` (`thepit_state_v1`).
-- Leaderboards and tournament standings show real players only, synced live through Supabase. Duel opponents are deterministic simulated bots, clearly labeled as AI in the UI.
+- Leaderboards, tournament standings, chat, and duels are real players only, synced through Supabase. Duels are asynchronous PvP: you're matched against another player's recorded run on the same 5 questions. Chat updates over Supabase Realtime with a poll fallback.
 - Daily/tournament content rotates deterministically from content pools keyed by date/week.
 - Styling is hand-rolled CSS (Space Grotesk + Inter via Google Fonts) — no UI framework.
 
@@ -91,7 +91,6 @@ the-pit/
 │   ├── state.tsx                 # GameProvider: XP, streaks, badges, persistence
 │   ├── xp.ts                     # XP economy + rank ladder
 │   ├── badges.ts                 # 26 badge definitions (pure predicates)
-│   ├── bots.ts                   # Deterministic simulated competitors
 │   ├── content.ts                # Season aggregation + unlock rules
 │   ├── community.ts              # Feed merging (seeded + user posts)
 │   ├── progress.ts               # Persisted state shape

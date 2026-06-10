@@ -142,9 +142,9 @@ export default function LockerRoom() {
         </Link>
         <Link href="/duels">
           <div className="card" style={{ textAlign: "center", marginBottom: 0 }}>
-            <div className="display" style={{ fontSize: 18 }}>Sparring Duels</div>
+            <div className="display" style={{ fontSize: 18 }}>Duels</div>
             <div className="muted" style={{ fontSize: 12 }}>
-              {state.duels.wins}W — {state.duels.losses}L vs the house AI.
+              {state.duels.wins}W — {state.duels.losses}L vs real players.
             </div>
           </div>
         </Link>
