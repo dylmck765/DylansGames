@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "the-pit",
+      "runtimeExecutable": "C:\\Users\\dmckeever\\source\\repos\\StrategyFinder\\InternProjects\\BloombergMarketDataLab\\src\\.tools\\node-v24.16.0-win-x64\\npm.cmd",
+      "runtimeArgs": ["run", "start"],
+      "cwd": "C:\\Users\\dmckeever\\source\\repos\\StrategyFinder\\InternProjects\\BloombergMarketDataLab\\src\\the-pit",
+      "port": 3000
+    }
+  ]
+}
