@@ -1,10 +1,9 @@
 "use client";
 
-// Structured Trade Thesis composer: ticker, direction, catalyst, thesis, max loss.
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useGame } from "@/lib/state";
+import { supabase } from "@/lib/supabase";
 
 export default function NewThesisPage() {
   const router = useRouter();
@@ -15,6 +14,7 @@ export default function NewThesisPage() {
   const [catalyst, setCatalyst] = useState("");
   const [thesis, setThesis] = useState("");
   const [maxLoss, setMaxLoss] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   if (!ready) return <main className="page" />;
   if (!state.profile.onboarded) {
@@ -29,8 +29,25 @@ export default function NewThesisPage() {
     thesis.trim().length >= 20 &&
     maxLoss.trim().length >= 10;
 
-  const submit = () => {
-    if (!valid) return;
+  const submit = async () => {
+    if (!valid || submitting) return;
+    setSubmitting(true);
+
+    const id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+
+    await supabase.from("posts").insert({
+      id,
+      handle: state.profile.handle,
+      ticker: ticker.trim().toUpperCase().slice(0, 6),
+      direction,
+      title: title.trim(),
+      catalyst: catalyst.trim(),
+      thesis: thesis.trim(),
+      max_loss: maxLoss.trim(),
+      upvotes: 0,
+    });
+
+    // Award XP locally
     addPost({
       ticker: ticker.trim().toUpperCase().slice(0, 6),
       direction,
@@ -39,6 +56,7 @@ export default function NewThesisPage() {
       thesis: thesis.trim(),
       maxLoss: maxLoss.trim(),
     });
+
     router.push("/community");
   };
 
@@ -60,22 +78,14 @@ export default function NewThesisPage() {
           <div>
             <label className="lbl">Direction</label>
             <div className="row">
-              <button
-                className="btn btn-sm"
-                style={{ flex: 1, borderColor: direction === "bullish" ? "var(--green)" : undefined,
+              <button className="btn btn-sm" style={{ flex: 1,
+                  borderColor: direction === "bullish" ? "var(--green)" : undefined,
                   color: direction === "bullish" ? "var(--green)" : undefined }}
-                onClick={() => setDirection("bullish")}
-              >
-                ▲ Bull
-              </button>
-              <button
-                className="btn btn-sm"
-                style={{ flex: 1, borderColor: direction === "bearish" ? "var(--red)" : undefined,
+                onClick={() => setDirection("bullish")}>▲ Bull</button>
+              <button className="btn btn-sm" style={{ flex: 1,
+                  borderColor: direction === "bearish" ? "var(--red)" : undefined,
                   color: direction === "bearish" ? "var(--red)" : undefined }}
-                onClick={() => setDirection("bearish")}
-              >
-                ▼ Bear
-              </button>
+                onClick={() => setDirection("bearish")}>▼ Bear</button>
             </div>
           </div>
         </div>
@@ -85,19 +95,20 @@ export default function NewThesisPage() {
           onChange={(e) => setTitle(e.target.value)} />
 
         <label className="lbl">Catalyst — why NOW?</label>
-        <textarea className="input" rows={2} placeholder="Earnings Thursday? Breakout over a key level? Sector momentum?"
+        <textarea className="input" rows={2} placeholder="Earnings Thursday? Breakout over a key level?"
           value={catalyst} onChange={(e) => setCatalyst(e.target.value)} />
 
         <label className="lbl">The Thesis</label>
-        <textarea className="input" rows={4} placeholder="Your directional case. Levels, timeframe, what proves you right, what proves you wrong."
+        <textarea className="input" rows={4} placeholder="Your directional case. Levels, timeframe, what proves you right."
           value={thesis} onChange={(e) => setThesis(e.target.value)} />
 
         <label className="lbl">Max Loss — define the risk</label>
-        <textarea className="input" rows={2} placeholder='e.g. "Risking $250 — full premium on 1 contract. Cut if price closes below 178."'
+        <textarea className="input" rows={2} placeholder='e.g. "Risking $250 — full premium on 1 contract."'
           value={maxLoss} onChange={(e) => setMaxLoss(e.target.value)} />
 
-        <button className="btn btn-primary btn-block" style={{ marginTop: 16 }} disabled={!valid} onClick={submit}>
-          📣 Post It to The Pit
+        <button className="btn btn-primary btn-block" style={{ marginTop: 16 }}
+          disabled={!valid || submitting} onClick={submit}>
+          {submitting ? "Posting..." : "📣 Post It to The Pit"}
         </button>
         {!valid && (
           <p className="muted" style={{ fontSize: 12, marginTop: 8, textAlign: "center" }}>

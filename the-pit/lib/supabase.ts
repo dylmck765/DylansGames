@@ -15,3 +15,16 @@ export interface LBRow {
   episodes_done: number;
   updated_at: string;
 }
+
+export interface PostRow {
+  id: string;
+  handle: string;
+  ticker: string;
+  direction: "bullish" | "bearish";
+  title: string;
+  catalyst: string;
+  thesis: string;
+  max_loss: string;
+  upvotes: number;
+  created_at: string;
+}
