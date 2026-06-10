@@ -1,32 +1,59 @@
 "use client";
 
 // Weekly Tournament: 5 challenges drop Monday, close Sunday.
-// 100 points per correct call. Final standings vs a 20-bot field; top 3 medal.
+// 100 points per correct call. Standings are real players only,
+// synced live through Supabase.
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useGame } from "@/lib/state";
 import { tournamentPool } from "@/data/tournament";
-import { tournamentField } from "@/lib/bots";
 import { weekKey, pickManyForKey } from "@/lib/util";
+import { supabase } from "@/lib/supabase";
+import { syncTournament } from "@/lib/sync";
 import CompeteNav from "@/components/CompeteNav";
 import ScenarioBlock from "@/components/ScenarioBlock";
+
+interface EntrantRow {
+  week: string;
+  handle: string;
+  score: number;
+  answered: number;
+  done: boolean;
+}
 
 export default function TournamentPage() {
   const { state, ready, answerTournament, finalizeTournament, grantBadge } = useGame();
   const week = weekKey();
+  const [field, setField] = useState<EntrantRow[]>([]);
+  const [loadingField, setLoadingField] = useState(true);
 
   const challenges = useMemo(() => pickManyForKey(tournamentPool, week, "tourney", 5), [week]);
-  const field = useMemo(() => tournamentField(week), [week]);
-
-  if (!ready) return <main className="page" />;
 
   const entry = state.tournaments[week] || { answers: [null, null, null, null, null], done: false };
   const answered = entry.answers.filter((a) => a !== null).length;
   const myScore = entry.answers.filter((a) => a === true).length * 100;
   const allAnswered = answered === 5;
 
-  // Live standings: bots + me.
-  const standings = [...field.map((f) => ({ handle: f.handle, score: f.score, isMe: false }))];
+  // Load this week's real entrants.
+  useEffect(() => {
+    supabase.from("tournament_scores").select("*").eq("week", week).then(({ data }) => {
+      setField((data as EntrantRow[]) ?? []);
+      setLoadingField(false);
+    });
+  }, [week]);
+
+  // Push my score up whenever it changes so others see me in their standings.
+  useEffect(() => {
+    if (!ready || !state.profile.onboarded || answered === 0) return;
+    syncTournament(week, state.profile.handle, myScore, answered, entry.done);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, week, myScore, answered, entry.done]);
+
+  if (!ready) return <main className="page" />;
+
+  // Standings: real entrants, with my row always reflecting local state.
+  const others = field.filter((f) => f.handle !== state.profile.handle);
+  const standings = others.map((f) => ({ handle: f.handle, score: f.score, isMe: false }));
   if (state.profile.onboarded) standings.push({ handle: state.profile.handle, score: myScore, isMe: true });
   standings.sort((a, b) => b.score - a.score);
   const myPlace = standings.findIndex((s) => s.isMe) + 1;
@@ -49,9 +76,9 @@ export default function TournamentPage() {
         </div>
         <div style={{ textAlign: "right" }}>
           <div className="display" style={{ fontSize: 26 }}>
-            {entry.done ? `FINAL: #${entry.placement}` : `#${myPlace}`}
+            {entry.done ? `FINAL: #${entry.placement}` : myPlace > 0 ? `#${myPlace}` : "—"}
           </div>
-          <div className="muted" style={{ fontSize: 12 }}>of {standings.length} entrants</div>
+          <div className="muted" style={{ fontSize: 12 }}>of {standings.length} real {standings.length === 1 ? "entrant" : "entrants"}</div>
         </div>
       </div>
 
@@ -91,9 +118,9 @@ export default function TournamentPage() {
               </p>
               <p className="muted" style={{ fontSize: 13, marginBottom: 12 }}>
                 You&apos;re sitting at #{myPlace} with {myScore} points.
-                {myPlace <= 3 ? " That's a PODIUM finish." : ""}
+                {myPlace <= 3 ? " That's a podium finish." : ""}
               </p>
-              <button className="btn btn-primary" onClick={finalize}>🏁 Certify the Result</button>
+              <button className="btn btn-primary" onClick={finalize}>Certify the Result</button>
             </div>
           )}
         </>
@@ -101,9 +128,11 @@ export default function TournamentPage() {
 
       {entry.done && (
         <div className="card" style={{ textAlign: "center", borderColor: myPlace <= 3 ? "var(--gold)" : undefined }}>
-          <div style={{ fontSize: 40 }}>
-            {entry.placement === 1 ? "🥇" : entry.placement === 2 ? "🥈" : entry.placement === 3 ? "🥉" : "🏟️"}
-          </div>
+          {entry.placement != null && entry.placement <= 3 && (
+            <div style={{ fontSize: 40 }}>
+              {entry.placement === 1 ? "🥇" : entry.placement === 2 ? "🥈" : "🥉"}
+            </div>
+          )}
           <div className="display" style={{ fontSize: 26 }}>
             FINAL PLACEMENT: #{entry.placement}
           </div>
@@ -115,27 +144,38 @@ export default function TournamentPage() {
         </div>
       )}
 
-      <div className="section-head"><h2>Live Standings</h2></div>
+      <div className="section-head">
+        <h2>Live Standings</h2>
+        <span className="muted" style={{ fontSize: 12 }}>real players only</span>
+      </div>
       <div className="card" style={{ padding: "6px 10px" }}>
-        <table className="lb-table">
-          <thead>
-            <tr><th>#</th><th>Trader</th><th style={{ textAlign: "right" }}>Points</th></tr>
-          </thead>
-          <tbody>
-            {standings.map((s, i) => (
-              <tr key={s.handle} className={s.isMe ? "me" : ""}>
-                <td className={`lb-rank ${i < 3 ? "top" : ""}`}>
-                  {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : i + 1}
-                </td>
-                <td>
-                  {s.handle}
-                  {s.isMe && <span className="pill pill-red" style={{ marginLeft: 8 }}>YOU</span>}
-                </td>
-                <td style={{ textAlign: "right", fontFamily: "var(--font-display)", fontWeight: 700 }}>{s.score}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {loadingField ? (
+          <p className="muted" style={{ textAlign: "center", padding: "20px 0" }}>Loading the field...</p>
+        ) : standings.length === 0 ? (
+          <p className="muted" style={{ textAlign: "center", padding: "20px 0" }}>
+            Nobody has entered this week yet. Play a challenge to put your name up.
+          </p>
+        ) : (
+          <table className="lb-table">
+            <thead>
+              <tr><th>#</th><th>Trader</th><th style={{ textAlign: "right" }}>Points</th></tr>
+            </thead>
+            <tbody>
+              {standings.map((s, i) => (
+                <tr key={s.handle} className={s.isMe ? "me" : ""}>
+                  <td className={`lb-rank ${i < 3 ? "top" : ""}`}>
+                    {i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : i + 1}
+                  </td>
+                  <td>
+                    {s.handle}
+                    {s.isMe && <span className="pill pill-red" style={{ marginLeft: 8 }}>YOU</span>}
+                  </td>
+                  <td style={{ textAlign: "right", fontFamily: "var(--font-display)", fontWeight: 700 }}>{s.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </main>
   );

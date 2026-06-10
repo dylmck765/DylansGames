@@ -111,7 +111,7 @@ export default function CommunityPage() {
 
         {myComments.length > 0 && (
           <>
-            <div className="section-head"><h2>💬 Your Takes</h2></div>
+            <div className="section-head"><h2>Your Takes</h2></div>
             {myComments.map((c) => (
               <div className="card" key={c.id} style={{ padding: "10px 14px", borderColor: "var(--red)" }}>
                 <div className="kicker" style={{ fontSize: 11 }}>{state.profile.handle} (you)</div>
@@ -147,18 +147,18 @@ export default function CommunityPage() {
 
       {top && (
         <div className="card card-banner" style={{ borderColor: "var(--gold)", marginTop: 12 }}>
-          <div className="kicker" style={{ color: "var(--gold)" }}>🧠 ANALYST OF THE WEEK — LEADING THESIS</div>
+          <div className="kicker" style={{ color: "var(--gold)" }}>ANALYST OF THE WEEK — LEADING THESIS</div>
           <p className="display" style={{ fontSize: 20, margin: "6px 0 2px", cursor: "pointer" }}
             onClick={() => setSelected(top.id)}>{top.title}</p>
           <p className="muted" style={{ fontSize: 13 }}>
-            {top.handle} • {top.ticker} {top.direction === "bullish" ? "🟢" : "🔴"} • {top.upvotes} votes
+            {top.handle} • {top.ticker} {top.direction === "bullish" ? "bull" : "bear"} • {top.upvotes} votes
           </p>
         </div>
       )}
 
       <div className="subnav" style={{ marginTop: 14 }}>
-        <a className={sort === "top" ? "active" : ""} style={{ cursor: "pointer" }} onClick={() => setSort("top")}>🔥 Top</a>
-        <a className={sort === "new" ? "active" : ""} style={{ cursor: "pointer" }} onClick={() => setSort("new")}>🕐 New</a>
+        <a className={sort === "top" ? "active" : ""} style={{ cursor: "pointer" }} onClick={() => setSort("top")}>Top</a>
+        <a className={sort === "new" ? "active" : ""} style={{ cursor: "pointer" }} onClick={() => setSort("new")}>New</a>
       </div>
 
       {loading ? (

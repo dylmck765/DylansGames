@@ -43,11 +43,6 @@ export function weekKey(d: Date = new Date()): string {
   return `w${Math.floor(daysSinceEpoch(monday) / 7)}`;
 }
 
-export function isBossDay(d: Date = new Date()): boolean {
-  const day = d.getDay();
-  return day === 5 || day === 6 || day === 0; // Friday through Sunday
-}
-
 export function hashString(s: string): number {
   let h = 2166136261;
   for (let i = 0; i < s.length; i++) {

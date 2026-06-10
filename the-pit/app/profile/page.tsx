@@ -33,7 +33,7 @@ export default function ProfilePage() {
       <div className="kicker" style={{ marginTop: 10 }}>PLAYER FILE</div>
       <h1 className="display-italic" style={{ fontSize: 34, marginBottom: 16 }}>{state.profile.handle}</h1>
 
-      <div className="section-head"><h2>📸 Your Player Card</h2></div>
+      <div className="section-head"><h2>Your Player Card</h2></div>
       <div className="card">
         <ShareCard
           handle={state.profile.handle}
@@ -48,7 +48,7 @@ export default function ProfilePage() {
         </p>
       </div>
 
-      <div className="section-head"><h2>📊 Career Stats</h2></div>
+      <div className="section-head"><h2>Career Stats</h2></div>
       <div className="card">
         <table className="lb-table">
           <tbody>
@@ -69,7 +69,7 @@ export default function ProfilePage() {
       </div>
 
       <div className="section-head">
-        <h2>🏅 The Badge Case</h2>
+        <h2>The Badge Case</h2>
         <span className="pill pill-gold">{state.badges.length} / {BADGES.length}</span>
       </div>
       <div className="badge-grid" style={{ marginBottom: 16 }}>
@@ -85,7 +85,7 @@ export default function ProfilePage() {
         })}
       </div>
 
-      <div className="section-head"><h2>📰 The Pit Report</h2></div>
+      <div className="section-head"><h2>The Pit Report</h2></div>
       <Link href="/pit-report">
         <div className="card row-between">
           <span>Weekly digest templates — ready to send to your crew.</span>
@@ -93,7 +93,7 @@ export default function ProfilePage() {
         </div>
       </Link>
 
-      <div className="section-head"><h2>⚠️ Danger Zone</h2></div>
+      <div className="section-head"><h2>Danger Zone</h2></div>
       <div className="card" style={{ borderColor: "var(--red)" }}>
         {!confirmReset ? (
           <button className="btn btn-block" onClick={() => setConfirmReset(true)}>

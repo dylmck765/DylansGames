@@ -95,17 +95,17 @@ export default function LeaderboardPage() {
 
       {board === "season" && (
         <p className="muted" style={{ fontSize: 13, marginBottom: 10 }}>
-          ⏳ Season rankings reset every 30 days. {periodDaysLeft()} days left in this one — climb now.
+          Season rankings reset every 30 days. {periodDaysLeft()} days left in this one — climb now.
         </p>
       )}
       {board === "streak" && (
         <p className="muted" style={{ fontSize: 13, marginBottom: 10 }}>
-          🔥 Longest active daily streaks. Miss a day, lose the flame.
+          Longest active daily streaks. Miss a day, lose the flame.
         </p>
       )}
       {board === "community" && (
         <p className="muted" style={{ fontSize: 13, marginBottom: 10 }}>
-          💬 Points earned from posting theses and commenting in the feed.
+          Points earned from posting theses and commenting in the feed.
         </p>
       )}
 

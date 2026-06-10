@@ -1,12 +1,12 @@
 "use client";
 
 // The daily habit loop: Blitz (60s timer), Market Read, Film Room,
-// and the Friday-weekend Boss Challenge. Content rotates by date.
+// and the Boss Challenge. Content rotates by date.
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGame } from "@/lib/state";
 import { dailyBlitzPool, marketReadPool, filmRoomPool, bossPool } from "@/data/daily-content";
-import { dateKey, isBossDay, pickForDate } from "@/lib/util";
+import { dateKey, pickForDate } from "@/lib/util";
 
 export default function DailyPage() {
   const { state, ready, submitBlitz, submitRead, submitFilm, submitBoss } = useGame();
@@ -25,12 +25,12 @@ export default function DailyPage() {
       <div className="kicker" style={{ marginTop: 10 }}>TODAY&apos;S SLATE — {today}</div>
       <h1 className="display-italic" style={{ fontSize: 34, marginBottom: 4 }}>Daily Reps</h1>
       <p className="muted" style={{ marginBottom: 18, fontSize: 14 }}>
-        🔥 Day {state.streak.current} streak. Show up tomorrow and the bonus doubles.
+        Day {state.streak.current} streak. Show up tomorrow and the bonus doubles.
       </p>
 
       {/* DAILY BLITZ */}
       <div className="section-head">
-        <h2>⚡ Daily Blitz</h2>
+        <h2>Daily Blitz</h2>
         <span className="pill pill-gold">+150 XP</span>
       </div>
       <div className="card card-accent">
@@ -49,7 +49,7 @@ export default function DailyPage() {
 
       {/* MARKET READ */}
       <div className="section-head">
-        <h2>📈 Market Read</h2>
+        <h2>Market Read</h2>
         <span className="pill pill-gold">+100 XP</span>
       </div>
       <div className="card card-accent">
@@ -68,7 +68,7 @@ export default function DailyPage() {
 
       {/* FILM ROOM */}
       <div className="section-head">
-        <h2>🎬 Film Room</h2>
+        <h2>Film Room</h2>
         <span className="pill pill-gold">+50 XP</span>
       </div>
       <div className="card card-accent">
@@ -82,25 +82,17 @@ export default function DailyPage() {
 
       {/* BOSS */}
       <div className="section-head">
-        <h2>🐉 Boss Challenge</h2>
+        <h2>Boss Challenge</h2>
         <span className="pill pill-red">UP TO 2,000 XP</span>
       </div>
-      {isBossDay() ? (
-        <div className="card" style={{ border: "1px solid var(--red)", boxShadow: "0 0 24px rgba(255,30,45,0.12)" }}>
-          <h3 className="display" style={{ fontSize: 22, marginBottom: 6 }}>{boss.title}</h3>
-          {day?.bossDone ? (
-            <BankedLine text={`Boss fought: ${day.bossCorrect}/4 parts — ${(day.bossCorrect * 500).toLocaleString()} XP banked.`} />
-          ) : (
-            <BossGame intro={boss.intro} parts={boss.parts} onDone={submitBoss} />
-          )}
-        </div>
-      ) : (
-        <div className="card" style={{ textAlign: "center", opacity: 0.7 }}>
-          <div style={{ fontSize: 30 }}>🔒</div>
-          <p className="display" style={{ fontSize: 18 }}>The Boss arrives Friday.</p>
-          <p className="muted" style={{ fontSize: 13 }}>Multi-part gauntlet. Open Friday through Sunday. Bring your A game.</p>
-        </div>
-      )}
+      <div className="card" style={{ border: "1px solid var(--red)" }}>
+        <h3 className="display" style={{ fontSize: 22, marginBottom: 6 }}>{boss.title}</h3>
+        {day?.bossDone ? (
+          <BankedLine text={`Boss fought: ${day.bossCorrect}/4 parts — ${(day.bossCorrect * 500).toLocaleString()} XP banked.`} />
+        ) : (
+          <BossGame intro={boss.intro} parts={boss.parts} onDone={submitBoss} />
+        )}
+      </div>
     </main>
   );
 }
@@ -154,7 +146,7 @@ function BlitzGame({
         <p className="muted" style={{ marginBottom: 12 }}>
           One question. Sixty seconds. The clock starts when you say it does.
         </p>
-        <button className="btn btn-primary" onClick={() => setStarted(true)}>⏱️ Start the Clock</button>
+        <button className="btn btn-primary" onClick={() => setStarted(true)}>Start the Clock</button>
       </div>
     );
   }
@@ -222,10 +214,10 @@ function MarketReadGame({
     onDone(picked === correctCall);
   };
 
-  const CALLS: { id: "bullish" | "bearish" | "neutral"; label: string; ico: string }[] = [
-    { id: "bullish", label: "Bullish", ico: "🟢" },
-    { id: "bearish", label: "Bearish", ico: "🔴" },
-    { id: "neutral", label: "No Trade", ico: "⚪" },
+  const CALLS: { id: "bullish" | "bearish" | "neutral"; label: string }[] = [
+    { id: "bullish", label: "Bullish" },
+    { id: "bearish", label: "Bearish" },
+    { id: "neutral", label: "No Trade" },
   ];
 
   return (
@@ -244,7 +236,7 @@ function MarketReadGame({
             disabled={submitted}
             onClick={() => setPicked(c.id)}
           >
-            {c.ico} {c.label}
+            {c.label}
           </button>
         ))}
       </div>
@@ -286,7 +278,7 @@ function FilmRoomViewer({ story, lesson, onDone }: { story: string[]; lesson: st
         <p key={i} style={{ marginBottom: 10, fontSize: 14.5 }}>{p}</p>
       ))}
       {revealed ? (
-        <div className="explain">🎯 THE LESSON: {lesson}</div>
+        <div className="explain">THE LESSON: {lesson}</div>
       ) : (
         <button
           className="btn btn-block"
@@ -323,7 +315,7 @@ function BossGame({
       <div>
         <p style={{ marginBottom: 12 }}>{intro}</p>
         <button className="btn btn-primary btn-block" onClick={() => setPartIdx(0)}>
-          ⚔️ Enter the Arena
+          Enter the Arena
         </button>
       </div>
     );
@@ -340,7 +332,7 @@ function BossGame({
             ? "FLAWLESS VICTORY. The boss never stood a chance."
             : correctCount >= 2
             ? "The boss is down, but you took some hits. Review the film."
-            : "Rough night. Champions are made on nights like this — run it back next week."}
+            : "Rough night. Champions are made on nights like this — a new boss drops tomorrow."}
         </p>
       </div>
     );

@@ -39,7 +39,7 @@ export default function EventLayer() {
     return (
       <div className="toast-layer">
         <div className="toast">
-          🔥 <span className="xp-pop">DAY {ev.day}</span>
+          <span className="xp-pop">DAY {ev.day}</span>
           <span style={{ color: "var(--muted)", fontSize: 13 }}>+{formatXp(ev.xp)} XP streak bonus</span>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function EventLayer() {
     return (
       <div className="overlay" onClick={dismissEvent}>
         <div className="rankup-card">
-          <div className="kicker">⬆ RANK UP ⬆</div>
+          <div className="kicker">RANK UP</div>
           <div className="big">{ev.rankName}</div>
           <p className="muted" style={{ marginBottom: 18 }}>
             {rank?.blurb ?? "The crowd is on its feet."}
@@ -72,7 +72,7 @@ export default function EventLayer() {
     <div className="overlay" onClick={dismissEvent}>
       <div className="rankup-card" style={{ borderColor: "var(--gold)", boxShadow: "0 0 60px rgba(255,198,45,0.25)" }}>
         <div className="kicker" style={{ color: "var(--gold)" }}>
-          🏅 BADGE UNLOCKED
+          BADGE UNLOCKED
         </div>
         <div style={{ fontSize: 60, margin: "12px 0" }}>{badge.icon}</div>
         <div className="big" style={{ color: "var(--gold)", textShadow: "none", fontSize: 36 }}>

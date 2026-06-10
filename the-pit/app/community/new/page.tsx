@@ -108,7 +108,7 @@ export default function NewThesisPage() {
 
         <button className="btn btn-primary btn-block" style={{ marginTop: 16 }}
           disabled={!valid || submitting} onClick={submit}>
-          {submitting ? "Posting..." : "📣 Post It to The Pit"}
+          {submitting ? "Posting..." : "Post It to The Pit"}
         </button>
         {!valid && (
           <p className="muted" style={{ fontSize: 12, marginTop: 8, textAlign: "center" }}>

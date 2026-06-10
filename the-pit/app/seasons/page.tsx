@@ -24,7 +24,7 @@ export default function SeasonsPage() {
             <div className="card card-accent" style={{ opacity: anyUnlocked ? 1 : 0.5 }}>
               <div className="row-between">
                 <div>
-                  <div className="kicker">SEASON {season.id}{anyUnlocked ? "" : " • 🔒 LOCKED"}</div>
+                  <div className="kicker">SEASON {season.id}{anyUnlocked ? "" : " • LOCKED"}</div>
                   <h2 className="display" style={{ fontSize: 24 }}>{season.title}</h2>
                   <p className="muted" style={{ fontSize: 13 }}>{season.subtitle}</p>
                 </div>

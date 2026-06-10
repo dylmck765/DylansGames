@@ -19,7 +19,7 @@ ESPN energy. Six seasons of curriculum. Daily habit loops, streaks, badges, duel
 | **Streaks** | Daily login bonus starts at 50 XP and doubles every consecutive day, capped at 1,600. |
 | **Badges** | 26 badges from "First Blood" to "The GOAT," evaluated automatically after every action. |
 | **Competition** | Global top-100 leaderboard, 30-day Season rankings (auto-reset), streak leaderboard, weekly 5-challenge tournaments (Mon–Sun, top 3 medal), and head-to-head duels (same 5 questions, most correct wins, time breaks ties). |
-| **Daily Loop** | Daily Blitz (60-second shot clock), Market Read (call the direction + write your reasoning), Film Room (case study), and a Friday–Sunday Boss Challenge worth 2,000 XP. |
+| **Daily Loop** | Daily Blitz (60-second shot clock), Market Read (call the direction + write your reasoning), Film Room (case study), and a daily Boss Challenge worth up to 2,000 XP. |
 | **Community** | Reddit-style feed of structured Trade Theses (ticker / direction / catalyst / max loss), votes, comments, and a weekly "Analyst of the Week" badge. |
 | **Onboarding** | Hype welcome → 5-question placement quiz → animated rank reveal → first episode auto-queued. High scorers skip Season 1 (or 1–2) and start with bonus XP. |
 | **Marketing** | Landing page with waitlist capture (writes `waitlist.csv`), shareable player-card PNG generator, and a 4-week "Pit Report" email sequence (in-app at `/pit-report` and in `marketing/pit-report-emails.md`). |
@@ -28,9 +28,9 @@ ESPN energy. Six seasons of curriculum. Daily habit loops, streaks, badges, duel
 
 - **Next.js 15** (App Router) + **React 19** + **TypeScript** — that's it. No database, no auth service, no paid APIs.
 - All player state persists in `localStorage` (`thepit_state_v1`).
-- Leaderboard rivals, duel opponents, and tournament fields are deterministic simulated bots seeded per-day, so the boards move daily without a server.
+- Leaderboards and tournament standings show real players only, synced live through Supabase. Duel opponents are deterministic simulated bots, clearly labeled as AI in the UI.
 - Daily/tournament content rotates deterministically from content pools keyed by date/week.
-- Styling is hand-rolled CSS (Barlow Condensed + Inter via Google Fonts) — no UI framework.
+- Styling is hand-rolled CSS (Space Grotesk + Inter via Google Fonts) — no UI framework.
 
 ## Run It Locally
 

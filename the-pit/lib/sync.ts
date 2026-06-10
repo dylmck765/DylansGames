@@ -20,3 +20,21 @@ export function syncScore(state: PitState): void {
     updated_at: new Date().toISOString(),
   }, { onConflict: "handle" }).then(() => {});
 }
+
+/** Upsert this week's tournament score so standings show real players. */
+export function syncTournament(
+  week: string,
+  handle: string,
+  score: number,
+  answered: number,
+  done: boolean
+): void {
+  supabase.from("tournament_scores").upsert({
+    week,
+    handle,
+    score,
+    answered,
+    done,
+    updated_at: new Date().toISOString(),
+  }, { onConflict: "week,handle" }).then(() => {});
+}

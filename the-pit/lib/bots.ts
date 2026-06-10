@@ -1,7 +1,8 @@
-// Simulated competitors. Deterministic from a fixed seed plus a daily jitter,
-// so leaderboards feel alive without any backend.
+// AI sparring partners for the duel floor. These are clearly labeled as bots
+// in the UI — they never appear on leaderboards or tournament standings,
+// which show real players only (via Supabase).
 
-import { dateKey, hashString, mulberry32, weekKey } from "./util";
+import { dateKey, hashString, mulberry32 } from "./util";
 
 export interface Bot {
   id: string;
@@ -75,27 +76,4 @@ export function simulateDuelRun(bot: Bot, duelNumber: number): { correct: number
     timeMs += 2500 + Math.floor(rng() * 8000);
   }
   return { correct, timeMs };
-}
-
-export interface TournamentBotScore {
-  handle: string;
-  score: number; // 0-500 (100 per challenge)
-}
-
-/** 20 bot entrants for this week's tournament with deterministic scores. */
-export function tournamentField(week: string = weekKey()): TournamentBotScore[] {
-  const bots = getBots();
-  const rng = mulberry32(hashString("tourney:" + week));
-  const entrants: TournamentBotScore[] = [];
-  const used = new Set<number>();
-  while (entrants.length < 20) {
-    const idx = Math.floor(rng() * bots.length);
-    if (used.has(idx)) continue;
-    used.add(idx);
-    const b = bots[idx];
-    const correct = Math.round(5 * Math.min(1, b.skill * (0.55 + rng() * 0.55)));
-    entrants.push({ handle: b.handle, score: correct * 100 });
-  }
-  entrants.sort((a, b) => b.score - a.score);
-  return entrants;
 }

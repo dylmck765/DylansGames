@@ -1,7 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// The publishable (anon) key is safe to ship in client code — Row Level
+// Security policies on the Supabase side control what it can do.
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://qqjxffrbglbnyvwgxqxv.supabase.co";
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_1tjHMogha1yiYlYeN6jN6g_ZID-IODS";
 
 export const supabase = createClient(url, key);
 

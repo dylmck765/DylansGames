@@ -51,7 +51,7 @@ export default function Ticker() {
       ))}
       <span className="ticker-item">
         <span className="sym">THE PIT</span>
-        <span style={{ color: "var(--gold)" }}>★ LIVE</span>
+        <span style={{ color: "var(--gold)" }}>SIM TAPE</span>
       </span>
     </>
   );

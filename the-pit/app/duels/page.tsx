@@ -1,6 +1,8 @@
 "use client";
 
-// Head-to-head duels: same 5 questions, most correct wins, total time breaks ties.
+// Sparring duels vs the house AI: same 5 questions, most correct wins,
+// total time breaks ties. Opponents are clearly labeled as bots — live
+// player-vs-player isn't possible on static hosting.
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGame } from "@/lib/state";
@@ -96,20 +98,20 @@ export default function DuelsPage() {
         <CompeteNav />
         <div className="rankup-card" style={{ margin: "20px auto", borderColor: won ? "var(--green)" : "var(--red)" }}>
           <div className="kicker" style={{ color: won ? "var(--green)" : "var(--red)" }}>
-            {won ? "🏆 VICTORY" : "💀 DEFEAT"}
+            {won ? "VICTORY" : "DEFEAT"}
           </div>
           <div className="big" style={{ fontSize: 36, color: won ? "var(--green)" : "var(--red)", textShadow: "none" }}>
             {myCorrect} — {oppRun.correct}
           </div>
           <p className="muted" style={{ fontSize: 13 }}>
-            vs {opponent.handle} • your time {(myTimeMs / 1000).toFixed(1)}s, theirs {(oppRun.timeMs / 1000).toFixed(1)}s
+            vs {opponent.handle} (AI) • your time {(myTimeMs / 1000).toFixed(1)}s, theirs {(oppRun.timeMs / 1000).toFixed(1)}s
           </p>
           <p style={{ margin: "12px 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase" }}>
             {won
               ? `+${formatXp(750)} XP. ${opponent.handle} will be hearing about this one.`
               : "No XP. But the film from this loss is free — study it."}
           </p>
-          <button className="btn btn-primary btn-block" onClick={startDuel}>⚔️ Run It Back</button>
+          <button className="btn btn-primary btn-block" onClick={startDuel}>Run It Back</button>
           <button className="btn btn-block" style={{ marginTop: 8 }} onClick={() => setPhase("lobby")}>
             Back to the Lobby
           </button>
@@ -125,7 +127,7 @@ export default function DuelsPage() {
       <main className="page" style={{ maxWidth: 560 }}>
         <div className="row-between" style={{ margin: "14px 0" }}>
           <span className="pill pill-red">YOU: {myCorrect}</span>
-          <span className="display" style={{ fontSize: 18 }}>VS {opponent.handle.toUpperCase()}</span>
+          <span className="display" style={{ fontSize: 18 }}>VS {opponent.handle.toUpperCase()} <span className="pill" style={{ fontSize: 10 }}>AI</span></span>
           <span className={`timer-ring ${secondsLeft <= 5 && picked === null ? "danger" : ""}`} style={{ fontSize: 24 }}>
             :{String(Math.max(0, secondsLeft)).padStart(2, "0")}
           </span>
@@ -168,7 +170,7 @@ export default function DuelsPage() {
   const preview = duelOpponent(state.duels.played + 1);
   return (
     <main className="page">
-      <div className="kicker" style={{ marginTop: 10 }}>HEAD-TO-HEAD</div>
+      <div className="kicker" style={{ marginTop: 10 }}>SPARRING — VS THE HOUSE AI</div>
       <h1 className="display-italic" style={{ fontSize: 34, marginBottom: 12 }}>The Duel Floor</h1>
       <CompeteNav />
 
@@ -186,12 +188,15 @@ export default function DuelsPage() {
       </div>
 
       <div className="card" style={{ textAlign: "center" }}>
-        <div className="kicker">NEXT OPPONENT ON THE CARD</div>
-        <div className="display" style={{ fontSize: 30, margin: "8px 0" }}>{preview.handle}</div>
+        <div className="kicker">NEXT SPARRING PARTNER</div>
+        <div className="display" style={{ fontSize: 30, margin: "8px 0" }}>
+          {preview.handle} <span className="pill" style={{ verticalAlign: "middle" }}>AI</span>
+        </div>
         <p className="muted" style={{ fontSize: 13, marginBottom: 14 }}>
+          A simulated opponent — train here, then take your real score to the leaderboard.
           Same 5 questions. 15 seconds each. Most correct wins — total time breaks the tie.
         </p>
-        <button className="btn btn-primary btn-block" onClick={startDuel}>⚔️ Throw Down the Gauntlet</button>
+        <button className="btn btn-primary btn-block" onClick={startDuel}>Start the Duel</button>
       </div>
 
       <p className="muted" style={{ fontSize: 12.5, textAlign: "center" }}>

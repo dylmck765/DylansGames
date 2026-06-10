@@ -183,7 +183,7 @@ export const BADGES: BadgeDef[] = [
     id: "boss-slayer",
     name: "Boss Slayer",
     icon: "🐉",
-    desc: "Complete your first Friday Boss Challenge.",
+    desc: "Complete your first Boss Challenge.",
     tier: "silver",
     check: (s) => s.counters.bossDone >= 1,
   },
