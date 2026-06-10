@@ -7,6 +7,8 @@ export function syncScore(state: PitState): void {
   const episodesDone = Object.values(state.episodes).filter(
     (e) => e?.quizDone && e?.paperDone && e?.scenarioDone
   ).length;
+  // .then() is required — Supabase JS v2 uses a lazy query builder that only
+  // executes the fetch when the Promise is consumed.
   supabase.from("leaderboard").upsert({
     handle: state.profile.handle,
     xp: state.xp,
@@ -16,6 +18,5 @@ export function syncScore(state: PitState): void {
     badge_count: state.badges.length,
     episodes_done: episodesDone,
     updated_at: new Date().toISOString(),
-  }, { onConflict: "handle" });
-  // Fire-and-forget — local state is source of truth, sync failure is silent.
+  }, { onConflict: "handle" }).then(() => {});
 }
