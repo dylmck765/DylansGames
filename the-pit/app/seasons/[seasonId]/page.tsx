@@ -4,6 +4,10 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+
+export function generateStaticParams() {
+  return [1, 2, 3, 4, 5, 6].map((id) => ({ seasonId: String(id) }));
+}
 import { useGame } from "@/lib/state";
 import { getSeason, isEpisodeUnlocked } from "@/lib/content";
 import { episodeComplete } from "@/lib/progress";

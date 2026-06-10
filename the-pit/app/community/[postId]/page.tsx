@@ -5,6 +5,11 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+
+export function generateStaticParams() {
+  const { seedPosts } = require("@/data/community-seed");
+  return seedPosts.map((p: { id: string }) => ({ postId: p.id }));
+}
 import { useGame } from "@/lib/state";
 import { buildFeed } from "@/lib/community";
 import { seedPosts } from "@/data/community-seed";

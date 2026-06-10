@@ -4,6 +4,11 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+
+export function generateStaticParams() {
+  const { ALL_EPISODES } = require("@/lib/content");
+  return ALL_EPISODES.map((ep: { id: string }) => ({ episodeId: ep.id }));
+}
 import { useGame } from "@/lib/state";
 import { getEpisode, isEpisodeUnlocked, ALL_EPISODES, episodeIndex } from "@/lib/content";
 import { episodeComplete } from "@/lib/progress";
