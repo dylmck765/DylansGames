@@ -1,5 +1,7 @@
 # 🏟️ THE PIT
 
+**[▶ Live Demo — dylmck765.github.io/DylansGames](https://dylmck765.github.io/DylansGames/)**
+
 **The free, gamified training ground that turns stock investors into confident directional options traders.**
 
 ESPN energy. Six seasons of curriculum. Daily habit loops, streaks, badges, duels, weekly tournaments, and a built-in community — all running 100% locally with zero paid services.
