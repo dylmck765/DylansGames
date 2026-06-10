@@ -10,6 +10,7 @@ import { initialState, emptyEpisodeProgress, emptyDayProgress } from "./progress
 import { XP_VALUES, streakXp, rankIndexForXp, RANKS } from "./xp";
 import { evaluateBadges, BADGE_MAP } from "./badges";
 import { dateKey, yesterdayKey, periodKey } from "./util";
+import { syncScore } from "./sync";
 
 const STORAGE_KEY = "thepit_state_v1";
 
@@ -78,6 +79,13 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       // Storage full or blocked; the session still works in memory.
     }
   }, [state, ready]);
+
+  // Sync score to Supabase whenever XP, streak, or badges change.
+  useEffect(() => {
+    if (!ready || !state.profile.onboarded) return;
+    syncScore(state);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.xp, state.streak.current, state.badges.length, ready]);
 
   const pushEvents = useCallback((evs: GameEvent[]) => {
     if (evs.length) setEvents((cur) => [...cur, ...evs]);

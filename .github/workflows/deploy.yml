@@ -35,6 +35,8 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /DylansGames
+          NEXT_PUBLIC_SUPABASE_URL: https://qqjxffrbglbnyvwgxqxv.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: sb_publishable_1tjHMogha1yiYlYeN6jN6g_ZID-IODS
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -5,7 +5,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useGame } from "@/lib/state";
-import { getBots, type Bot } from "@/lib/bots";
+import { supabase, type LBRow } from "@/lib/supabase";
 import { formatXp } from "@/lib/util";
 
 const TESTIMONIALS = [
@@ -28,10 +28,11 @@ export default function LandingPage() {
   const [email, setEmail] = useState("");
   const [signed, setSigned] = useState(false);
   const [err, setErr] = useState("");
-  // Bot XP carries a daily jitter; computing it during hydration would
-  // mismatch the build-day values baked into the prerendered HTML.
-  const [top5, setTop5] = useState<Bot[]>([]);
-  useEffect(() => setTop5(getBots().slice(0, 5)), []);
+  const [top5, setTop5] = useState<LBRow[]>([]);
+  useEffect(() => {
+    supabase.from("leaderboard").select("handle,xp,rank_name").order("xp", { ascending: false }).limit(5)
+      .then(({ data }) => setTop5((data as LBRow[]) ?? []));
+  }, []);
 
   const joinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -127,15 +128,23 @@ export default function LandingPage() {
               <tr><th>#</th><th>Trader</th><th style={{ textAlign: "right" }}>XP</th></tr>
             </thead>
             <tbody>
-              {top5.map((b, i) => (
-                <tr key={b.id}>
-                  <td className={`lb-rank ${i < 3 ? "top" : ""}`}>{i + 1}</td>
-                  <td>{b.handle}</td>
-                  <td style={{ textAlign: "right", fontFamily: "var(--font-display)", fontWeight: 700 }}>
-                    {formatXp(b.xp)}
+              {top5.length === 0 ? (
+                <tr>
+                  <td colSpan={3} className="muted" style={{ textAlign: "center", padding: "14px 0", fontStyle: "italic" }}>
+                    Be the first name on the board.
                   </td>
                 </tr>
-              ))}
+              ) : (
+                top5.map((b, i) => (
+                  <tr key={b.handle}>
+                    <td className={`lb-rank ${i < 3 ? "top" : ""}`}>{i + 1}</td>
+                    <td>{b.handle}</td>
+                    <td style={{ textAlign: "right", fontFamily: "var(--font-display)", fontWeight: 700 }}>
+                      {formatXp(b.xp)}
+                    </td>
+                  </tr>
+                ))
+              )}
               <tr>
                 <td className="lb-rank">?</td>
                 <td className="muted" style={{ fontStyle: "italic" }}>Your name goes here</td>
