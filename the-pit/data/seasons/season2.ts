@@ -45,36 +45,36 @@ const season2: Season = {
           id: "s2e1-q1",
           question: "In plain English, what are the Greeks?",
           options: [
-            "Secret formulas only market makers can see",
-            "The box score of your option - stats showing how its price reacts to stock moves, time, and volatility",
-            "Government regulations on options trading",
-            "The fees your broker charges per contract"
+            "The stats showing how the option's price reacts to its inputs",
+            "Secret pricing formulas only market makers can see",
+            "Government regulations that control how options can be traded",
+            "The per-contract fees your broker charges you"
           ],
-          correctIndex: 1,
-          explanation: "The Greeks are just measurements, one per input. Delta tracks stock moves, theta tracks time, vega tracks volatility. They are printed on every option chain - no secret handshake required."
+          correctIndex: 0,
+          explanation: "The Greeks are the box score of your option - one measurement per input. Delta tracks stock moves, theta tracks time, vega tracks volatility. They are printed on every option chain - no secret handshake required."
         },
         {
           id: "s2e1-q2",
           question: "Your call lost value today even though the stock did not move at all. Which stat most likely explains it?",
           options: [
-            "Delta - the option's speed",
-            "Theta - the shot clock ticking down",
-            "Open interest dropped overnight",
-            "The strike price changed"
+            "Delta - the option's speed stat",
+            "Open interest dropping at that strike overnight",
+            "A change in the strike price",
+            "Theta - the ticking shot clock"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Theta is time decay. Every day that passes drains a little value from your option, even on a day when the stock goes nowhere. Strike prices never change, and open interest does not directly set your option's value."
         },
         {
           id: "s2e1-q3",
           question: "Which statement about the Greeks is TRUE?",
           options: [
-            "They are fixed the moment you buy and never change",
-            "They only matter if you are selling options",
-            "They are live stats that shift as price, time, and volatility change",
-            "Only delta matters for short-term trades"
+            "They shift constantly as price, time, and volatility change",
+            "They are locked in at purchase and stay fixed until expiration",
+            "They only matter to traders who are selling options",
+            "Only delta is worth checking on short-term trades"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "The Greeks update constantly. A 0.50 delta can become 0.65 after one good move, and theta ramps up as expiration nears. They matter to buyers and sellers alike - they are the same stats read from opposite sidelines."
         }
       ],
@@ -91,7 +91,7 @@ const season2: Season = {
             pnl: -35
           },
           {
-            label: "Buy the $195 call expiring in 45 days for $4.80. Delta 0.48, manageable daily theta.",
+            label: "Buy the $195 call expiring in 45 days for $4.80. Delta 0.48.",
             result: "Apple reaches $197.50 in three weeks. Your call climbs to about $6.40. You sell with time still on the clock.",
             pnl: 160
           },
@@ -111,12 +111,12 @@ const season2: Season = {
         question: "What is your move before a single dollar leaves your account?",
         options: [
           "Market-buy the cheapest weekly call right at the open before the move happens",
-          "Pull up the chain stats - delta, theta, IV, and the bid-ask spread - and only then decide if any contract fits the play",
           "Buy 10 contracts instead of 1 because the tip sounded extra confident",
-          "Buy shares AND calls at the open so there is no way to miss"
+          "Read the chain stats - delta, theta, IV, the bid-ask spread - then decide",
+          "Buy shares AND calls at the open so you cannot miss the move either way"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B is the pro move: ten seconds of reading tells you whether the cheap calls are lottery tickets and whether the spread will tax you on the way in. Option A buys blind at the most chaotic minute of the day. Option C confuses confidence with edge - sizing up on a rumor is how accounts die. Option D doubles your exposure to a thesis you have not even checked. Tips are free; losses are not."
+        bestIndex: 2,
+        coachNotes: "Option C is the pro move: ten seconds of reading tells you whether the cheap calls are lottery tickets, whether the spread will tax you on the way in, and whether any contract actually fits the play. Option A buys blind at the most chaotic minute of the day. Option B confuses confidence with edge - sizing up on a rumor is how accounts die. Option D doubles your exposure to a thesis you have not even checked. Tips are free; losses are not."
       }
     },
     {
@@ -159,36 +159,36 @@ const season2: Season = {
           question: "A call option is at-the-money - strike right at the stock price. Roughly what is its delta?",
           options: [
             "About 0.05",
-            "About 1.00",
             "About 0.50",
+            "About 1.00",
             "Exactly zero"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "At-the-money options sit near 0.50 delta - a coin flip. From there, delta climbs toward 1.00 as the option goes deeper in-the-money and shrinks toward zero as it goes further out."
         },
         {
           id: "s2e2-q2",
           question: "You are looking at a 0.20-delta call. What is the plain-English read?",
           options: [
-            "It moves about $0.20 per $1 stock move, and has roughly a 20% shot of finishing in-the-money",
-            "It is guaranteed to gain 20% if the stock rises",
-            "It expires in 20 days",
-            "You need 20 contracts for it to be profitable"
+            "A guaranteed 20% gain on the premium whenever the stock closes higher",
+            "The contract has exactly 20 trading days left until it expires",
+            "About $0.20 per $1 stock move, and roughly a 20% shot of finishing in-the-money",
+            "You need at least 20 contracts for the position to turn a profit"
           ],
-          correctIndex: 0,
+          correctIndex: 2,
           explanation: "Delta pulls double duty: price sensitivity (about $0.20 per $1 move, or $20 per contract) and a rough probability of expiring in-the-money (about 20%). Rough is the key word - it is an estimate, not a promise."
         },
         {
           id: "s2e2-q3",
           question: "A call is deep in-the-money with a 0.95 delta. How does it behave?",
           options: [
-            "It barely reacts to the stock at all",
-            "It moves almost dollar-for-dollar with the stock, like owning roughly 95 shares",
-            "It loses value when the stock rises",
-            "It has a 5% chance of finishing in-the-money"
+            "It barely reacts to moves in the stock at this point",
+            "It loses value whenever the stock price climbs higher",
+            "It carries only a 5% chance of finishing in-the-money",
+            "It moves almost dollar-for-dollar with the stock"
           ],
-          correctIndex: 1,
-          explanation: "A 0.95 delta means the option captures about 95 cents of every $1 stock move - nearly stride for stride with 100 shares. And the probability read flips with it: roughly a 95% chance of finishing in-the-money, not 5%."
+          correctIndex: 3,
+          explanation: "A 0.95 delta means the option captures about 95 cents of every $1 stock move - like owning roughly 95 of the 100 shares the contract covers. And the probability read flips with it: roughly a 95% chance of finishing in-the-money, not 5%."
         }
       ],
       paperTrade: {
@@ -223,10 +223,10 @@ const season2: Season = {
         situation: "You are bullish on a retailer over the next three to four weeks ahead of its holiday sales data. You have a $1,500 risk budget for the play and the full option chain in front of you.",
         question: "How do you pick the contract?",
         options: [
-          "Buy as many far out-of-the-money weeklies as the budget allows - maximum contracts, maximum upside",
-          "Buy a call around 0.50 to 0.60 delta with 45-plus days to expiry, sized so the premium fits the risk budget",
-          "Put the entire account, not just the budget, into deep in-the-money calls since they have the highest delta",
-          "Sort the chain by price and grab whatever costs under $1.00"
+          "Buy as many far out-of-the-money weeklies as the budget allows - maximum contracts",
+          "Buy a call around 0.50 to 0.60 delta with 45-plus days to expiry, sized to the budget",
+          "Put the entire account into deep in-the-money calls, since they carry the highest delta",
+          "Sort the chain by price and grab whatever contracts cost under $1.00 each"
         ],
         bestIndex: 1,
         coachNotes: "Option B is the disciplined play: a delta that genuinely participates, time that outlasts the thesis, and size that respects the budget. Option A maximizes ticket count on contracts the market prices as longshots - ten lotto tickets are still lotto tickets. Option C has the right idea about delta but torches risk management by betting the whole account. Option D shops by sticker price, which is how you accidentally buy 0.06 deltas and call it a strategy. Pick the runner by his speed, not his salary."
@@ -271,12 +271,12 @@ const season2: Season = {
           id: "s2e3-q1",
           question: "In plain English, what does gamma measure?",
           options: [
-            "How much value the option loses each day",
             "How much delta changes when the stock moves $1",
-            "The probability the trade is profitable",
-            "How wide the bid-ask spread is"
+            "How much value the option loses with each passing day",
+            "The probability the trade ends up profitable",
+            "How wide the option's bid-ask spread is"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Gamma is the acceleration stat. If delta is 0.40 and gamma is 0.08, a $1 rally pushes delta to 0.48. Daily value loss is theta, and spreads are a liquidity issue - different stats on the card."
         },
         {
@@ -285,19 +285,19 @@ const season2: Season = {
           options: [
             "Deep in-the-money options with a year to expiry",
             "Far out-of-the-money options with a year to expiry",
-            "At-the-money options close to expiration",
-            "It is the same for every option on the chain"
+            "It is the same for every option on the chain",
+            "At-the-money options close to expiration"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "At-the-money near expiry is gamma's home field. The option is balanced on the edge between worthless and valuable with almost no time left, so every dollar of stock movement slams delta around. That is why 0DTE at-the-money contracts move so violently."
         },
         {
           id: "s2e3-q3",
           question: "During a gamma squeeze, why does heavy call buying push the stock itself higher?",
           options: [
-            "Call buyers are legally required to buy shares too",
+            "Call buyers are legally required to purchase shares at the same time",
             "The exchange raises the stock price when option volume spikes",
-            "Market makers who sold the calls must buy more and more shares to hedge as the stock rises",
+            "Dealers who sold the calls must keep buying shares to stay hedged",
             "Gamma squeezes are a myth - options cannot affect stock prices"
           ],
           correctIndex: 2,
@@ -336,13 +336,13 @@ const season2: Season = {
         situation: "It is expiration Friday, 2:00 PM. Your 0DTE at-the-money call has doubled from $1.50 to $3.00 on a sharp rally. The stock is sitting right at your strike. Two hours left in regulation.",
         question: "What do you do with the position?",
         options: [
-          "Take the profit now, or at minimum sell most of it - a double on a max-gamma contract is the market offering you the ball",
-          "Hold everything - it doubled in an hour, so it could double again by the close",
+          "Hold everything - a double in an hour could double again by the close",
+          "Take the profit now, or at minimum sell most of the position",
           "Add more contracts since momentum is clearly on your side",
-          "Hold through the close no matter what to collect every penny of value at expiration"
+          "Hold through the close to collect every penny of value at expiration"
         ],
-        bestIndex: 0,
-        coachNotes: "Option A is the pro move: at-the-money on expiration day, gamma swings both directions, and a $1.50 pullback can vaporize the gain as fast as it appeared. Option B confuses one good hour with a trend - 0DTE gains are rented, not owned. Option C adds size at maximum risk, after the move, which is backwards. Option D ignores that an at-the-money option's extrinsic value bleeds to zero into the close - if the stock so much as breathes wrong, the double becomes a doughnut. When gamma pays you early, cash the check."
+        bestIndex: 1,
+        coachNotes: "Option B is the pro move: a double on a max-gamma contract is the market offering you the ball. At-the-money on expiration day, gamma swings both directions, and a $1.50 pullback can vaporize the gain as fast as it appeared. Option A confuses one good hour with a trend - 0DTE gains are rented, not owned. Option C adds size at maximum risk, after the move, which is backwards. Option D ignores that an at-the-money option's extrinsic value bleeds to zero into the close - if the stock so much as breathes wrong, the double becomes a doughnut. When gamma pays you early, cash the check."
       }
     },
     {
@@ -385,11 +385,11 @@ const season2: Season = {
           question: "How does theta behave as an at-the-money option approaches expiration?",
           options: [
             "Decay slows down because there is less value left to lose",
-            "Decay stays perfectly constant from purchase to expiry",
             "Decay accelerates - the final weeks bleed fastest",
-            "Decay stops entirely inside the last week"
+            "Decay stays perfectly constant from purchase to expiry",
+            "Decay stops entirely once the final week begins"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Time decay is a curve, not a line. An at-the-money option bleeds slowly at 90 days, faster inside 30, and fastest in the final week. That acceleration is why buying just enough time is usually buying too little."
         },
         {
@@ -397,21 +397,21 @@ const season2: Season = {
           question: "Your option shows a theta of -0.08. What does that mean in dollars?",
           options: [
             "The option loses about $0.08 total before expiration",
-            "The option loses about $8 per contract per day, all else equal",
             "The option gains $8 per day as long as the stock rises",
-            "You owe your broker an $8 daily fee"
+            "Your broker charges you an $8 fee for each day you hold it",
+            "It loses about $8 per contract per day, all else equal"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Theta is quoted per share, and a contract covers 100 shares - so -0.08 means roughly $8 a day in decay, all else equal. It is not a broker fee; it is value quietly leaving the contract itself."
         },
         {
           id: "s2e4-q3",
           question: "Who is theta actually working FOR?",
           options: [
-            "Option sellers, who collect the decay buyers bleed",
-            "Option buyers, since cheaper options are easier to buy",
+            "Option sellers on the other side of the trade",
+            "Option buyers, since cheaper contracts are easier to buy",
             "Nobody - time decay is a fee the exchange keeps",
-            "Only market makers with special software"
+            "Only market makers running specialized software"
           ],
           correctIndex: 0,
           explanation: "Theta is a transfer, not a tax that vanishes. Every day of decay a buyer loses lands in the seller's pocket. That is the entire business model of covered calls and credit spreads: be the landlord, collect the rent."
@@ -451,11 +451,11 @@ const season2: Season = {
         options: [
           "Hold the current call and hope the move arrives before expiration",
           "Buy MORE of the same expiration to average down the cost basis",
-          "Roll the position out to a later expiration - or exit entirely - so the clock matches the thesis",
-          "Hold into expiration week, because that is when the option is cheapest to own"
+          "Hold into expiration week, when the option is cheapest to own",
+          "Roll the position out to a later expiration, or exit entirely"
         ],
-        bestIndex: 2,
-        coachNotes: "Option C is the pro move: when the thesis timeline and the expiration no longer match, fix the mismatch - roll out for more time or take the small loss and reset. Option A is hope masquerading as patience while decay accelerates into the steepest part of the curve. Option B doubles exposure to the exact same expiring clock - averaging down on theta is paying double rent on a condemned building. Option D has it backwards: expiration week is when the option is cheapest because decay is at maximum sprint. The clock is not your enemy - ignoring it is."
+        bestIndex: 3,
+        coachNotes: "Option D is the pro move: when the thesis timeline and the expiration no longer match, fix the mismatch - roll out so the clock matches the thesis, or take the small loss and reset. Option A is hope masquerading as patience while decay accelerates into the steepest part of the curve. Option B doubles exposure to the exact same expiring clock - averaging down on theta is paying double rent on a condemned building. Option C has it backwards: expiration week is when the option is cheapest because decay is at maximum sprint. The clock is not your enemy - ignoring it is."
       }
     },
     {
@@ -497,34 +497,34 @@ const season2: Season = {
           id: "s2e5-q1",
           question: "A stock's options suddenly show very high implied volatility. What is the market telling you?",
           options: [
-            "The stock is guaranteed to go down",
-            "It expects big moves ahead, and option premiums are priced expensively because of it",
-            "The stock is guaranteed to go up",
-            "The options have a pricing error you can exploit"
+            "The stock is guaranteed to fall from here",
+            "The options have a pricing error you can exploit",
+            "It expects big moves ahead, in either direction",
+            "The stock is guaranteed to rally from here"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "IV is about the SIZE of expected moves, not the direction. High IV means the crowd is bracing for fireworks and charging accordingly - buyers pay rich premiums and need a big move just to break even."
         },
         {
           id: "s2e5-q2",
           question: "Your option has a vega of 0.12. IV rises 5 points while the stock sits still. What happens to your contract, all else equal?",
           options: [
-            "Nothing - vega only matters at expiration",
-            "It loses about $60",
             "It gains about $60",
+            "It loses about $60",
+            "Nothing - vega only matters at expiration",
             "It gains exactly 12% of its value"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Vega of 0.12 means about $0.12 per share per IV point - times 100 shares, times 5 points, that is roughly $60 of gain with zero help from the stock. The noise alone moved your price."
         },
         {
           id: "s2e5-q3",
           question: "What does the VIX actually measure?",
           options: [
-            "The number of stocks falling on the NYSE",
-            "The implied volatility of S&P 500 index options over roughly the next 30 days",
-            "The average bid-ask spread across the market",
-            "The historical volatility of the Dow over the past year"
+            "The number of stocks declining versus advancing on the NYSE each session",
+            "Implied volatility on S&P 500 index options over roughly the next month",
+            "The average bid-ask spread across all listed option markets",
+            "The historical volatility of the Dow over the past 12 months"
           ],
           correctIndex: 1,
           explanation: "The VIX is computed from S&P 500 option prices and reads out the market's expected volatility for about the next month. It is implied - a forecast priced by the crowd - not a history report."
@@ -563,12 +563,12 @@ const season2: Season = {
         question: "How do you express the bullish view?",
         options: [
           "Buy the at-the-money calls anyway - conviction is conviction",
-          "Use a call debit spread - buy a call and sell a higher-strike call against it, so the inflated IV you sell offsets the inflated IV you buy",
+          "Buy a straddle - calls AND puts - so you profit no matter which way it moves",
           "Sell five naked puts and size up, since the premium is juicy",
-          "Buy a straddle - calls AND puts - so you profit no matter which way it moves"
+          "Use a call debit spread - buy a call, sell a higher-strike call against it"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B is the pro play: the spread sells expensive crowd noise against the expensive crowd noise you are buying, slashing your vega bill while keeping the bullish bet. Option A pays playoff prices and needs a monster move just to overcome the IV collapse after the report. Option C collects nice premium but with naked, oversized risk - one bad print and the account takes structural damage. Option D buys DOUBLE the inflated premium right before the uncertainty dies; the stock can move 5% and the straddle can still lose. When IV is pumped, structure beats conviction."
+        bestIndex: 3,
+        coachNotes: "Option D is the pro play: the spread sells expensive crowd noise against the expensive crowd noise you are buying - the inflated IV you sell offsets the inflated IV you buy - slashing your vega bill while keeping the bullish bet. Option A pays playoff prices and needs a monster move just to overcome the IV collapse after the report. Option B buys DOUBLE the inflated premium right before the uncertainty dies; the stock can move 5% and the straddle can still lose. Option C collects nice premium but with naked, oversized risk - one bad print and the account takes structural damage. When IV is pumped, structure beats conviction."
       }
     },
     {
@@ -611,24 +611,24 @@ const season2: Season = {
           id: "s2e6-q1",
           question: "A stock's IV is 40 today. Its 52-week IV low is 20 and its high is 100. What is its IV rank?",
           options: [
-            "25",
-            "40",
             "50",
+            "40",
+            "25",
             "80"
           ],
-          correctIndex: 0,
+          correctIndex: 2,
           explanation: "IV rank = (current - low) / (high - low) x 100. That is (40 - 20) / (100 - 20) = 20/80 = 25. Today's IV sits in the bottom quarter of its one-year range - cheap by this stock's own standards, regardless of how 40 sounds."
         },
         {
           id: "s2e6-q2",
           question: "What does an IV percentile of 80 mean?",
           options: [
-            "IV will rise 80% of the time from here",
-            "On 80% of trading days in the past year, IV was below today's level",
-            "The option has an 80% chance of profit",
-            "IV is exactly 80% of its all-time high"
+            "IV was below today's level on 80% of trading days this past year",
+            "IV is expected to keep rising on 80% of trading days from here",
+            "Any option on the chain carries an 80% probability of profit",
+            "Today's IV sits at exactly 80% of the highest level it has ever hit"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "IV percentile counts days: it is the share of the past year when IV traded below today's reading. At 80, today is louder than four out of five days this past year - rich territory. It says nothing about win probability or where IV goes next."
         },
         {
@@ -636,11 +636,11 @@ const season2: Season = {
           question: "A stock shows IV rank 92. What does that tilt the field toward?",
           options: [
             "Buying lots of long calls, since high IV means a big rally is coming",
-            "Nothing - IV rank is meaningless",
-            "Premium-selling or spread strategies, since options are expensive versus this stock's own history",
-            "Immediately selling naked options at maximum size"
+            "Premium-selling or spread strategies, with defined risk",
+            "Nothing - IV rank is a backward-looking stat with no practical use",
+            "Selling naked options immediately at maximum position size"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Rank 92 means premium is richer than almost any time in the past year - a tilt toward collecting it, with defined risk, or offsetting it inside spreads. It is not a direction call, and it is never a license for naked max-size anything."
         }
       ],
@@ -676,13 +676,13 @@ const season2: Season = {
         situation: "Your scanner flags a stock with IV at 60. That is all you know. Your finger is hovering over the trade ticket.",
         question: "What is your FIRST move?",
         options: [
-          "Pull up this stock's own 52-week IV history - rank and percentile - to learn whether 60 is loud or normal for THIS name",
           "Compare it to Apple's IV, since Apple is the benchmark everyone uses",
+          "Pull up this stock's own 52-week IV history - rank and percentile",
           "Start selling naked strangles immediately - 60 is objectively high",
           "Ignore IV entirely - you trade direction, not volatility"
         ],
-        bestIndex: 0,
-        coachNotes: "Option A is the only professional read: 60 might be an all-time panic for a utility or a quiet Tuesday for a biotech - the stock's own history is the only scale that matters. Option B grades a linebacker on a point guard's stat sheet; cross-stock IV comparisons mislead more than they inform. Option C bets naked risk on a number with zero context - if 60 is actually LOW for this name, you just sold cheap insurance on a volcano. Option D is how Episode 7 happens to you: direction traders who ignore IV systematically overpay and get crushed. Context is not optional - it IS the analysis."
+        bestIndex: 1,
+        coachNotes: "Option B is the only professional read: the stock's own history tells you whether 60 is loud or normal for THIS name - it might be an all-time panic for a utility or a quiet Tuesday for a biotech. Option A grades a linebacker on a point guard's stat sheet; cross-stock IV comparisons mislead more than they inform. Option C bets naked risk on a number with zero context - if 60 is actually LOW for this name, you just sold cheap insurance on a volcano. Option D is how Episode 7 happens to you: direction traders who ignore IV systematically overpay and get crushed. Context is not optional - it IS the analysis."
       }
     },
     {
@@ -724,12 +724,12 @@ const season2: Season = {
           id: "s2e7-q1",
           question: "A company beats earnings and the stock opens UP 2% - but the calls bought yesterday open sharply DOWN. What happened?",
           options: [
-            "The broker mispriced the options at the open",
-            "The stock did not really go up",
-            "Theta wiped out the position overnight by itself",
-            "IV crushed - the uncertainty premium collapsed once the event resolved, and the small move could not cover it"
+            "The vol crush - IV collapsed once the report was out",
+            "The broker mispriced the options at the open by mistake",
+            "The stock did not really go up - the open print was misleading",
+            "Overnight theta alone wiped out that much of the position"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "This is the classic vol crush. Pre-earnings IV inflates option prices; the report resolves the uncertainty and IV collapses at the open. A 2% pop against an implied move of, say, 7% means vega losses swamp delta gains. One night of theta stings, but the crush is the sledgehammer."
         },
         {
@@ -737,23 +737,23 @@ const season2: Season = {
           question: "A $200 stock's at-the-money straddle costs $10 the day before earnings. Roughly what move is the market pricing in?",
           options: [
             "About 10%",
-            "About 5%",
             "About 1%",
+            "About 5%",
             "The straddle price says nothing about expected moves"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Implied move is roughly the straddle price over the stock price: 10/200 = 5%. That is the bar - long premium buyers generally need the stock to move MORE than 5% to beat the crush, and sellers win when it moves less."
         },
         {
           id: "s2e7-q3",
           question: "Which position is MOST exposed to the post-earnings volatility crush?",
           options: [
-            "Short-dated at-the-money options bought the day before the report",
-            "A call debit spread opened before the report",
-            "Stock with no options at all",
-            "A 12-month LEAPS call bought six months ago"
+            "A call debit spread opened the week before the report",
+            "Stock shares held through earnings with no options attached",
+            "A 12-month LEAPS call purchased six months ago",
+            "Short-dated at-the-money options bought before the report"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "Short-dated at-the-money contracts are nearly all extrinsic value and carry the most pumped IV into the event - the crush hits them hardest. A debit spread offsets crushed IV on both legs, stock has no vega at all, and a 12-month LEAPS has far less of its value tied to one night's noise."
         }
       ],
@@ -770,7 +770,7 @@ const season2: Season = {
             pnl: -700
           },
           {
-            label: "Buy the $650/$680 call debit spread for $12 - sell inflated IV against the inflated IV you are buying.",
+            label: "Buy the $650/$680 call debit spread for $12 - cap the upside, cut the cost.",
             result: "Same 3% gap. The short $680 call you sold crushes to almost nothing while your long leg holds intrinsic value. The spread is worth about $17.50 the next morning.",
             pnl: 550
           },
@@ -790,9 +790,9 @@ const season2: Season = {
         question: "What do you do?",
         options: [
           "Buy weekly at-the-money calls before the close - a blowout is a blowout",
-          "Buy the weekly calls AND some far out-of-the-money lottery strikes for extra juice",
-          "Check the implied move and IV history first - and if the bar is priced high, either use a defined-risk spread or pass entirely",
-          "Sell naked strangles at maximum size since IV is high and somebody said that is what pros do"
+          "Buy weekly calls AND some far out-of-the-money lottery strikes for extra juice",
+          "Check the implied move and IV history before doing anything",
+          "Sell naked strangles at max size - collecting high IV is what the pros do"
         ],
         bestIndex: 2,
         coachNotes: "Option C is the disciplined read: the implied move tells you what blowout is ALREADY priced in - if the market expects 8% and your friend expects good news, those are not the same bet. A spread or a pass both respect the crush. Option A pays double-priced premium minutes before the uncertainty dies. Option B does the same thing twice, with the lottery strikes positioned to lose to the crush even on a decent beat. Option D borrows a real pro strategy and strips out everything that makes it survivable - sizing and defined risk; one true blowout and naked strangles do account-ending damage. The whisper might even be right - the question is whether the PRICE already heard it."
@@ -837,36 +837,36 @@ const season2: Season = {
           id: "s2e8-q1",
           question: "An option is quoted $1.10 bid, $1.50 ask. You buy at the ask and later sell at the bid with the option's value unchanged. What did the round trip cost per contract?",
           options: [
-            "Nothing - spreads are paid by market makers",
             "$4",
-            "$40 - about 27% of the premium",
-            "$110"
+            "$40",
+            "$110",
+            "Nothing - the market maker absorbs the cost"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "You paid $1.50 in and received $1.10 out: $0.40 per share, times 100 shares, equals $40 per contract - around 27% of what you paid. That is the hidden tax, and the option's actual value never had to move for you to pay it."
         },
         {
           id: "s2e8-q2",
           question: "Why are market orders dangerous on option chains?",
           options: [
-            "They take longer to fill than limit orders",
-            "They fill at whatever price the other side demands - which on an illiquid chain can be far from fair value",
-            "Brokers charge extra commission for them",
-            "They are only allowed on stocks, not options"
+            "They take much longer to fill than limit orders would",
+            "Brokers charge an extra commission to process them",
+            "Exchanges only allow them on stocks, not options",
+            "They fill at whatever price the other side demands"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "A market order surrenders all price control. On a liquid chain you might lose a penny; on a thin one you can instantly donate 20-30% of the premium to the spread. Limit orders near the mid-price keep you in control of the toll - that is rule one of execution."
         },
         {
           id: "s2e8-q3",
           question: "Which option chain is MOST likely to have razor-thin spreads?",
           options: [
+            "A near-dated, at-the-money option on a massively traded index ETF",
             "A far out-of-the-money strike on a small-cap stock, eight months out",
-            "Any option, as long as the stock itself is famous",
-            "A LEAPS contract on a stock that trades 200,000 shares a day",
-            "A near-dated, at-the-money option on a massively traded index ETF"
+            "Any option, as long as the underlying stock itself is famous",
+            "A LEAPS contract on a stock that trades 200,000 shares a day"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "Liquidity concentrates near the money, near expiration, on heavily traded underlyings - think SPY or the biggest mega-caps, where spreads run a penny or two. Distance from the money, distance in time, and small underlyings all widen the toll - and even famous stocks have ugly spreads on their far-flung strikes."
         }
       ],
@@ -883,7 +883,7 @@ const season2: Season = {
             pnl: 15
           },
           {
-            label: "Work a limit order at the $0.85 mid-price and wait for a fill, even if it takes a few tries.",
+            label: "Work a limit order at the $0.85 mid-price and wait for a fill.",
             result: "Filled at $0.85 an hour later. Same 8% rally - and on the exit your patient limit order at the mid gets you out at $1.70. The same trade, minus most of the toll.",
             pnl: 95
           },
@@ -903,9 +903,9 @@ const season2: Season = {
         question: "What is the move?",
         options: [
           "Send a market order now - with a thesis this good, the toll does not matter",
-          "Start bidding at $1.00 and keep raising the limit until somebody finally fills you",
+          "Start bidding at $1.00 and raise the limit until somebody finally fills you",
           "Double the position size so the eventual win is big enough to cover the spread",
-          "Walk away from this chain - trade the shares instead, or find a liquid name that expresses the same thesis"
+          "Walk away from this chain - trade the shares or a liquid name instead"
         ],
         bestIndex: 3,
         coachNotes: "Option D is the pro move: a $0.95-wide spread on a roughly dollar-mid option means the round-trip toll can rival your entire expected edge - no thesis survives that math, and shares or a liquid sector proxy express the same view without the tax. Option A donates instantly to the only market maker quoting. Option B is slow-motion version of the same donation - chasing a one-sided chain just walks your price up to their ask. Option C is the worst logic in trading: doubling size doubles the toll AND the risk; the spread scales with you. The toll booth does not care how right you are. If you cannot get out cleanly, you never go in."
@@ -950,36 +950,36 @@ const season2: Season = {
           id: "s2e9-q1",
           question: "What is the difference between volume and open interest?",
           options: [
-            "They are two names for the same number",
-            "Volume counts contracts traded today; open interest counts contracts still open and outstanding",
-            "Volume is for calls, open interest is for puts",
-            "Open interest counts only contracts traded in the last hour"
+            "They are two different names for the same daily number",
+            "Volume counts the calls while open interest counts the puts",
+            "Volume is today's trades; open interest is contracts still open",
+            "Open interest only counts the contracts traded within the last hour"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Volume is the day's traffic and resets every morning - today's points on the board. Open interest is the standing count of open contracts, updated overnight - the season record. You need both: one shows activity, the other shows the established market."
         },
         {
           id: "s2e9-q2",
           question: "A strike trades 15,000 contracts today against open interest of only 1,200. What does that strongly suggest?",
           options: [
-            "A data error - volume cannot exceed open interest",
-            "Old positions are quietly being closed out",
-            "New positions are being opened at that strike today - fresh money showed up",
-            "The stock will definitely rise tomorrow"
+            "A data feed error - volume can never exceed open interest",
+            "New positions are being opened at that strike today",
+            "The stock is virtually guaranteed to rise tomorrow",
+            "Old positions are quietly being closed out in bulk"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "When volume swamps existing open interest, most of those trades cannot be closures - there were not enough open contracts to close. New money opened positions today; tomorrow's OI update will confirm it. What it does NOT tell you is which direction that new money is actually betting."
         },
         {
           id: "s2e9-q3",
           question: "A scanner shows a massive call purchase in a stock you follow. Why is \"someone bullish bought calls\" NOT a safe conclusion?",
           options: [
-            "Because call buying is illegal in large size",
-            "Because scanners only show trades from retail accounts",
-            "Because big trades only happen at expiration",
-            "Because the print could be a covered-call SALE, a hedge, or one leg of a spread - the tape shows the trade, not the intent"
+            "Because the print could be a covered-call SALE, a hedge, or a spread leg",
+            "Because call buying in that size is illegal and gets reversed",
+            "Because scanners only capture orders placed from retail brokerage accounts",
+            "Because trades that big only happen during expiration week"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "Every print has two sides, and the aggressor is not labeled. A fund selling covered calls against a huge stock position creates the same volume spike as a bullish buyer - with roughly the opposite outlook. The tape is a fact; the narrative is a guess until you confirm it."
         }
       ],
@@ -996,7 +996,7 @@ const season2: Season = {
             pnl: -90
           },
           {
-            label: "Investigate first: check for news, look for a paired stock print, and see if the trade went off at the bid or the ask before risking a dime.",
+            label: "Spend ten minutes investigating the print before risking a dime.",
             result: "Ten minutes of digging finds the matching stock block - a classic covered-call structure, bearish-to-neutral if anything. You pass and keep your powder dry.",
             pnl: 0
           },
@@ -1015,13 +1015,13 @@ const season2: Season = {
         situation: "You own 200 shares of a company you researched carefully. Mid-afternoon, your scanner shows enormous put volume hitting your name - ten times normal, concentrated at next month's strikes. The stock is down 1%. Your stomach drops.",
         question: "What do you do?",
         options: [
+          "Check the news and the trade's structure, then act on your own pre-set levels",
           "Dump all 200 shares immediately - somebody clearly knows something terrible",
-          "Buy puts too, mirroring the smart money before the crash",
-          "Check for news and structure - was it a spread, a hedge, an institution insuring a big stock position? - watch tomorrow's OI, and manage the position by your own pre-set levels",
+          "Buy puts too, mirroring the smart money before the crash lands",
           "Short more of the stock on top of selling, to profit from the coming collapse"
         ],
-        bestIndex: 2,
-        coachNotes: "Option C is the disciplined read: giant put prints are routinely protective hedges from institutions who are LONG the stock and insuring - that flow is them committing to holding, not fleeing. Check the news, check if the print paired with stock, see if OI confirms tomorrow, and act on your levels, not your pulse. Option A torches a researched position over an unread signal. Option B pays freshly spiked IV to copy a trade with unknown intent. Option D leverages a panic conclusion in two instruments at once. You did the homework when you bought - do not let someone else's unexplained trade do your selling."
+        bestIndex: 0,
+        coachNotes: "Option A is the disciplined read: giant put prints are routinely protective hedges from institutions who are LONG the stock and insuring - that flow is them committing to holding, not fleeing. Check the news, check whether the print was a spread leg or paired with stock, see if OI confirms tomorrow, and act on your levels, not your pulse. Option B torches a researched position over an unread signal. Option C pays freshly spiked IV to copy a trade with unknown intent. Option D leverages a panic conclusion in two instruments at once. You did the homework when you bought - do not let someone else's unexplained trade do your selling."
       }
     },
     {
@@ -1064,36 +1064,36 @@ const season2: Season = {
           id: "s2e10-q1",
           question: "What are the four reads in the full pre-trade check?",
           options: [
-            "Chart pattern, moving average, RSI, and news sentiment",
-            "Delta for direction, theta for the clock, IV context for the noise, and liquidity for the field",
-            "Volume, open interest, gamma, and rho",
-            "Broker rating, analyst target, P/E ratio, and dividend yield"
+            "Chart patterns, moving averages, RSI, and the overall news sentiment",
+            "Daily volume, total open interest, gamma exposure, and rho",
+            "Broker ratings, analyst price targets, P/E ratio, and dividend yield",
+            "Delta for direction, theta for clock, IV for noise, liquidity for field"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "The pre-snap read covers the four ways an option trade wins or dies: the exposure you take (delta), the time you rent (theta), the price of volatility versus its own history (IV rank), and whether you can enter and exit without paying a toll (liquidity). Sixty seconds, every trade."
         },
         {
           id: "s2e10-q2",
           question: "A setup shows IV rank 96, earnings tomorrow, and a $0.60-wide spread on a $1.20 option. What does the read say?",
           options: [
-            "Buy more contracts than usual - high IV means a huge move is guaranteed",
-            "Only the chart matters - ignore the rest",
-            "Two screaming reds: volatility is at yearly extremes into a crush event, and the toll is half the premium - pass or restructure with defined risk",
+            "Two screaming reds - pass, or restructure with defined risk",
+            "Buy extra contracts - IV this high means a huge move is guaranteed",
+            "Green light - only the chart matters, the rest is noise",
             "Sell naked options at maximum size to exploit the rich premium"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "IV rank 96 into earnings is a crush waiting on a schedule, and a spread that is 50% of the premium means you start the play buried. The read says pass, or express the view with defined-risk structure on a liquid underlying. Reds are not dares - and naked max-size selling swaps one set of reds for account-ending risk."
         },
         {
           id: "s2e10-q3",
           question: "You want a 0.45-delta call, 60 days out, for a three-week thesis. IV rank is 12 and the spread is one penny wide on heavy open interest. What is the verdict?",
           options: [
-            "Four greens - sound direction, surplus time, cheap volatility, clean field. That is a trade",
-            "Pass - IV rank 12 means options are too expensive",
+            "Pass - IV rank 12 means options are far too expensive",
+            "Four greens across the board - that is a trade",
             "Pass - 60 days is far too much time for a three-week idea",
             "Buy a 0DTE option instead to save on premium"
           ],
-          correctIndex: 0,
+          correctIndex: 1,
           explanation: "This is the textbook green board: a delta with real participation, double the time the thesis needs (extra clock is cushion, not waste), volatility priced near its yearly lows, and a liquid exit. Low IV rank makes long premium cheaper, not pricier - and swapping into a 0DTE would trade four greens for a coin flip on a sprinting shot clock."
         }
       ],
@@ -1105,7 +1105,7 @@ const season2: Season = {
         brief: "You are bullish on AMD over the next six weeks on a data-center upgrade cycle. Earnings land in week five. IV rank is 18, and the chain is liquid with penny-wide spreads near the money. Run the full read and pick the play.",
         choices: [
           {
-            label: "Buy the 90-day $165 call, 0.55 delta, for $11.20 - time past the earnings date, volatility bought cheap.",
+            label: "Buy the 90-day $165 call, 0.55 delta, for $11.20 - time to spare past earnings.",
             result: "AMD grinds to $176.50 over six weeks, riding through earnings with room to spare. Your call is worth about $16.80 and weeks of clock remain when you sell.",
             pnl: 560
           },
@@ -1131,7 +1131,7 @@ const season2: Season = {
         options: [
           "Buy weekly out-of-the-money calls now before it runs without you",
           "Buy LEAPS with a market order right now - long time horizon fixes everything else",
-          "Run the read and respect it: pass for now, or express the view small with a defined-risk call spread that sells the inflated IV against what you buy - and reassess when vol settles",
+          "Run the read and respect it: pass for now, or a small defined-risk call spread",
           "Sell naked puts at maximum size - with IV this high, the premium is free money"
         ],
         bestIndex: 2,

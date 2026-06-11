@@ -3,5 +3,12 @@ node_modules/
 out/
 *.tsbuildinfo
 next-env.d.ts
-waitlist.csv
 .DS_Store
+
+# Local settings stay local — never commit env/config secrets.
+.env
+.env.*
+!.env.example
+
+# Live ticker data is generated at build time by scripts/fetch-quotes.mjs.
+public/quotes.json

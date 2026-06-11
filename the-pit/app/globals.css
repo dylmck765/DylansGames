@@ -676,66 +676,6 @@ label.lbl {
 
 .streak-flame { font-size: 16px; }
 
-/* ---------- Chat ---------- */
-
-.chat-list { padding-bottom: 150px; }
-
-.chat-msg {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  max-width: 85%;
-}
-
-.chat-msg.mine {
-  margin-left: auto;
-  border-color: rgba(229, 72, 77, 0.45);
-  background: rgba(229, 72, 77, 0.07);
-}
-
-.chat-msg .who {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--red);
-}
-
-.chat-msg .who .t {
-  color: var(--muted);
-  text-transform: none;
-  letter-spacing: 0.02em;
-  font-weight: 500;
-}
-
-.chat-msg .txt {
-  font-size: 14px;
-  margin-top: 2px;
-  word-break: break-word;
-}
-
-.chat-bar {
-  position: fixed;
-  bottom: calc(72px + env(safe-area-inset-bottom));
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(728px, calc(100% - 24px));
-  display: flex;
-  gap: 8px;
-  z-index: 40;
-  background: rgba(15, 15, 19, 0.94);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 8px;
-}
-
 .fade-up { animation: fade-up 0.4s ease both; }
 
 @keyframes fade-up {

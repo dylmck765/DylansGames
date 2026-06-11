@@ -5,12 +5,12 @@ export const dailyBlitzPool: DailyBlitz[] = [
     id: "blitz-1",
     question: "You buy 1 AAPL 200 call. Plain English: what did you just put in your playbook?",
     options: [
-      "The obligation to buy 100 shares at 200",
       "The right to buy 100 shares at 200 any time before expiration",
-      "100 shares of AAPL at a discount",
-      "The right to sell 100 shares at 200"
+      "The obligation to buy 100 shares at 200 by expiration",
+      "The right to sell 100 shares at 200 before expiration",
+      "100 shares of AAPL delivered at a discount to market"
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     explanation: "A call is a ticket, not a debt. Buyers get rights. Sellers take on obligations. One contract controls 100 shares, and if the play does not work, the most you lose is the premium you paid for the ticket."
   },
   {
@@ -19,41 +19,41 @@ export const dailyBlitzPool: DailyBlitz[] = [
     options: [
       "Buy a call above the current price",
       "Sell your shares and buy calls instead",
-      "Buy a put below the current price",
-      "Double your share position to lower your average"
+      "Double your share position to lower your average",
+      "Buy a put below the current price"
     ],
-    correctIndex: 2,
+    correctIndex: 3,
     explanation: "A protective put is insurance on your roster. You pay a premium, and if the stock tanks, the put gains value and caps your damage. Calls add risk here, and doubling down is the opposite of protection."
   },
   {
     id: "blitz-3",
     question: "Stock trades at 105. The 100 call is priced at 7.50. How much of that premium is intrinsic value, the part that is real right now?",
-    options: ["7.50", "2.50", "5.00", "Zero"],
-    correctIndex: 2,
+    options: ["7.50", "5.00", "2.50", "Zero"],
+    correctIndex: 1,
     explanation: "Intrinsic value is stock price minus strike for a call: 105 minus 100 equals 5. The other 2.50 is extrinsic value, the hope-and-time portion. Extrinsic is the part theta eats every day."
   },
   {
     id: "blitz-4",
     question: "You hold a 0.30 delta call. The stock pops 1 dollar. Roughly what happens to your option?",
     options: [
-      "It gains about 0.30 per share, about 30 dollars per contract",
-      "It gains the full 1.00 per share",
-      "It gains 0.30 percent",
-      "Nothing until expiration"
+      "It gains the full 100 dollars per contract",
+      "It gains about 0.30 percent of its value",
+      "It gains roughly 30 dollars per contract",
+      "It does not move until expiration nears"
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: "Delta is your speed stat. A 0.30 delta option moves about 30 cents for every dollar the stock moves. Multiply by 100 shares per contract and that is roughly 30 dollars. Options move in real time, not just at expiration."
   },
   {
     id: "blitz-5",
     question: "Quick read: a 0.70 delta call. Beyond price sensitivity, what is the rough-and-dirty way pros read that number?",
     options: [
-      "The option loses 70 percent per week",
-      "The stock has 70 percent upside",
-      "You need 70 percent more margin",
-      "Roughly a 70 percent chance the option finishes in the money"
+      "Roughly a 70 percent chance the option finishes in the money",
+      "The option loses about 70 percent of its value each week",
+      "The stock itself has about 70 percent more upside left",
+      "You need to post about 70 percent more margin to hold it"
     ],
-    correctIndex: 3,
+    correctIndex: 0,
     explanation: "Delta doubles as a rough probability gauge. A 0.70 delta call is priced like it has about a 70 percent shot of finishing in the money. It is an approximation, not a guarantee, but it is how pros size up odds at a glance."
   },
   {
@@ -61,45 +61,45 @@ export const dailyBlitzPool: DailyBlitz[] = [
     question: "Theta. Time decay. Who is taking that hit every single day?",
     options: [
       "Option sellers",
-      "Option buyers",
       "Both sides equally",
+      "Option buyers",
       "Nobody, theta only matters at expiration"
     ],
-    correctIndex: 1,
+    correctIndex: 2,
     explanation: "If you bought the option, theta is the toll you pay daily. Extrinsic value melts as the clock runs, and the melt accelerates in the final weeks for at-the-money options. Sellers collect that toll. The clock is always working for one side."
   },
   {
     id: "blitz-7",
     question: "You hold an at-the-money call expiring Friday. The stock goes sideways all week, never drops a dime. What happens to your option?",
     options: [
-      "It bleeds value every day from theta and can finish near zero",
-      "It holds its value since the stock did not fall",
-      "It gains slightly because the stock held steady",
-      "It converts to shares automatically"
+      "It holds its value since the stock never fell",
+      "It loses value steadily and can expire nearly worthless",
+      "It gains slightly because the stock held its ground",
+      "It converts to shares automatically at the bell"
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: "This is the fumble nobody sees coming. You can be NOT wrong about direction and still lose everything, because an at-the-money option is all extrinsic value and theta torches it daily into expiration. Sideways is a loss for short-dated premium buyers."
   },
   {
     id: "blitz-8",
     question: "You are long a call. The stock does not move, but implied volatility jumps from 30 to 55 on takeover chatter. Your option?",
     options: [
-      "Loses value because the stock was flat",
-      "Unchanged, IV does not affect open positions",
-      "Gains value, vega just paid you",
-      "Expires early"
+      "It loses value",
+      "It is unchanged",
+      "It gets exercised early",
+      "It gains value"
     ],
-    correctIndex: 2,
+    correctIndex: 3,
     explanation: "Vega measures how much your option gains when implied volatility rises. IV spiking from 30 to 55 inflates the premium even with the stock standing still. Long options are long vega. The crowd just bid up the price of uncertainty, and you own some."
   },
   {
     id: "blitz-9",
     question: "You buy an at-the-money call the day before earnings. The stock gaps UP 3 percent on the report, but the expected move was 7 percent. Most likely result?",
     options: [
-      "A clean win, direction was right",
-      "Your call loses value despite the stock rising",
-      "Your call doubles",
-      "Nothing changes until Friday"
+      "A clean win, the direction was right",
+      "The call loses value anyway",
+      "The call doubles overnight",
+      "No change until Friday's expiration"
     ],
     correctIndex: 1,
     explanation: "Welcome to IV crush. Pre-earnings, the option was priced for a 7 percent move. The stock delivered 3. After the report, implied volatility collapses, the extrinsic value evaporates, and the small move cannot cover the deflation. Right direction, losing trade."
@@ -108,22 +108,22 @@ export const dailyBlitzPool: DailyBlitz[] = [
     id: "blitz-10",
     question: "Stock at 200. The at-the-money straddle expiring Friday costs 12. What is the market telling you about this week?",
     options: [
-      "The stock will definitely move 12 dollars",
-      "The stock cannot move more than 12 dollars",
-      "IV is at 12 percent",
-      "The expected move is roughly plus or minus 12 dollars, about 6 percent"
+      "The stock is guaranteed to move 12 dollars by Friday",
+      "The stock cannot move more than 12 dollars this week",
+      "The expected move is roughly plus or minus 12 dollars",
+      "Implied volatility for the week is running at 12 percent"
     ],
-    correctIndex: 3,
+    correctIndex: 2,
     explanation: "The at-the-money straddle price is the market's betting line: roughly plus or minus 12 dollars, or 6 percent, by Friday. It is a forecast, not a promise. Pros compare their own expectations to that line before paying premium."
   },
   {
     id: "blitz-11",
     question: "Scouting report says IV percentile is 95 ahead of earnings. Translation?",
     options: [
-      "Options are priced richer than 95 percent of the past year, so buying premium needs an outsized move to pay",
+      "Options are priced richer than 95 percent of the past year",
       "The stock has a 95 percent chance of beating earnings",
-      "Volatility is low and options are cheap",
-      "The stock will move exactly 95 cents"
+      "Volatility is cheaper than 95 percent of the past year",
+      "The expected earnings move is about 95 cents in either direction"
     ],
     correctIndex: 0,
     explanation: "IV percentile compares today's implied volatility to its own past year. At 95, you are paying near top-of-the-range prices for options. That does not mean no trade ever, but it means the bar to profit is way up on the wall."
@@ -131,8 +131,8 @@ export const dailyBlitzPool: DailyBlitz[] = [
   {
     id: "blitz-12",
     question: "Account size 10,000. Your rule is risking 2 percent max per play. A call you like costs 400 and your plan cuts it at a 50 percent loss. How many contracts?",
-    options: ["Five, conviction matters", "Zero, options are too risky at this account size", "One, your planned risk is about 200, right at the 2 percent cap", "Three, you can average down later"],
-    correctIndex: 2,
+    options: ["Five", "Zero", "Three", "One"],
+    correctIndex: 3,
     explanation: "Risk per contract is what you would lose at your exit, about 200 here. The 2 percent rule caps total risk at 200. One contract. Position sizing is the one stat you control on every snap, and it is what keeps you in the league."
   },
   {
@@ -151,92 +151,92 @@ export const dailyBlitzPool: DailyBlitz[] = [
     id: "blitz-14",
     question: "Gamma, the stat that measures how fast your delta changes. Where does gamma run hottest?",
     options: [
-      "Deep in-the-money options with months left",
+      "At-the-money options close to expiration",
+      "Deep in-the-money options months out",
       "Far out-of-the-money LEAPS",
-      "It is constant across all options",
-      "At-the-money options close to expiration"
+      "It is constant across all options"
     ],
-    correctIndex: 3,
+    correctIndex: 0,
     explanation: "Gamma peaks at the money near expiration. That is why short-dated ATM options swing violently: small stock moves cause big delta changes, which cause big price changes. High gamma is high octane, in both directions."
   },
   {
     id: "blitz-15",
     question: "Your 110 call expires today with the stock at 104. Final whistle. What happens?",
     options: [
-      "It expires worthless, you lose the premium and nothing more",
       "You are forced to buy 100 shares at 110",
-      "You get the 6 dollar difference back",
-      "It rolls to next week automatically"
+      "You get the 6 dollar difference credited back",
+      "It expires worthless and the premium is gone",
+      "It rolls to next week's expiration automatically"
     ],
-    correctIndex: 0,
+    correctIndex: 2,
     explanation: "An out-of-the-money option at expiration is worth zero. Your loss is capped at the premium you paid, that is the whole point of buying options. No forced purchase, no rollover. The play just did not convert."
   },
   {
     id: "blitz-16",
     question: "You pay 2.00 for a 50 strike call. Where does the stock need to be at expiration for you to break even?",
-    options: ["50", "48", "52", "Anywhere above 50"],
-    correctIndex: 2,
+    options: ["50", "48", "Anywhere above 50", "52"],
+    correctIndex: 3,
     explanation: "Breakeven at expiration is strike plus premium: 50 plus 2 equals 52. Above 50 the option has value, but you do not turn a profit until the stock covers what you paid for the ticket. The first 2 dollars of the move just pays your way in."
   },
   {
     id: "blitz-17",
     question: "You are bearish on a stock and you want defined, capped risk. Cleanest play?",
     options: [
-      "Short the stock",
       "Buy puts",
+      "Short the stock",
       "Sell calls naked",
       "Buy calls and hope you are wrong"
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     explanation: "Buying puts gives you downside exposure with risk capped at the premium. Shorting stock has theoretically unlimited risk if the stock rips up, and selling naked calls is the same trap with extra steps. Defined risk means you know the worst case before kickoff."
   },
   {
     id: "blitz-18",
     question: "An option quotes 1.00 bid, 1.40 ask. You buy at the ask. If nothing moves and you sell at the bid, what just happened?",
     options: [
-      "Nothing, spreads do not cost real money",
-      "You earned the spread as a rebate",
-      "You lost 40 cents to commissions",
-      "You are instantly down about 29 percent, the spread is a hidden toll"
+      "Nothing, spreads only matter for market makers",
+      "You earned the spread back as a rebate",
+      "You are instantly down about 29 percent",
+      "You lost 40 cents per share to commissions"
     ],
-    correctIndex: 3,
+    correctIndex: 2,
     explanation: "Buy at 1.40, sell at 1.00, that is 40 cents gone per share, 40 dollars per contract, before the stock takes a single step. Wide spreads are an invisible tax. Pros hunt liquid chains with tight spreads, because the toll booth gets paid every trip."
   },
   {
     id: "blitz-19",
     question: "Your thesis plays out over several weeks. Which contract fits the game plan?",
     options: [
-      "45 to 60 days out, so the clock is not your enemy",
-      "2 days to expiration, cheapest entry",
       "Same-day expiration for maximum leverage",
-      "Whatever has the lowest dollar price"
+      "45 to 60 days to expiration",
+      "2 days to expiration",
+      "Whatever strike has the lowest dollar price"
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     explanation: "Match the contract to the thesis. A multi-week idea needs multi-week time, plus a buffer, because theta burns short-dated options fastest. Cheap 2 DTE contracts are cheap because they are almost out of time. Buy more clock than you think you need."
   },
   {
     id: "blitz-20",
     question: "Your long call is down 50 percent and the support level your whole thesis was built on just broke. The move?",
     options: [
-      "Add more, it is half price now",
+      "Add more at half price",
       "Hold to expiration, it might come back",
-      "Cut it. The thesis is gone, so the trade is gone",
-      "Roll it out a month and double the size"
+      "Roll it out a month and double the size",
+      "Cut it and take the loss"
     ],
-    correctIndex: 2,
+    correctIndex: 3,
     explanation: "The trade was built on a level, and the level broke. That is a busted play, not a discount. Averaging down on a broken thesis is throwing good money after bad. Take the loss, log the film, find the next setup."
   },
   {
     id: "blitz-21",
     question: "The stock has chopped in a 2 percent range for three weeks. No catalyst on the calendar. You are bored out of your mind. The play?",
     options: [
+      "No trade, sit on your hands",
       "Buy weekly calls, it is due for a move",
       "Buy weekly puts, it is due for a drop",
-      "Flip a coin and pick a direction",
-      "No trade. Boredom is not a setup"
+      "Flip a coin and pick a direction"
     ],
-    correctIndex: 3,
-    explanation: "No edge, no trade. Buying short-dated premium in a dead-quiet chop hands theta the win every day while the stock goes nowhere. Pros wait for the setup to come to them. Sitting on the bench when there is no play IS the play."
+    correctIndex: 0,
+    explanation: "Boredom is not a setup. No edge, no trade. Buying short-dated premium in a dead-quiet chop hands theta the win every day while the stock goes nowhere. Pros wait for the setup to come to them. Sitting on the bench when there is no play IS the play."
   }
 ];
 
@@ -510,46 +510,46 @@ export const bossPool: BossChallenge[] = [
       {
         question: "Monday. VLTA trades at 140, earnings hit Thursday night. IV percentile is 92, the weekly at-the-money straddle costs 18, and you are bullish on the quarter. What is the FIRST read a pro makes before touching the order ticket?",
         options: [
-          "Buy weekly 140 calls now and hold through the print, conviction pays",
-          "Options are priced richer than almost any week this year and the market is braced for a 9 dollar move each way, so any premium bought here needs the stock to BEAT that line",
-          "Wait until Thursday at 3:55 pm to buy calls, they will be cheaper by then",
-          "Buy double the contracts since earnings guarantees a big move"
+          "Buy weekly 140 calls now and hold them through the print",
+          "Wait until Thursday at 3:55 pm to buy calls at cheaper prices",
+          "Buy double the usual contracts since earnings guarantees a move",
+          "The straddle is pricing roughly a plus-or-minus 9 dollar move"
         ],
-        correctIndex: 1,
+        correctIndex: 3,
         explanation: "Read the line before you bet the game. IV percentile 92 and an 18 dollar straddle on a 140 stock means the market is already braced for roughly a plus-or-minus 9 move. Premium buyers do not get paid for A move, only for a move BIGGER than the one priced in. And Thursday afternoon calls are not cheaper, they are maximum crush exposure."
       },
       {
         question: "You bought a small, planned position of 145 calls Monday. By Wednesday, pre-earnings momentum has carried VLTA to 146 and your calls are up 70 percent, with the print still 24 hours away. The play?",
         options: [
-          "Hold everything through the print, the momentum proves you are right",
+          "Take the 70 percent and exit before the print, per the plan",
+          "Hold everything through the print, momentum proves the thesis",
           "Add more contracts, winners deserve reinforcements",
-          "Take the 70 percent on the run-up and exit before the print, per the plan: the trade was the anticipation, not the coin flip",
           "Move your stop up and hold full size through earnings"
         ],
-        correctIndex: 2,
+        correctIndex: 0,
         explanation: "The run-up WAS the trade. Pre-earnings drift plus rising IV handed you 70 percent without ever facing the binary. Holding through the print converts a banked win into a coin flip where IV crush starts you in a hole. Stops do not protect you overnight, the gap happens while the market is closed."
       },
       {
         question: "You kept one small rider call through the print against the plan. VLTA BEATS and opens Friday up 5 dollars at 151. But your 145 call barely budges and your friend's 150 calls are down 60 percent. What happened?",
         options: [
-          "The market makers manipulated the open",
-          "The report was secretly bad",
-          "Earnings winners always sell off, that is just the rule",
-          "IV crush: the options were priced for a 9 dollar move and got 5, so the volatility premium evaporated and took the extrinsic value with it"
+          "Market makers manipulated the opening print",
+          "IV crush vaporized the extrinsic value",
+          "The report was secretly worse than the headlines",
+          "Earnings winners always sell off the next morning"
         ],
-        correctIndex: 3,
+        correctIndex: 1,
         explanation: "Direction right, trade flat. Before the print those options carried a massive volatility premium pricing a 9 dollar move. The stock delivered 5, inside the line, and post-earnings IV collapsed, vaporizing the extrinsic value. Your 145 call survived on intrinsic value. The 150 calls were ALL extrinsic, so they got crushed despite the stock rallying."
       },
       {
         question: "Next quarter, the identical setup appears: VLTA at highs, IV percentile 90-plus, you are bullish again. What is the system takeaway you carry forward?",
         options: [
-          "Never trade anything near earnings ever again",
-          "Trade the run-up not the print, size small, exit before the binary, and respect the expected move as the bar your trade has to clear",
-          "Buy puts through the print instead, since crush punishes calls",
-          "Double the size this time to win back what the rider lost"
+          "Never trade anything near an earnings report again",
+          "Buy puts through the print, since crush punishes calls",
+          "Trade the run-up, size small, exit before the binary",
+          "Double the size next quarter to win the rider loss back"
         ],
-        correctIndex: 1,
-        explanation: "The lesson is not fear, it is precision. Pre-earnings momentum with rising IV is a real, repeatable edge. Holding premium through the print at 90-plus IV percentile is a tax. And the crush is direction-neutral: puts get vaporized exactly like calls. Same game next quarter, same plan, same paycheck."
+        correctIndex: 2,
+        explanation: "The lesson is not fear, it is precision. Pre-earnings momentum with rising IV is a real, repeatable edge. Holding premium through the print at 90-plus IV percentile is a tax, and the expected move is always the bar your trade has to clear. The crush is direction-neutral: puts get vaporized exactly like calls. Same game next quarter, same plan, same paycheck."
       }
     ]
   },
@@ -561,45 +561,45 @@ export const bossPool: BossChallenge[] = [
       {
         question: "RDGE has been riding its rising 50-day moving average for six months. It just pulled back 6 percent to that line at 84 on shrinking volume. Your entry decision?",
         options: [
-          "Wait for a confirmation signal at the line, a strong reversal day, then enter with your invalidation set below the swing low",
-          "Buy right now, the 50-day always holds",
-          "Wait for the stock to make a new all-time high first, then buy with full confidence",
-          "Skip it, pullbacks in uptrends are usually the start of downtrends"
+          "Buy right now, the rising 50-day has held for six months",
+          "Wait for a new all-time high first, then buy with confidence",
+          "Wait for a strong reversal day at the line, then enter",
+          "Skip it, pullbacks this deep usually start downtrends"
         ],
-        correctIndex: 0,
-        explanation: "Location plus trigger. The pullback to a rising 50-day on quiet volume is the location, but you still wait for buyers to show up, a strong reversal candle, before committing. Buying blind assumes the line holds; waiting for new highs surrenders the entire risk-reward advantage of entering at support with a tight stop."
+        correctIndex: 2,
+        explanation: "Location plus trigger. The pullback to a rising 50-day on quiet volume is the location, but you still wait for buyers to show up, a strong reversal candle, before committing, with your invalidation set below the swing low. Buying blind assumes the line holds; waiting for new highs surrenders the entire risk-reward advantage of entering at support with a tight stop."
       },
       {
         question: "The reversal day prints. Now pick the weapon. Your thesis is a multi-week move back toward the prior high at 92. Which contract?",
         options: [
-          "7 days out, 0.15 delta, costs almost nothing",
-          "Weekly at-the-money, maximum gamma for the bounce",
-          "Calls 45 to 60 days out at around 0.60 delta: enough time to outlive the thesis, enough delta to actually get paid for being right",
-          "Two-year LEAPS, time is always good so more is always better"
+          "Calls 7 days out at 0.15 delta, nearly free",
+          "Calls 45 to 60 days out at around 0.60 delta",
+          "Weekly at-the-money calls for maximum gamma",
+          "Two-year LEAPS, since more time is always better"
         ],
-        correctIndex: 2,
+        correctIndex: 1,
         explanation: "Match the weapon to the play. A multi-week thesis needs more time than the thesis, so 45 to 60 days gives you the move plus a buffer against being early. A 0.60 delta means the option meaningfully tracks the stock. Cheap far-OTM weeklies are a theta donation, and two-year LEAPS tie up capital paying for 20 months you do not need."
       },
       {
         question: "Two weeks in: RDGE has rallied to 90.50 and your calls are up 55 percent, with the prior high at 92 overhead. Manage the position.",
         options: [
           "Sell everything immediately, never let a winner breathe",
-          "Sell half here into strength near resistance, raise the exit line on the rest, and let the trend pay you if 92 breaks",
-          "Hold everything with no changes, the trend is your friend forever",
-          "Add more contracts, it is working so press the bet"
+          "Hold everything, the trend is your friend forever",
+          "Add more contracts, press the bet while it works",
+          "Sell half into strength and raise the exit line on the rest"
         ],
-        correctIndex: 1,
+        correctIndex: 3,
         explanation: "Scale-out is how pros resolve the hold-or-sell fight: banking half locks in a real win and pays for the trade, while the runner keeps you on the field if 92 breaks into open air. Selling all surrenders the breakout scenario, holding all risks round-tripping at resistance, and adding NEAR resistance is pressing at the worst spot on the chart."
       },
       {
         question: "Fourth quarter. RDGE broke through 92, ran to 97, but today it slices through the rising 50-day, the line that defined the entire trend, and closes below it on the highest volume in three months. Your runner is still up 80 percent. The call?",
         options: [
-          "Hold, the 50-day break is probably a shakeout and it owes you a bounce",
-          "Add at a discount, the trend always resumes",
-          "Hold but stop watching the chart for a week to avoid emotional decisions",
-          "Exit the runner. The trend WAS the thesis, and a high-volume break of the trend line is the thesis ending"
+          "Exit the runner and bank the 80 percent",
+          "Hold, this break is probably just a shakeout",
+          "Add at a discount, strong trends always resume",
+          "Hold but stop watching the chart for a week"
         ],
-        correctIndex: 3,
+        correctIndex: 0,
         explanation: "You entered because of the 50-day trend, so you exit when the 50-day trend breaks, especially on the heaviest volume in months, which means big money is leaving. It might bounce, but trading the plan means the signal that built the trade is the signal that ends it. Up 80 percent on the runner with the thesis dead is called the final whistle."
       }
     ]
@@ -612,46 +612,46 @@ export const bossPool: BossChallenge[] = [
       {
         question: "Four consecutive losing trades, account down 8 percent, and you can feel the frustration in your chest. The very next thing a professional does?",
         options: [
-          "Find a bigger setup to win it all back at once",
-          "Cut position size sharply, slow the trade frequency, and treat the next stretch as rebuilding mode",
-          "Switch strategies completely, clearly the playbook is broken",
-          "Keep the exact same size, changing anything would be emotional"
+          "Cut position size sharply and slow your trade frequency",
+          "Find one bigger setup to win the whole drawdown back at once",
+          "Switch strategies completely, the playbook is clearly broken",
+          "Keep the exact same size, since changing anything is emotional"
         ],
-        correctIndex: 1,
-        explanation: "Shrink until the pressure is gone. Cutting size after a streak protects the account from your own tilted judgment, which is statistically at its worst right now. Hunting a get-it-back trade is the classic blowup script, and torching the whole playbook over four trades is overreacting to a sample size of four."
+        correctIndex: 0,
+        explanation: "Shrink until the pressure is gone and treat the next stretch as rebuilding mode. Cutting size after a streak protects the account from your own tilted judgment, which is statistically at its worst right now. Hunting a get-it-back trade is the classic blowup script, and torching the whole playbook over four trades is overreacting to a sample size of four."
       },
       {
         question: "Day two of the skid. A setup appears, a B-grade chart at best, but your gut SCREAMS that doubling your normal size here erases the whole losing streak in one play. Decision?",
         options: [
-          "Skip it. A B-grade setup judged by a tilted brain demanding double size is a revenge trade wearing a costume",
-          "Take it at double size, fortune favors the bold",
-          "Take it at normal size, a compromise between gut and rules",
-          "Take it small, but promise yourself you will add if it starts working"
+          "Take it at double size",
+          "Take it at normal size",
+          "Take it small, but add if it starts working",
+          "Skip it and stay on the bench"
         ],
-        correctIndex: 0,
-        explanation: "Name the play: revenge trade. The tell is not the chart, it is the MOTIVE, the urge to erase the streak rather than execute an edge. B-grade setup plus emotional reasoning plus a size increase is three alarms ringing at once. Even normal size is wrong here because the decision engine itself is compromised."
+        correctIndex: 3,
+        explanation: "Name the play: a revenge trade wearing a costume. The tell is not the chart, it is the MOTIVE, the urge to erase the streak rather than execute an edge. B-grade setup plus emotional reasoning plus a size increase is three alarms ringing at once. Even normal size is wrong here because the decision engine itself is compromised."
       },
       {
         question: "Weekend film session. You open the journal to review the four losses. What are you actually looking for?",
         options: [
           "Proof that the market was rigged against you this week",
-          "The single indicator that would have predicted all four losses",
-          "Sort each loss into one of two bins: followed-the-rules-and-lost, which is variance, or broke-the-rules-and-lost, which is the real problem to fix",
-          "Confirmation that you should feel terrible so you never lose again"
+          "Sort each loss into followed-the-rules versus broke-the-rules",
+          "The one indicator that would have predicted all four losses",
+          "Confirmation that you should feel terrible about the week"
         ],
-        correctIndex: 2,
+        correctIndex: 1,
         explanation: "Process versus variance is the only review that matters. Rule-following losses are tuition, an edge can lose four straight and still be an edge, the math allows it. Rule-BREAKING losses are the fixable disease. The film might show four good plays that did not convert, or it might show you freelancing. Different diagnoses, totally different prescriptions."
       },
       {
         question: "The review showed two variance losses and two rule breaks, now patched. Ten days later a genuine A-plus setup fires, your best pattern, textbook clean. How do you come back onto the field?",
         options: [
           "Full size immediately, the review fixed everything",
-          "Take it at quarter-to-half size, and earn your way back to full size with two clean weeks of executed process",
-          "Skip it, you have not suffered long enough to deserve a win",
-          "Full size plus a little extra to start recovering the drawdown"
+          "Skip it, you have not earned a win yet",
+          "Take it at quarter-to-half of your normal size",
+          "Full size plus extra to start recovering the drawdown"
         ],
-        correctIndex: 1,
-        explanation: "Re-entry is a ramp, not a switch. Reduced size on an A-plus setup gets you executing and rebuilding confidence with real stakes, while protecting the account in case the tilt is not fully gone. You earn your way back to full size with clean process, not with one good feeling. Skipping A-plus setups out of self-punishment is just tilt wearing a different jersey."
+        correctIndex: 2,
+        explanation: "Re-entry is a ramp, not a switch. Reduced size on an A-plus setup gets you executing and rebuilding confidence with real stakes, while protecting the account in case the tilt is not fully gone. You earn your way back to full size with two clean weeks of executed process, not with one good feeling. Skipping A-plus setups out of self-punishment is just tilt wearing a different jersey."
       }
     ]
   },
@@ -663,45 +663,45 @@ export const bossPool: BossChallenge[] = [
       {
         question: "GENR trades at 40 with the FDA decision Friday. Implied volatility on the weeklys has hit 240 percent and the at-the-money straddle costs 14, on a 40 dollar stock. First read: what is that chain actually telling you?",
         options: [
-          "The options market is pricing roughly a 35 percent move in EITHER direction, so any premium you buy already has a massive move baked into the price",
-          "IV at 240 means the stock is guaranteed to explode higher",
-          "The options are mispriced and free money is available",
-          "High IV is irrelevant if you get the direction right"
+          "An IV of 240 percent means the stock is guaranteed to explode higher",
+          "The chain is pricing about a 35 percent move in either direction",
+          "The options are badly mispriced and free money is on the table",
+          "High IV is just noise as long as you get the direction right"
         ],
-        correctIndex: 0,
+        correctIndex: 1,
         explanation: "A 14 dollar straddle on a 40 dollar stock means the market is braced for roughly a plus-or-minus 35 percent swing. That is the bar YOUR trade has to clear, direction alone is not enough, you need the move to beat the move already in the price. IV this high is not a tip, it is a toll."
       },
       {
         question: "Your friend's pitch: \"Approval sends it to 60. The 50 calls cost 5. That is a double, easy money.\" What is the flaw in the plan?",
         options: [
-          "Nothing, the math checks out, a 60 print makes the 50 calls worth 10",
-          "He is only pricing the best case. If approval lands and the stock goes to 52, those calls hold 2 of intrinsic with IV collapsing, down 60 percent ON A WIN, and a rejection makes them zero",
-          "The strike is wrong, the 45 calls are the smarter buy",
-          "He should buy twice as many to improve the odds"
+          "Nothing, a 60 print makes the 50 calls worth 10, a clean double",
+          "The strike is wrong, the 45 calls are the smarter buy here",
+          "He is only pricing the single best-case branch of the trade",
+          "He should buy twice as many contracts to improve his odds"
         ],
-        correctIndex: 1,
-        explanation: "He showed you one branch of the tree and called it the whole tree. Run all three: rejection means zero, modest-pop approval means crushed premium and a loss despite being RIGHT, and only the moonshot pays. When two of three outcomes lose, including one where your direction call is correct, the easy-money math is an illusion."
+        correctIndex: 2,
+        explanation: "He showed you one branch of the tree and called it the whole tree. Run all three: rejection means zero, a modest approval pop to 52 leaves the calls holding 2 of intrinsic while IV collapses, down 60 percent ON A WIN, and only the moonshot pays. When two of three outcomes lose, including one where your direction call is correct, the easy-money math is an illusion."
       },
       {
         question: "Decision time, Thursday afternoon. Pick your play for the FDA binary.",
         options: [
-          "Buy the 50 calls at meaningful size, you have done more homework than the crowd",
-          "Buy puts instead, the contrarian side must be where the edge is",
-          "Buy the straddle, calls plus puts, it has to move big one way or the other",
-          "Skip the binary entirely, or risk only a tiny entertainment-sized stake you have fully written off in advance"
+          "Skip it, or risk only a tiny stake you have written off",
+          "Buy the 50 calls at size, your homework beats the crowd",
+          "Buy puts instead, the contrarian side is where the edge is",
+          "Buy the straddle, it has to move big one way or the other"
         ],
-        correctIndex: 3,
+        correctIndex: 0,
         explanation: "The crush is direction-neutral, it hits puts exactly as hard as calls, so flipping sides buys you the same trap with a different logo. The straddle costs the full 35 percent expected move, so it needs MORE than the priced-in chaos to profit. With no informational edge on the science, the pro plays are pass, or lottery-ticket size with zero expectations."
       },
       {
         question: "Friday: APPROVAL. GENR opens up 18 percent at 47.20. Your friend's 50 calls, bought for 5, are trading at 1.10, down nearly 80 percent on the best news of the year. Final exam: why?",
         options: [
-          "The market clearly did not understand the approval",
-          "Market makers stole the move at the open",
-          "The stock moved 18 percent against a 35 percent expected move, the calls are still out of the money, and IV collapsed from 240 to 60, vaporizing the premium: the move you get must beat the move you paid for",
-          "He just needed to hold until expiration for the comeback"
+          "The market clearly did not understand what the approval was worth",
+          "Market makers stole the move at the opening print",
+          "He just needed to hold to expiration for the comeback",
+          "The move landed inside the expected move and IV collapsed"
         ],
-        correctIndex: 2,
+        correctIndex: 3,
         explanation: "An 18 percent pop sounds enormous until you remember the chain priced 35. The stock never reached the 50 strike, so the calls are pure extrinsic value, and extrinsic value is exactly what IV crush destroys, 240 to 60 overnight. Direction: correct. News: best case. Trade: demolished. In binaries, you are not betting on the event, you are betting AGAINST the price of the event."
       }
     ]
@@ -714,43 +714,43 @@ export const bossPool: BossChallenge[] = [
       {
         question: "RDLN has based between 55 and 60 for twelve weeks, with volume drying to a trickle and the range tightening for three straight weeks. Define your entry trigger.",
         options: [
-          "Buy at 58 now to front-run the breakout at a better price",
-          "Buy the move through 60 ONLY if it comes on a clear volume surge, big participation is what separates a breakout from a head fake",
-          "Wait until the stock is up 10 percent past 60 to be absolutely sure it is real",
-          "Buy every touch of 60 until one of them finally breaks through"
+          "Buy at 58 now and front-run the breakout at a better price",
+          "Wait until it is 10 percent past 60 to be sure it is real",
+          "Buy every touch of 60 until one finally breaks through",
+          "Buy the move through 60 only on a clear surge in volume"
         ],
-        correctIndex: 1,
-        explanation: "Price tells you what, volume tells you who. A push through 60 on 2x-plus average volume means institutions are driving, not day-trade tourists. Front-running at 58 is a guess wearing a plan's jersey, waiting for plus-10 surrenders the tight-risk entry, and buying every touch is paying repeated tolls to watch other people fail."
+        correctIndex: 3,
+        explanation: "Price tells you what, volume tells you who. A push through 60 on 2x-plus average volume means institutions are driving, not day-trade tourists, and that participation is what separates a breakout from a head fake. Front-running at 58 is a guess wearing a plan's jersey, waiting for plus-10 surrenders the tight-risk entry, and buying every touch is paying repeated tolls to watch other people fail."
       },
       {
         question: "Trigger fires: RDLN clears 60 on heavy volume and you enter calls at 61.50 with a written rule, out on a daily CLOSE below 58. Next day the stock reverses hard and closes at 58.80, ugly, but above your line. Decision?",
         options: [
-          "Sell everything now, the reversal clearly means the breakout failed",
-          "Average down, the pullback is a gift at these prices",
-          "Honor the written plan: the stop is a CLOSE below 58 and that has not happened, so you hold, but you absolutely do not add",
+          "Hold and do not add, the written stop has not been hit yet",
+          "Sell everything now, the reversal means the breakout failed",
+          "Average down here, the pullback is a gift at these prices",
           "Widen the stop to 55 to give the trade more room to breathe"
         ],
-        correctIndex: 2,
+        correctIndex: 0,
         explanation: "Breakouts shake the tree on purpose, the pullback-and-recover is one of the most common sequences in the pattern, and your plan was built knowing that. The stop said CLOSE below 58, not feels-bad-at-58.80. Panic-selling above your line and widening the stop are the same crime in opposite directions: rewriting rules mid-play. Hold the line you wrote, and never add to a trade on probation."
       },
       {
         question: "The shakeout completes: RDLN retakes 60, then powers to 66, up 10 percent from the pivot, and your calls are up 85 percent. Manage it.",
         options: [
-          "Take partial profits into the strength and move the exit line on the remainder up to your entry zone, the trade now plays with banked money",
-          "Sell nothing, breakout stocks always run 30 percent minimum",
+          "Sell nothing yet, breakout stocks run 30 percent minimum",
           "Sell everything, 85 percent is plenty and greed is a sin",
-          "Add a fresh full position here, up 10 percent is proof of concept"
+          "Take partial profits and raise the exit line to your entry zone",
+          "Add a fresh full position, up 10 percent is proof of concept"
         ],
-        correctIndex: 0,
+        correctIndex: 2,
         explanation: "First target hit means pay the team. Banking partial profit at plus-10-percent-from-pivot converts paper into points, and raising the remaining exit to breakeven means the worst case left is a scratch. Always and never are not risk plans, and adding full size AFTER a 10 percent run inverts your cost basis at the worst time."
       },
       {
         question: "Three days later RDLN goes vertical: up 18 percent above the pivot, gapping up at the open, then closing weak at the bottom of its daily range on the heaviest volume of the entire move. Your runner decision?",
         options: [
-          "Hold, the biggest volume of the move means the biggest buyers just arrived",
-          "Sell the remaining position into the climax: vertical extension, exhaustion gap, weak close on peak volume is the crowd arriving and the smart money leaving",
+          "Hold, record volume means the biggest buyers just arrived",
+          "Sell the rest of the runner into the climax strength",
           "Add one more time, vertical is exactly what you want to own",
-          "Hold and decide at expiration, no need to act on one candle"
+          "Hold and decide at expiration, one candle is not a signal"
         ],
         correctIndex: 1,
         explanation: "Read the candle, not the euphoria. Record volume with a WEAK close means the massive buying met even more massive selling, distribution, someone big is handing out inventory at the top of a vertical move. Climax behavior after an 18 percent post-breakout sprint is the textbook exit cue for the runner. Sell when you can celebrate, not when you must capitulate."
@@ -765,10 +765,10 @@ export const bossPool: BossChallenge[] = [
       {
         question: "Sunday scan. Four candidates on the watchlist. Account rules: trade only A-plus setups. Pick the play.",
         options: [
-          "Ticker A: up 40 percent TODAY on a viral social post, options IV at 300 percent",
-          "Ticker B: down 30 percent this month, a falling knife, but SO cheap now",
-          "Ticker C: MERX, eight-week tight base above a rising 50-day, relative strength line at new highs, today broke out on 2.5x volume, IV rank 30, earnings five weeks away",
-          "Ticker D: dead sideways chop for months on shrinking volume, no catalyst in sight"
+          "Ticker A: up 40 percent today on a viral social post, options IV sitting at 300 percent",
+          "Ticker B: down 30 percent this month and falling, but the cheapest it has been in two years",
+          "Ticker C: MERX, an eight-week tight base above a rising 50-day, breaking out today on 2.5x volume",
+          "Ticker D: dead sideways chop for months on shrinking volume, no catalyst anywhere in sight"
         ],
         correctIndex: 2,
         explanation: "MERX checks every box on the card: long tight base, rising 50-day, RS line leading price to new highs, institutional volume on the breakout, sanely priced options at IV rank 30, and a five-week runway before earnings risk. Ticker A is a 300-percent-IV hype trap, B is a knife with cheap as its only thesis, and D has no edge at all. One A-plus beats three maybes every time."
@@ -776,32 +776,32 @@ export const bossPool: BossChallenge[] = [
       {
         question: "Build the position. Account: 25,000, risk rule: 1.5 percent per trade, 375 max. The MERX 50-day calls you want cost 4.20 each, and your plan exits if the breakout fails, which back-of-envelope costs the option about 45 percent, roughly 190 per contract. Size it.",
         options: [
-          "10 contracts, 4,200 in premium, because this setup is the best one all year",
-          "5 contracts, splitting the difference between rules and conviction",
-          "1 contract, you can never be too safe",
-          "2 contracts: about 380 of planned risk at the stop, right at your 375 budget"
+          "2 contracts",
+          "10 contracts",
+          "5 contracts",
+          "1 contract"
         ],
-        correctIndex: 3,
+        correctIndex: 0,
         explanation: "Size from the STOP, not from the premium and not from the feeling. Risk per contract is what the planned exit costs, about 190, so two contracts lands almost exactly on the 375 budget. Ten contracts bets 17 percent of the account on one play, conviction does not amend math. Splitting the difference is just breaking the rule politely, and one contract leaves budgeted edge on the table."
       },
       {
         question: "One week in: MERX is up 7 percent and your calls are up 35 percent. But the broad market just flashed two heavy distribution days, big institutional selling, even though MERX itself still acts fine. Adjust?",
         options: [
-          "Bank partial profits and tighten the exit on the rest: your stock is innocent, but the market is the field every play runs on",
-          "Ignore the market completely, you trade MERX, not SPY",
-          "Dump the entire position instantly, distribution days mean crash incoming",
-          "Add more MERX, its strength against a weak tape proves it is a leader"
+          "Ignore the market read entirely, you trade MERX, not SPY",
+          "Dump the entire position now, distribution means a crash is coming",
+          "Add more MERX, strength against a weak tape proves a leader",
+          "Bank partial profits and tighten the exit line on the rest"
         ],
-        correctIndex: 0,
-        explanation: "Three out of four stocks follow the market's tide, and distribution days are the earliest storm warning the tape gives. You do not panic-eject a working trade on a warning, and you do not ignore the weather either. Partial profits plus a tighter line keeps you on the field with reduced exposure, while adding into a deteriorating tape raises risk on the exact day the evidence says lower it."
+        correctIndex: 3,
+        explanation: "Your stock is innocent, but the market is the field every play runs on. Three out of four stocks follow the market's tide, and distribution days are the earliest storm warning the tape gives. You do not panic-eject a working trade on a warning, and you do not ignore the weather either. Partial profits plus a tighter line keeps you on the field with reduced exposure, while adding into a deteriorating tape raises risk on the exact day the evidence says lower it."
       },
       {
         question: "Final decision. MERX has climbed for three more weeks, your remaining calls are up 80 percent, and earnings are now two weeks out, with your contracts expiring four days after the print. The system call?",
         options: [
-          "Hold everything through earnings, the trend this strong will power through the report",
-          "Take the win on the position before the print: the thesis was the technical breakout, and that thesis never included a binary earnings bet",
-          "Add protection by ALSO buying puts through the print, both sides covered",
-          "Hold, but check the position hourly during earnings week to stay in control"
+          "Hold through earnings, a trend this strong powers through",
+          "Take the win on the whole position before the print",
+          "Buy puts through the print too, so both sides are covered",
+          "Hold, but check it hourly during earnings week"
         ],
         correctIndex: 1,
         explanation: "Exit when the original thesis is complete, and this thesis was a base breakout, never an earnings call. Holding converts a banked 80 percent technical win into an overnight coin flip, with IV crush waiting on the other side. Buying puts too just means paying double premium into peak IV, and watching a binary hourly is monitoring a coin while it is still in the air. Take the points. Full system executed. That is a championship drive."

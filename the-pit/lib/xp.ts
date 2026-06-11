@@ -28,12 +28,12 @@ export interface Rank {
 
 export const RANKS: Rank[] = [
   { name: "Bench Warmer", minXp: 0, blurb: "Everyone starts somewhere. Get reps." },
-  { name: "Practice Squad", minXp: 1000, blurb: "You made the building. Now make the roster." },
-  { name: "Starter", minXp: 3000, blurb: "Your name is on the lineup card." },
-  { name: "All-Star", minXp: 7500, blurb: "The crowd knows your name." },
-  { name: "MVP", minXp: 15000, blurb: "You carry the team." },
-  { name: "Hall of Famer", minXp: 30000, blurb: "Your jersey hangs in the rafters." },
-  { name: "GOAT", minXp: 60000, blurb: "There is no debate." },
+  { name: "Practice Squad", minXp: 750, blurb: "You made the building. Now make the roster." },
+  { name: "Starter", minXp: 2250, blurb: "Your name is on the lineup card." },
+  { name: "All-Star", minXp: 5500, blurb: "The crowd knows your name." },
+  { name: "MVP", minXp: 11000, blurb: "You carry the team." },
+  { name: "Hall of Famer", minXp: 22000, blurb: "Your jersey hangs in the rafters." },
+  { name: "GOAT", minXp: 45000, blurb: "There is no debate." },
 ];
 
 export function rankIndexForXp(xp: number): number {

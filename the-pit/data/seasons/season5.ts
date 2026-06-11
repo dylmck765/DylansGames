@@ -45,12 +45,12 @@ const season5: Season = {
           id: "s5e1-q1",
           question: "What makes earnings a \"binary event\" for traders?",
           options: [
+            "The outcome lands all at once while the market is closed",
             "The stock can only move in two directions, up or down",
-            "The new information lands all at once while the market is closed, and the stock gaps to a new price",
-            "Only two types of traders are allowed to participate",
-            "The company reports exactly twice per year"
+            "The company reports results exactly twice per calendar year",
+            "Only two types of traders are allowed to participate"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Binary here means the uncertainty resolves in one shot. The report drops outside market hours, and the stock reopens at whatever price the new information demands. That all-at-once jump is the gap, and it is what separates earnings risk from everyday trading risk."
         },
         {
@@ -59,22 +59,22 @@ const season5: Season = {
           options: [
             "Your stop sells you out at 95 as planned",
             "Your stop is cancelled automatically before earnings",
-            "Your stop triggers at the open and fills near 78, far below your stop price",
-            "The exchange reimburses you the difference"
+            "The exchange reimburses you the difference",
+            "Your stop triggers at the open and fills near 78"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "A stop-loss is a trigger, not a guarantee. The stock never traded at 95; it jumped from 100 to 78 while the market was closed. Your stop becomes a market order at the open and fills around 78. Gaps jump over stops, which is why position size is the only defense that always works."
         },
         {
           id: "s5e1-q3",
           question: "Why do chart support levels often fail on earnings night?",
           options: [
-            "Exchanges delete old price data after each report",
-            "Support levels only work for index funds",
-            "Market makers turn charts off during earnings week",
-            "Support reflects behavior under old information, and the report is new information that can reprice the stock past any level"
+            "Exchanges wipe the old price history after every earnings report",
+            "The print is new information that can reprice the stock past any level",
+            "Market makers are required to ignore chart levels during earnings week",
+            "Support and resistance levels only apply to index funds and ETFs"
           ],
-          correctIndex: 3,
+          correctIndex: 1,
           explanation: "Support and resistance map how traders behaved given what they knew. An earnings surprise changes what everyone knows, so the stock can gap straight through levels that held for months. Technicals are regular-season tools; the print rewrites the rulebook overnight."
         }
       ],
@@ -91,7 +91,7 @@ const season5: Season = {
             pnl: -720
           },
           {
-            label: "Sell both calls before the close and watch the report from the sidelines.",
+            label: "Sell both calls before the close and watch from the sidelines.",
             result: "You sell at 6.50, locking in the gain from the run-up. STRM gaps down 9 percent overnight on soft guidance. You sleep fine, your profit already banked.",
             pnl: 500
           },
@@ -110,13 +110,13 @@ const season5: Season = {
         situation: "Your friend texts you at 3 PM: \"BURG reports tonight. They are absolutely going to crush it, everyone is saying so. I just put my whole account into weekly calls.\" BURG is up 4 percent on the day already, and the options expiring this week cost triple what they did last month. You have 5,000 dollars in your account.",
         question: "What do you do?",
         options: [
+          "Skip the trade, or risk only a small slice you can afford to lose whole",
           "Match your friend: put most of the account into weekly calls before the close",
           "Buy puts instead, because if everyone is bullish the stock must fall",
-          "Skip the trade entirely, or risk no more than a small slice you can lose whole, knowing the print is a coin flip",
           "Buy the stock on margin instead of options so you cannot get crushed"
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is the blowup play: an all-in bet on a binary event, in options already priced for a big move, on a tip that everyone has heard. If everyone is saying it, it is in the price. Option B is the same gamble wearing a different jersey; contrarian for its own sake is not edge. Option D removes the option-pricing problem but adds leverage to a gap that can blow through any margin cushion. Option C is the pro move: no edge means no trade, and if you must play, size it like the coin flip it is. The first lesson of the playoffs is that surviving them is the win condition."
+        bestIndex: 0,
+        coachNotes: "Option B is the blowup play: an all-in bet on a binary event, in options already priced for a big move, on a tip that everyone has heard. If everyone is saying it, it is in the price. Option C is the same gamble wearing a different jersey; contrarian for its own sake is not edge. Option D removes the option-pricing problem but adds leverage to a gap that can blow through any margin cushion. Option A is the pro move: no edge means no trade, and if you must play, size it like the coin flip it is. The first lesson of the playoffs is that surviving them is the win condition."
       }
     },
     {
@@ -158,36 +158,36 @@ const season5: Season = {
           id: "s5e2-q1",
           question: "A stock trades at 80 dollars before earnings. The at-the-money call expiring after the report costs 3.00 and the at-the-money put costs 3.20. What is the rough expected move?",
           options: [
-            "About 4 percent, the average of the two prices",
-            "About 8 percent, the straddle price of 6.20 divided by the 80 dollar stock price",
-            "About 16 percent, double the straddle",
+            "About 4 percent",
+            "About 16 percent",
+            "About 8 percent",
             "It cannot be estimated without knowing the earnings date"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Add the at-the-money call and put: 3.00 plus 3.20 is 6.20. Divide by the stock price: 6.20 over 80 is about 7.75 percent, call it 8. That is the market's betting line: it expects the stock to land within roughly plus-or-minus 8 percent of 80 after the print."
         },
         {
           id: "s5e2-q2",
           question: "The expected move on a stock is plus-or-minus 6 percent. What does that actually tell you?",
           options: [
-            "The stock is guaranteed to move exactly 6 percent",
-            "The stock will move up 6 percent if earnings are good",
-            "The market is pricing a rough one-standard-deviation range of 6 percent in either direction, with no opinion on direction",
-            "The company itself forecast a 6 percent move"
+            "A rough one-standard-deviation bracket of 6 percent either way",
+            "A guarantee that the stock will move exactly 6 percent",
+            "A forecast that the stock rises 6 percent if earnings are good",
+            "The company's own published forecast of a 6 percent move"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "The expected move is a bracket, not a prediction. It says option buyers and sellers have settled on roughly a 6 percent swing as the fair line, direction unknown. The stock lands inside that bracket most of the time and outside it often enough to punish anyone who treats the line as a ceiling."
         },
         {
           id: "s5e2-q3",
           question: "You buy the at-the-money straddle for 10 dollars on a 100 dollar stock, an expected move of 10 percent. Earnings hit and the stock rises 6 percent to 106. Roughly what happens to your trade?",
           options: [
-            "You lose money: the 100 call is worth about 6 in intrinsic value, less than the 10 you paid for the package",
-            "You profit, because the stock moved in a clear direction",
-            "You break even automatically at any move over 5 percent",
-            "You profit, because the put expires worthless and that helps the call"
+            "You make about 6 dollars, the size of the move",
+            "You break even at any move over 5 percent",
+            "You profit, since one winning leg is all a straddle needs",
+            "You lose roughly 4 dollars of the 10 you paid"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "The straddle needs the move to beat its own price. You paid 10; after the print the put is nearly worthless and the call is worth roughly its 6 dollars of intrinsic value plus scraps. A 6 percent move against a 10 percent line loses about 4 dollars. The stock moved, the direction was clear, and the straddle buyer still lost, because the line was bigger than the game."
         }
       ],
@@ -209,7 +209,7 @@ const season5: Season = {
             pnl: -640
           },
           {
-            label: "Pass on the trade. Your own forecast of 3 to 4 percent is inside the 8 percent line, so long options offer no edge.",
+            label: "Pass on the trade and watch the print from flat.",
             result: "RBLD rises 3.5 percent, exactly your thesis. The calls and straddles both open lower than they closed. You made nothing and lost nothing, and your read of both the company and the market was perfect.",
             pnl: 0
           }
@@ -224,12 +224,12 @@ const season5: Season = {
         question: "What does the line tell you, and what is the disciplined move?",
         options: [
           "The calls are cheap in dollars, so buy a bunch; small price means small risk",
-          "Read the 13 percent line first: these calls are priced for a violent move, so only buy them if you believe the move will be even bigger than that, and size small",
           "Sell those calls naked, since the stock probably will not move 13 percent",
-          "Ignore the straddle math, it only applies to people trading straddles"
+          "Ignore the straddle math, it only applies to people trading straddles",
+          "Buy only with a thesis for a move beyond the 13 percent line, sized small"
         ],
-        bestIndex: 1,
-        coachNotes: "Option A confuses a low price tag with a good deal: a 90-cent option on a 13-percent line is priced for chaos, and chaos is exactly what you are paying for. Option C gets the probability roughly right and the risk completely wrong; naked short calls into a 13 percent line is unlimited downside on a binary event, and episode six will show you what happens when the line gets tripled. Option D is just refusing to look at the scoreboard: the straddle math prices every option on that chain, not just straddles. Option B is the pro move. The line is information. You only get paid for disagreeing with it correctly, so state your disagreement first, then size like you might be wrong."
+        bestIndex: 3,
+        coachNotes: "Option A confuses a low price tag with a good deal: a 90-cent option on a 13-percent line is priced for chaos, and chaos is exactly what you are paying for. Option B gets the probability roughly right and the risk completely wrong; naked short calls into a 13 percent line is unlimited downside on a binary event, and episode six will show you what happens when the line gets tripled. Option C is just refusing to look at the scoreboard: the straddle math prices every option on that chain, not just straddles. Option D is the pro move: read the 13 percent line first, because these calls are priced for a violent move. The line is information. You only get paid for disagreeing with it correctly, so state your disagreement first, then size like you might be wrong."
       }
     },
     {
@@ -272,7 +272,7 @@ const season5: Season = {
           question: "Why does implied volatility rise in the weeks before a scheduled earnings report?",
           options: [
             "The stock price always rises before earnings, dragging IV up with it",
-            "A known binary event is approaching, so demand for protection and speculation rises while sellers demand more for taking gap risk",
+            "Demand rises for options that contain a known binary event",
             "Exchanges mandate higher option prices during earnings season",
             "Interest rates always increase in the weeks before corporate reports"
           ],
@@ -283,12 +283,12 @@ const season5: Season = {
           id: "s5e3-q2",
           question: "Earnings hit after the close on Thursday. Which options typically show the biggest IV inflation beforehand?",
           options: [
-            "Options expiring the Friday before the report, which do not contain the event",
-            "Only deep in-the-money options",
-            "All expirations inflate exactly equally",
-            "The expirations landing just after the report, because they contain the event"
+            "The expirations landing just after the report",
+            "Options expiring the Friday before the report date",
+            "Deep in-the-money options across every expiration",
+            "Every expiration on the chain, all inflating equally"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "Event risk lives in the expirations that contain the event. An option expiring the day before earnings never has to survive the gap, so its IV stays comparatively calm, while the expiration just after the print soaks up the whole coin flip and inflates the most. That is the term structure: playoff tickets cost more than regular-season tickets."
         },
         {
@@ -296,8 +296,8 @@ const season5: Season = {
           question: "Your call has a vega of 0.08. Over two weeks before earnings, IV rises from 50 to 75 while the stock stays flat. Roughly how much does vega add to the option's price?",
           options: [
             "About 8 cents",
-            "Nothing, because the stock did not move",
-            "About 2.00, since 25 IV points times 0.08 is 2 dollars",
+            "Nothing, since the stock did not move",
+            "About 2.00",
             "About 75 cents"
           ],
           correctIndex: 2,
@@ -336,13 +336,13 @@ const season5: Season = {
         situation: "Eight days before earnings, you own calls on JTTR that you bought for the run-up play at IV 40. The stock has gone nowhere, but IV is now 64 and your calls are up 45 percent. A trading forum you follow is pounding the table that the report will be a monster beat, and part of you wants to let the winner ride through the print.",
         question: "What is the disciplined move?",
         options: [
-          "Hold through the print; the position is already winning, so it has momentum",
-          "Sell now or on your planned pre-print exit date, taking the vega profit the trade was designed to capture",
+          "Hold through the print and let the winner ride",
           "Buy more calls at IV 64 to press the bet into the report",
-          "Convert to a much larger position using margin since the trade is clearly working"
+          "Sell now or on your planned pre-print exit date",
+          "Use margin to convert into a much larger position"
         ],
-        bestIndex: 1,
-        coachNotes: "Option A confuses two different trades: your gains came from IV inflation, and holding through the print exposes exactly those gains to the post-print collapse. A position being green is not a reason; it is a result. Option C adds premium at hyped prices, the worst entry of the cycle, on the strength of forum conviction that is already in the price. Option D layers leverage on top of that mistake. Option B is the pro move: the run-up play has a defined exit, before the game starts, because the thing you own, inflated uncertainty, is at its most valuable right before it evaporates. Plan the exit when you plan the entry, then honor it."
+        bestIndex: 2,
+        coachNotes: "Option A confuses two different trades: your gains came from IV inflation, and holding through the print exposes exactly those gains to the post-print collapse. A position being green is not a reason; it is a result. Option B adds premium at hyped prices, the worst entry of the cycle, on the strength of forum conviction that is already in the price. Option D layers leverage on top of that mistake. Option C is the pro move: take the vega profit the trade was designed to capture, because the run-up play has a defined exit, before the game starts. The thing you own, inflated uncertainty, is at its most valuable right before it evaporates. Plan the exit when you plan the entry, then honor it."
       }
     },
     {
@@ -384,12 +384,12 @@ const season5: Season = {
           id: "s5e4-q1",
           question: "What is IV crush?",
           options: [
-            "The drop in a stock's price after a bad earnings report",
-            "The collapse of implied volatility, and the extrinsic value it supports, once the earnings uncertainty is resolved",
-            "A margin call triggered by holding options overnight",
-            "The fee brokers charge for exercising options on earnings day"
+            "The drop in a stock's price in the hours after a bad earnings report",
+            "A margin call triggered by holding options through an overnight gap",
+            "The fee brokers charge for exercising options on earnings day",
+            "The collapse of implied volatility once the result is known"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Before the print, options carry inflated IV because the outcome is unknown. The instant the report drops, the unknown becomes known, IV reverts to everyday levels, and the premium that elevated IV was supporting evaporates. It happens to the whole chain at once, regardless of which way the stock goes."
         },
         {
@@ -397,20 +397,20 @@ const season5: Season = {
           question: "You buy a call before earnings. The stock gaps UP after the report, yet your call opens LOWER than you paid. What happened?",
           options: [
             "The market maker made a pricing error you can dispute",
-            "The option must have expired during the report",
-            "The gap was smaller than the expected move, so the extrinsic value lost to IV crush exceeded the intrinsic value gained from the move",
-            "Calls always lose value after earnings no matter what"
+            "IV crush took more extrinsic value than the gap added in intrinsic",
+            "The option must have expired during the overnight session",
+            "Calls always lose value after earnings, no matter which way the stock goes"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Your call's pre-print price was mostly inflated extrinsic value. The gap added intrinsic value, but the crush subtracted extrinsic value, and when the move comes in under the line, the subtraction wins. Calls can absolutely profit through earnings; they just need the move to beat the expected move first."
         },
         {
           id: "s5e4-q3",
           question: "Which position is hurt MOST by IV crush on earnings night?",
           options: [
-            "Long out-of-the-money weekly options bought the day before the report",
-            "Long shares of the stock",
-            "A long-dated option expiring in two years",
+            "Long out-of-the-money weeklies bought the day before the report",
+            "A long position in the underlying shares themselves",
+            "A long-dated option with two years left until expiration",
             "A covered call where you own shares and sold a call against them"
           ],
           correctIndex: 0,
@@ -435,7 +435,7 @@ const season5: Season = {
             pnl: -480
           },
           {
-            label: "Stand aside tonight. With IV at 110, the premium demands a move bigger than you actually expect.",
+            label: "Stand aside tonight and trade nothing into the print.",
             result: "FLNT gaps up 4 percent on a real beat, and every long-premium ticket on the chain opens red anyway. You watch the crush from the bleachers with your capital intact.",
             pnl: 0
           }
@@ -449,13 +449,13 @@ const season5: Season = {
         situation: "You skipped the DRVN print like a pro. The company beat, the stock gapped up 5 percent at the open, and the same calls that cost 3.00 yesterday now trade for 0.95 with IV cut from 100 to 42. Your gut says the rally continues, and those calls suddenly look like a bargain compared to yesterday.",
         question: "How should you think about those post-crush options?",
         options: [
-          "Avoid them; if they fell that much overnight they must be broken",
-          "Buy them only because they are 70 percent cheaper than yesterday",
-          "Recognize they are now priced at normal IV, so if you have a real thesis for continued upside, you are finally buying premium at fair prices instead of hype prices",
-          "Buy yesterday's puts instead since they fell even harder"
+          "Avoid them entirely; options that fell that hard overnight are broken goods",
+          "They are priced at everyday IV now; buy only with a real follow-through thesis",
+          "Load up purely because they cost 70 percent less than they did yesterday afternoon",
+          "Buy yesterday's puts instead, since they fell even harder than the calls"
         ],
-        bestIndex: 2,
-        coachNotes: "Option A misreads the crush as damage: nothing is broken, the event premium simply left because the event is over. Option B is the right instinct with no thesis attached; cheaper than yesterday is not a reason, because yesterday's price contained a coin flip that no longer exists. Option D is buying a deflated ticket for a game that was just lost. Option C is the pro frame: post-crush options are priced at everyday IV, which makes the day after earnings one of the more honest times to buy premium, if and only if you have an actual view on follow-through. That idea gets its own episode when we hit post-earnings drift."
+        bestIndex: 1,
+        coachNotes: "Option A misreads the crush as damage: nothing is broken, the event premium simply left because the event is over. Option C is the right instinct with no thesis attached; cheaper than yesterday is not a reason, because yesterday's price contained a coin flip that no longer exists. Option D is buying a deflated ticket for a game that was just lost. Option B is the pro frame: post-crush is when you finally buy premium at fair prices instead of hype prices, which makes the day after earnings one of the more honest times to be a buyer, if and only if you have an actual view on follow-through. That idea gets its own episode when we hit post-earnings drift."
       }
     },
     {
@@ -497,36 +497,36 @@ const season5: Season = {
           id: "s5e5-q1",
           question: "For a run-up play on a company reporting March 20, which option expiration should you buy?",
           options: [
-            "The expiration on March 14, the week before the report, because it is cheaper",
-            "An expiration shortly after March 20, because it contains the event and soaks up the IV inflation",
-            "Any expiration works equally well for capturing the run-up",
-            "The longest-dated expiration available, two years out"
+            "The March 14 expiration, because it is cheaper",
+            "The longest-dated expiration available, two years out",
+            "An expiration landing shortly after March 20",
+            "Any expiration; they all capture the run-up equally"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Event premium pours into the expirations that contain the event. The March 14 expiry never has to survive the gap, so its IV stays comparatively flat, and a two-year option barely notices one quarter's report. The contract just after the print is where the hype cycle lives, so that is the ticket you scalp."
         },
         {
           id: "s5e5-q2",
           question: "When does the run-up play exit, and why?",
           options: [
-            "One to three days before the report, to sell at peak IV and avoid the crush entirely",
-            "The morning after the report, to capture the earnings move too",
-            "Whenever the position is up 100 percent, regardless of the calendar",
-            "At expiration, to avoid paying commissions twice"
+            "The morning after the report drops",
+            "Whenever the position is up 100 percent",
+            "At expiration, avoiding a second commission",
+            "One to three days before the report"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "The asset you are trading is inflated uncertainty, and it is most valuable right before it evaporates. Selling one to three days pre-print captures the peak and keeps you flat through the binary gap. Holding for the move converts a volatility trade into a coin flip and hands the crush everything the run-up paid you."
         },
         {
           id: "s5e5-q3",
           question: "Which of these is a REAL risk of the run-up play, even when executed correctly?",
           options: [
-            "IV crush after the earnings report",
+            "Theta decay and adverse stock drift outrunning the vega gains",
+            "IV crush hitting the position after the earnings report",
             "Early assignment forcing you to deliver shares on a long call",
-            "The stock gapping overnight on the earnings report itself",
-            "Theta decay and adverse stock drift outrunning the IV gains, or the run-up already being priced in"
+            "The stock gapping overnight on the earnings report itself"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "Crush and the earnings gap cannot touch you because the play exits before the print, and long options carry no assignment obligation. The honest risks are the grind: daily theta, the stock drifting against a directional version of the play, and term-structure math that sometimes pre-prices the hype so the expected IV climb never shows up."
         }
       ],
@@ -562,10 +562,10 @@ const season5: Season = {
         situation: "You find KYTE five days before earnings. The setup looked great a month ago, but you are late: post-print IV is already 71 against a typical earnings-day peak of about 75. A trading group you follow is loudly buying calls for the run-up, posting screenshots of last quarter's wins, and you feel the pull to hop on.",
         question: "What is the disciplined read?",
         options: [
-          "Buy the calls; the play worked last quarter so it should work again",
-          "Pass on the run-up: with IV at 71 against a 75 peak, the inflation is nearly complete and theta plus any drift will likely outrun the last few points of vega",
-          "Buy double the normal size to make up for the late entry",
-          "Buy the calls but plan to hold through the print since the run-up edge is gone anyway"
+          "Buy the calls; the play worked last quarter",
+          "Pass on the run-up trade; the window has closed",
+          "Buy double size to make up for the late entry",
+          "Buy the calls but hold through the print instead"
         ],
         bestIndex: 1,
         coachNotes: "Option A is rearview-mirror trading: last quarter's entry was at cheap IV, and that is the entire reason it worked. Option C doubles exposure precisely when edge is thinnest, which is backwards; size should scale with edge, not with FOMO. Option D is the sneakiest trap, drifting from a dead volatility trade into an unplanned coin flip because you wanted a position. Option B is the pro move: the run-up play is a bet on IV inflation that has not happened yet, and at 71 of 75 the inflation has happened. Four points of runway cannot pay five days of theta. Late to the gate means no trade, and the calendar prints a new setup every week."
@@ -611,8 +611,8 @@ const season5: Season = {
           question: "What must happen for a long straddle held through earnings to be profitable?",
           options: [
             "The stock must move in the direction of the call",
-            "The company must beat analyst estimates",
-            "The actual move must exceed the expected move priced into the straddle",
+            "The company must beat the published analyst estimates",
+            "The actual move must exceed the expected move",
             "Implied volatility must rise after the report"
           ],
           correctIndex: 2,
@@ -622,24 +622,24 @@ const season5: Season = {
           id: "s5e6-q2",
           question: "What is the volatility risk premium in the context of earnings?",
           options: [
-            "The tendency of actual earnings moves to average somewhat smaller than the move options priced, a markup earned by premium sellers",
-            "The extra commission brokers charge during earnings week",
-            "The bonus volatility a stock gains after beating earnings",
-            "The difference between a call's price and a put's price"
+            "The extra commission brokers tack on for trades placed during earnings week",
+            "Actual moves averaging a bit smaller than what the options priced",
+            "The gap between a call's price and a put's price at the same strike",
+            "The extra volatility a stock carries in the weeks after beating earnings"
           ],
-          correctIndex: 0,
+          correctIndex: 1,
           explanation: "Sellers of earnings premium are insuring a coin flip, and like any insurer they charge a markup: implied moves average a bit larger than realized moves across most names and quarters. That is why blindly buying every straddle bleeds money over time, and why a hold-through needs a specific reason THIS line is too small."
         },
         {
           id: "s5e6-q3",
           question: "Why do pros often prefer debit spreads over naked long options when holding a directional view through earnings?",
           options: [
-            "Spreads are exempt from IV crush entirely",
-            "The short leg gets crushed too, offsetting part of the crush bill, and max loss is defined before the gap",
-            "Spreads pay out double when the stock gaps",
-            "Brokers waive margin requirements on spreads during earnings"
+            "Spreads are completely exempt from IV crush on both legs",
+            "Spreads pay out double whenever the stock gaps past the long strike",
+            "Brokers waive margin requirements on spreads during earnings",
+            "The short leg absorbs crush too, and max loss is locked in advance"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Nothing is exempt from the crush, but a spread puts it on both legs: the option you sold loses inflated premium in your favor, subsidizing what your long leg loses. Add a max loss that is locked before the report and spreads turn a binary gap into a defined, survivable bet, which is exactly what sizing rules demand."
         }
       ],
@@ -675,13 +675,13 @@ const season5: Season = {
         situation: "You love the company GLOW long-term: great product, growing market, you have read every filing. Earnings are tonight, the expected move is plus-or-minus 7 percent, and its actual moves have averaged about 6 percent over the past two years. You feel a strong pull to buy calls and hold through, because the company is simply excellent.",
         question: "What is the disciplined decision?",
         options: [
-          "Buy weekly calls and hold through; deep conviction in the company is the edge",
+          "Skip the print and let game night pass without a position",
+          "Buy weekly calls and hold through on conviction",
           "Buy a small straddle to avoid choosing a direction",
-          "Pass on the print: you have a view on the company but no view on the line, and at 7 priced versus 6 average there is no mispricing to bet",
-          "Buy a call debit spread through the print since spreads handle crush better"
+          "Buy a call debit spread, since spreads handle crush better"
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is the most common confusion in earnings trading: loving the company is a thesis about years, while the print is a bet about one overnight gap against a line that already prices a normal quarter. Option B buys a straddle when history says moves average UNDER this line, a textbook negative-expectancy bet. Option D picks the right structure for a trade that should not exist; good plumbing cannot fix a missing edge. Option C is the pro move: the hold-through question is never \"is this a good company\" but \"is this line mispriced,\" and 7 priced against 6 realized says it is priced about right, maybe rich. If you love GLOW, own shares on your own timeline and let game night pass without you."
+        bestIndex: 0,
+        coachNotes: "Option B is the most common confusion in earnings trading: loving the company is a thesis about years, while the print is a bet about one overnight gap against a line that already prices a normal quarter. Option C buys a straddle when history says moves average UNDER this line, a textbook negative-expectancy bet. Option D picks the right structure for a trade that should not exist; good plumbing cannot fix a missing edge. Option A is the pro move: the hold-through question is never \"is this a good company\" but \"is this line mispriced,\" and 7 priced against 6 realized says it is priced about right, maybe rich. You have a view on the company but no view on the line, so there is no mispricing to bet. If you love GLOW, own shares on your own timeline."
       }
     },
     {
@@ -724,8 +724,8 @@ const season5: Season = {
           question: "What is post-earnings announcement drift?",
           options: [
             "The random noise in a stock's price the week after earnings",
-            "The documented tendency of stocks to keep moving in the direction of a big earnings surprise for weeks afterward",
-            "The decline in option prices after the report",
+            "Stocks continuing to move in the direction of a big surprise",
+            "The steady decline in option prices in the weeks after the report",
             "A stock always returning to its pre-earnings price within a month"
           ],
           correctIndex: 1,
@@ -735,24 +735,24 @@ const season5: Season = {
           id: "s5e7-q2",
           question: "A stock gaps up 12 percent on a guidance raise and is still trading ABOVE its opening price two hours into the session. What does the drift framework suggest?",
           options: [
+            "Gap-and-go, with continued drift higher likely",
             "Short it immediately; all gaps fill eventually",
-            "Wait six months for a pullback to the pre-earnings price",
-            "Gap-and-go: a fundamental surprise plus a gap that holds its open signals institutional buying and likely continued drift higher",
-            "Buy puts since IV is cheap after the crush"
+            "Buy puts since IV is cheap after the crush",
+            "Wait for a pullback to the pre-earnings price"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "The two tells line up: the cause is fundamental, changing future earnings, and the price is holding above the open, meaning real buyers are absorbing supply rather than fading the pop. That combination is the classic gap-and-go setup. \"All gaps fill\" is a slogan, not a statistic, and it is most wrong precisely when guidance changes the company's trajectory."
         },
         {
           id: "s5e7-q3",
           question: "Why is the morning after earnings often an attractive time to BUY options?",
           options: [
-            "Options are free the day after earnings",
-            "IV is at its highest, so options gain value fastest",
-            "Market makers are required to sell at a discount post-earnings",
-            "The crush has reset IV to everyday levels, so you buy direction at normal prices with the binary gap risk already resolved"
+            "Theta pauses for a few sessions after the report",
+            "IV is at its highest, so options gain value the fastest",
+            "The crush has reset IV to normal and the gap risk is gone",
+            "Market makers are required to sell at a discount post-earnings"
           ],
-          correctIndex: 3,
+          correctIndex: 2,
           explanation: "The day before the print you pay hype prices and carry coin-flip risk; the morning after, IV has collapsed to baseline and the event is history. If the report genuinely changed the company's path and you want the drift, you are finally paying everyday premium for a regular directional trade. Cheap is only good with a thesis, but post-crush is when cheap actually means cheap."
         }
       ],
@@ -764,7 +764,7 @@ const season5: Season = {
         brief: "CRUX reported last night: a clean beat plus a full-year guidance raise on a new enterprise product. The stock gapped from 64 to 73, up 14 percent, and after the first hour it is holding firmly above its 72.20 open. IV has crushed from 95 to 40, so the six-week 75 calls cost 2.30. What is your play?",
         choices: [
           {
-            label: "Buy two six-week 75 calls at 2.30, stop if the stock closes below the morning low of 71.50.",
+            label: "Buy two six-week 75 calls at 2.30 with a stop at the morning low of 71.50.",
             result: "Classic gap-and-go: analysts hike targets all week and CRUX drifts to 79 over the next month. Your post-crush calls, bought at everyday IV, sell at 3.95.",
             pnl: 330
           },
@@ -788,13 +788,13 @@ const season5: Season = {
         situation: "Two stocks gapped down 15 percent this morning after earnings. PLMB missed revenue, cut full-year guidance, and announced its CFO is leaving; it keeps sliding below its open all morning. KETL beat estimates and maintained guidance, but took a one-time currency charge that spooked the algorithms; by late morning it has reclaimed its opening price. You want to buy one dip.",
         question: "Which dip, if either, do you buy?",
         options: [
-          "PLMB, because it has fallen the hardest and is the better bargain",
-          "Both, splitting your capital evenly to diversify the bet",
-          "KETL: the gap contradicts intact fundamentals and price is already stabilizing, while PLMB's gap is confirmed by deteriorating fundamentals and continued weakness",
-          "Neither; stocks that gap down 15 percent are untouchable for months"
+          "PLMB, the harder faller and the better bargain",
+          "Both, splitting capital evenly to diversify",
+          "Neither; gaps that size are untouchable for months",
+          "Buy the KETL dip and leave PLMB alone for now"
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is the classic bargain trap: PLMB is not cheap, it is repriced, and a guidance cut plus a CFO exit means the drift framework points DOWN for weeks, not up. Option B splits money between one good setup and one bad one, which is not diversification, it is dilution. Option D throws out a documented edge because of a blanket rule; the size of a gap says nothing without its cause. Option C reads both tells correctly: KETL's fundamentals and price action disagree with its own gap, the fade setup, while PLMB's agree with the gap, which is a falling knife with a reason to keep falling. Trade the disagreement, not the discount."
+        bestIndex: 3,
+        coachNotes: "Option A is the classic bargain trap: PLMB is not cheap, it is repriced, and a guidance cut plus a CFO exit means the drift framework points DOWN for weeks, not up. Option B splits money between one good setup and one bad one, which is not diversification, it is dilution. Option C throws out a documented edge because of a blanket rule; the size of a gap says nothing without its cause. Option D reads both tells correctly: KETL's gap contradicts intact fundamentals and its price is already stabilizing, the fade setup, while PLMB's gap is confirmed by deteriorating fundamentals and continued weakness, a falling knife with a reason to keep falling. Trade the disagreement, not the discount."
       }
     },
     {
@@ -837,11 +837,11 @@ const season5: Season = {
           question: "A company beats consensus estimates on revenue and earnings, yet the stock falls 8 percent the next day. Which is the LEAST likely explanation?",
           options: [
             "Guidance for next quarter came in below expectations",
-            "The whisper number was higher than the published consensus after a big run-up",
-            "Management made cautious comments on the earnings call",
-            "The market simply did not notice the beat"
+            "The whisper number was above the printed consensus",
+            "The market simply did not notice the beat",
+            "Management made cautious comments on the earnings call"
           ],
-          correctIndex: 3,
+          correctIndex: 2,
           explanation: "Markets do not miss headline numbers; they are parsed by algorithms in milliseconds. Stocks fall on beats because the real bar was higher than the printed one: soft guidance, a demanding whisper after a rally, or cautious call commentary. When price and headline disagree, the price is responding to information beyond the headline, not failing to see it."
         },
         {
@@ -849,23 +849,23 @@ const season5: Season = {
           question: "What is a whisper number?",
           options: [
             "The estimate companies privately send to regulators",
-            "The unofficial expectation the market actually demands, often above published consensus when a stock has run up and positioning is crowded",
-            "The lowest analyst estimate on the street",
-            "A rumor about the earnings date changing"
+            "The lowest analyst estimate published on the street",
+            "A rumor that the earnings release date is about to change",
+            "The unofficial expectation the market actually trades on"
           ],
-          correctIndex: 1,
-          explanation: "Consensus is the published average of analyst forecasts, a number companies actively manage toward beatable. The whisper is what the marginal buyer truly requires, set by the run-in and how crowded the trade is. Nobody prints it anywhere; the stock's reaction to the report is how the whisper reveals itself."
+          correctIndex: 3,
+          explanation: "Consensus is the published average of analyst forecasts, a number companies actively manage toward beatable. The whisper is what the marginal buyer truly requires, often above the printed consensus, set by the run-in and how crowded the trade is. Nobody prints it anywhere; the stock's reaction to the report is how the whisper reveals itself."
         },
         {
           id: "s5e8-q3",
           question: "Why does guidance usually move a stock more than the reported quarter itself?",
           options: [
-            "Guidance is legally binding while results are not",
-            "Reported results are usually inaccurate",
-            "Stock prices are claims on future earnings, and the reported quarter is already-finished history the market spent three months estimating",
-            "Analysts are not allowed to model past quarters"
+            "Guidance is legally binding on management while results are not",
+            "Stock prices are claims on future earnings, not past quarters",
+            "Reported results are too unreliable for the market to price",
+            "Analysts are not allowed to publish models of past quarters"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "By release day, the reported quarter is a dead game: thirteen weeks old and largely triangulated by the market already. The forecast is the genuinely new information about the cash flows a stock actually represents. That is why a miss with raised guidance can rally and a beat with a cut almost always sells off: the market reprices the future, not the past."
         }
       ],
@@ -882,7 +882,7 @@ const season5: Season = {
             pnl: -310
           },
           {
-            label: "Skip the print. Tomorrow, after guidance and the call are public, trade the confirmed direction with a defined-risk spread if a drift setup appears.",
+            label: "Skip the print, then trade the confirmed direction tomorrow with a defined-risk spread if a drift setup appears.",
             result: "The stock gaps down 7 percent on light guidance, then keeps sagging below its open all morning, a downside drift setup. You buy a put spread at post-crush prices and the slide continues for a week.",
             pnl: 180
           },
@@ -901,13 +901,13 @@ const season5: Season = {
         situation: "You hold calls on PRSM through earnings, against this season's advice, and at 4:05 PM the headline flashes: earnings per share and revenue both beat. The stock jumps 4 percent in after-hours and your calls would sell right now for a solid profit. The guidance details have not crossed the wire yet, and the earnings call starts in 25 minutes.",
         question: "What do you do at 4:06 PM?",
         options: [
-          "Hold everything through the call; the beat proves the quarter was great and the pop should grow",
-          "Sell into the headline pop, or at minimum take most off, because guidance and the call are unpriced coin flips and the after-hours bid is real money right now",
+          "Hold everything through the call; the beat proves the quarter was great",
+          "Sell into the headline pop, or at minimum take most of the position off",
           "Buy more calls in after-hours to press the winning trade",
           "Place a stop-loss order in after-hours and let it protect you through the call"
         ],
         bestIndex: 1,
-        coachNotes: "Option A confuses the box score with the final whistle: the guidance paragraph and the CFO's tone are still unplayed, and beats regularly reverse into red on one forecast line. Option C doubles exposure into the half of the report that moves stocks most, at after-hours spreads no less. Option D leans on a tool that barely works after dark: after-hours liquidity is thin, stops can fill terribly or not at all, and a headline-to-guidance reversal can gap right past one. Option B is the pro move: an after-hours pop on a headline beat is an offered price for an unresolved bet, and taking it converts luck into banked profit before the riskiest 30 minutes of the night. The release is half the report; never forget which half moves the stock."
+        coachNotes: "Option A confuses the box score with the final whistle: the guidance paragraph and the CFO's tone are still unplayed, and beats regularly reverse into red on one forecast line. Option C doubles exposure into the half of the report that moves stocks most, at after-hours spreads no less. Option D leans on a tool that barely works after dark: after-hours liquidity is thin, stops can fill terribly or not at all, and a headline-to-guidance reversal can gap right past one. Option B is the pro move: an after-hours pop on a headline beat is an offered price for an unresolved bet, guidance and the call are still unpriced coin flips, and taking the bid converts luck into banked profit before the riskiest 30 minutes of the night. The release is half the report; never forget which half moves the stock."
       }
     },
     {
@@ -949,37 +949,37 @@ const season5: Season = {
           id: "s5e9-q1",
           question: "A company on your slate reports BMO on Wednesday. When must your positioning decisions be final?",
           options: [
-            "By Wednesday's close, since the report is Wednesday",
-            "By Tuesday's market close, because the report lands before Wednesday's open and the gap happens at the opening bell",
-            "Anytime Wednesday morning before 11 AM",
-            "BMO and AMC timing makes no practical difference"
+            "By Wednesday's closing bell",
+            "Anytime before 11 AM Wednesday",
+            "The slot makes no practical difference",
+            "By the close of trading on Tuesday"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Before market open means the news drops while you cannot trade, and the stock gaps at Wednesday's opening bell. Whatever you hold at Tuesday's close is your position through the event, ready or not. Mixing up BMO and AMC is how traders end up holding a coin flip they never meant to bet, which is why the slot goes on the calendar next to the name."
         },
         {
           id: "s5e9-q2",
           question: "Your slate has bullish earnings bets on two semiconductor companies reporting the same week. What is the planning concern?",
           options: [
+            "The two bets are correlated, closer to one doubled sector bet",
             "Semiconductors are not allowed to report in the same week",
-            "Nothing; two trades always mean diversification",
-            "Their results and reactions are correlated, so this is closer to one doubled bet on the sector than two independent positions",
-            "The second company's options stop trading after the first one reports"
+            "Nothing; two separate trades always mean diversification",
+            "The second company's options stop trading once the first reports"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Sector peers move on each other's reports through readthrough: one chipmaker's demand warning marks down the whole group. Two same-direction bets in one sector concentrate risk while feeling like diversification, so a pro either sizes the pair as one position or drops the weaker setup. And whichever reports first is new information for the second thesis, scheduled in advance."
         },
         {
           id: "s5e9-q3",
           question: "Why does the weekly plan limit the slate to two or three setups when dozens of companies report?",
           options: [
-            "Brokers cap earnings trades at three per week",
-            "Edge comes from depth of preparation per print, and a small slate keeps sizing survivable and decisions pre-made instead of adrenaline-driven",
+            "Most brokers cap earnings trades at three per account per week",
+            "Depth of preparation is the edge, and sizing stays survivable",
             "More than three positions is illegal in a margin account",
             "Expected moves can only be computed for three stocks at a time"
           ],
           correctIndex: 1,
-          explanation: "Each earnings bet is a binary event demanding real homework: the line, the whisper context, the correlation map, the exit plan. Spread across ten prints, that work gets shallow and the sizing gets dangerous, since binaries can all land wrong in the same week. The watch-only list is not wasted research; it is how next week's A-setups get found."
+          explanation: "Each earnings bet is a binary event demanding real homework: the line, the whisper context, the correlation map, the exit plan. Spread across ten prints, that work gets shallow and the sizing gets dangerous, since binaries can all land wrong in the same week. A short slate also keeps decisions pre-made instead of adrenaline-driven. The watch-only list is not wasted research; it is how next week's A-setups get found."
         }
       ],
       paperTrade: {
@@ -995,7 +995,7 @@ const season5: Season = {
             pnl: -350
           },
           {
-            label: "Re-underwrite tonight: TOPA's miss is material new information against your thesis, so exit at Wednesday's open and take the smaller loss.",
+            label: "Re-underwrite tonight: treat TOPA's miss as new information and exit at Wednesday's open.",
             result: "You sell at the open before the sympathy slide deepens, salvaging most of the position's remaining value. MGNA later reports its own soft quarter, validating the readthrough. The plan said the rival's print was a checkpoint, and the checkpoint said get out.",
             pnl: -90
           },
@@ -1014,13 +1014,13 @@ const season5: Season = {
         situation: "It is Wednesday of a packed earnings week. Your Sunday slate had two plays; one is finished at a small profit, the other triggers tomorrow. Tonight, a stock you never researched, JOLT, is suddenly everywhere: up 11 percent ahead of its AMC report, trending on every platform, with screenshots of overnight riches flooding your feed. The report drops in 90 minutes and weekly calls are bid at IV 130.",
         question: "What do you do with JOLT?",
         options: [
-          "Take a small calls position; the momentum is real and 90 minutes is enough to ride it",
-          "Buy puts instead, betting the hype reverses after the print",
-          "Sell premium to the hype crowd with naked strangles at IV 130",
-          "Nothing: it is not on the slate, you have no thesis, no line work, and 90 minutes of research is not preparation for a binary event"
+          "Take a small calls position and ride the momentum",
+          "Buy puts, betting the hype reverses after the print",
+          "Nothing; leave JOLT off the slate entirely",
+          "Sell naked strangles to the hype crowd at IV 130"
         ],
-        bestIndex: 3,
-        coachNotes: "Option A is buying the most expensive options of the quarter, at IV 130, on a stock you never studied, with the print 90 minutes out: the worst entry of the entire hype cycle, fueled by other people's screenshots. Option B is the same unresearched coin flip with the sign flipped; contrarian without homework is still gambling. Option C at least understands that IV 130 is rich, but naked strangles on an unknown, hype-soaked name is unlimited risk on the exact kind of stock that triples its line. Option D is the championship answer: the Sunday plan already allocated this week's risk to researched setups, and JOLT failing every filter is the system working, not an opportunity missed. There is a new calendar next week. There always is."
+        bestIndex: 2,
+        coachNotes: "Option A is buying the most expensive options of the quarter, at IV 130, on a stock you never studied, with the print 90 minutes out: the worst entry of the entire hype cycle, fueled by other people's screenshots. Option B is the same unresearched coin flip with the sign flipped; contrarian without homework is still gambling. Option D at least understands that IV 130 is rich, but naked strangles on an unknown, hype-soaked name is unlimited risk on the exact kind of stock that triples its line. Option C is the championship answer: you have no thesis and no line work, and 90 minutes of research is not preparation for a binary event. The Sunday plan already allocated this week's risk to researched setups, and JOLT failing every filter is the system working, not an opportunity missed. There is a new calendar next week. There always is."
       }
     },
     {
@@ -1063,35 +1063,35 @@ const season5: Season = {
           question: "Earnings are 18 days away, IV on the post-print expiration is near its quarterly lows, and you have no strong view on the report itself. Which playbook page is this?",
           options: [
             "Hold a straddle through the print to capture the move",
-            "The run-up play: buy post-print premium now, exit one to three days before the report",
             "Sell naked strangles to collect the coming inflation",
-            "The drift play: buy calls the morning after"
+            "The run-up play: buy post-print premium, exit before the print",
+            "The drift play: wait and buy calls the morning after the report"
           ],
-          correctIndex: 1,
-          explanation: "Walk the three questions: IV is cheap and pre-hype, you have no view against the line, and the clock says weeks out. That routes straight to the run-up page, which needs no directional or line edge, just room for the predictable inflation. The hold-through requires a stated mispricing you do not have, and the drift page is not open until the morning after."
+          correctIndex: 2,
+          explanation: "Walk the three questions: IV is cheap and pre-hype, you have no view against the line, and the clock says weeks out. That routes straight to the run-up page, exiting one to three days before the report, and the page needs no directional or line edge, just room for the predictable inflation. The hold-through requires a stated mispricing you do not have, and the drift page is not open until the morning after."
         },
         {
           id: "s5e10-q2",
           question: "Why does the playbook demand defined-risk structures, like iron condors instead of naked strangles, when selling rich earnings premium?",
           options: [
-            "Defined-risk trades collect more premium than naked ones",
-            "Naked options are prohibited during earnings week",
-            "Premium selling collects the crush most quarters, but the occasional Snap-style gap far beyond the line turns undefined risk into account-ending loss",
-            "Iron condors profit whether the stock moves or not"
+            "Defined-risk structures collect more premium than naked ones do",
+            "A Snap-style gap can turn undefined risk into account-ending loss",
+            "Naked short options are prohibited during earnings week",
+            "Iron condors profit whether or not the stock ends up moving"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Selling the line wins whenever the move stays inside it, which is most quarters, and that steady win rate seduces traders into naked size. Then one print triples its line, minus 35 or 39 percent, and undefined risk gives back years of premium in a night. The wings cost a little expected profit and buy the only thing that matters: a known, survivable max loss."
         },
         {
           id: "s5e10-q3",
           question: "Your researched hold-through thesis was sound, but the stock landed inside the line and you took a full loss at one percent of the account. How does the playbook grade this trade?",
           options: [
-            "A good trade: edge stated, structure defined, size survivable; single outcomes do not grade theses, twenty trades do",
             "A failure, because the trade lost money",
-            "Proof that hold-throughs never work and should be dropped",
-            "A signal to double the size next time to win the loss back"
+            "Proof that hold-throughs should be dropped",
+            "A good trade, graded full marks on process",
+            "A signal to double size next time to win it back"
           ],
-          correctIndex: 0,
+          correctIndex: 2,
           explanation: "Binary events make good bets lose constantly; that is what binary means. The grade covers what you controlled: a written mispricing, defined risk, one percent sized, plan followed, full marks. Verdicts on the edge itself come from the journal across twenty prints, and doubling size to chase a loss is how the market collects tuition twice."
         }
       ],
@@ -1103,7 +1103,7 @@ const season5: Season = {
         brief: "Final exam. OMNI reports in 9 days. IV on the post-print expiration is 33, far below its typical pre-earnings peak of about 60. Your homework gives you no directional view and no opinion that the eventual line will be mispriced. Account: 20,000 dollars. Route this setup through the three questions and pick the play.",
         choices: [
           {
-            label: "Run-up play: buy post-print 58 strangles now at IV 33, exit two days before the report.",
+            label: "Run-up play: buy post-print 58 strangles at IV 33, exit two days before the report.",
             result: "Over the next week IV climbs from 33 to 54 as the print approaches. You exit on schedule two days before earnings with the strangle marked up 35 percent, flat for the coin flip itself, exactly as routed.",
             pnl: 280
           },
@@ -1127,13 +1127,13 @@ const season5: Season = {
         situation: "Earnings season finale. Your journal says you are up 6 percent over three months running the playbook: eleven trades, sixteen passes, nothing oversized. Tonight the quarter's loudest name, VRTX-adjacent highflier NOVA, reports AMC. Your homework genuinely suggests the line is a touch too small, maybe 8 priced against 10 likely. A voice says you have earned a victory lap: ten percent of the account on straddles would turn a good season into a legendary one.",
         question: "How do you finish the season?",
         options: [
-          "Take the victory lap: ten percent on straddles, the edge is real and the season's profits are the bankroll",
+          "Take the victory lap: ten percent of the account on straddles",
           "Skip it entirely; never trade the loudest name on the calendar",
-          "Run the playbook unchanged: the edge qualifies for a hold-through at one to two percent in defined-risk structure, same as every other print all season",
-          "Put five percent on, splitting the difference between discipline and conviction"
+          "Put five percent on, splitting discipline and conviction",
+          "Run the playbook unchanged: one to two percent, defined risk"
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is how winning seasons end in the loss column: the edge may be real, but 8-versus-10 is a thin mispricing, and ten percent of the account on one binary print means a single inside-the-line outcome erases months of process. Option D is the seductive compromise, but splitting the difference with discipline is just indiscipline at half price; the sizing rule was built for exactly this moment of confidence. Option B overcorrects, refusing a researched, qualified edge because the name is popular; loud is not a disqualifier, sizing handles loud. Option C is the championship answer and the whole season in one line: the playbook already has a page for this setup, the same one to two percent, the same defined risk, the same journal entry afterward. Edges scale a season. They do not scale a single night."
+        bestIndex: 3,
+        coachNotes: "Option A is how winning seasons end in the loss column: the edge may be real, but 8-versus-10 is a thin mispricing, and ten percent of the account on one binary print means a single inside-the-line outcome erases months of process. Option C is the seductive compromise, but splitting the difference with discipline is just indiscipline at half price; the sizing rule was built for exactly this moment of confidence. Option B overcorrects, refusing a researched, qualified edge because the name is popular; loud is not a disqualifier, sizing handles loud. Option D is the championship answer and the whole season in one line: the edge qualifies for a hold-through, and the playbook already has a page for it, the same one to two percent, the same defined-risk structure, the same journal entry afterward. Edges scale a season. They do not scale a single night."
       }
     }
   ]

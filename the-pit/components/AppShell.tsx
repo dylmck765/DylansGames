@@ -60,13 +60,6 @@ function NavIcon({ name }: { name: string }) {
           <path d="M21 12a8 8 0 0 1-8 8H4l2-3.5A8 8 0 1 1 21 12z" />
         </svg>
       );
-    case "send":
-      return (
-        <svg {...common}>
-          <path d="M22 2 11 13" />
-          <path d="M22 2 15 22l-4-9-9-4z" />
-        </svg>
-      );
     default:
       return null;
   }
@@ -78,7 +71,6 @@ const NAV = [
   { href: "/daily", label: "Daily", ico: "zap" },
   { href: "/leaderboard", label: "Compete", ico: "trophy" },
   { href: "/community", label: "The Pit", ico: "chat" },
-  { href: "/chat", label: "Chat", ico: "send" },
 ];
 
 // Routes that show the full app chrome (ticker + bottom nav).
@@ -91,7 +83,6 @@ const APP_PREFIXES = [
   "/tournament",
   "/duels",
   "/community",
-  "/chat",
   "/profile",
   "/pit-report",
 ];

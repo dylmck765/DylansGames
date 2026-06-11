@@ -46,24 +46,24 @@ const season1: Season = {
           id: "s1e1-q1",
           question: "In plain English, what IS an option?",
           options: [
-            "A small piece of ownership in a company",
-            "A contract giving the buyer the right, but not the obligation, to buy or sell 100 shares at a set price by a set date",
-            "A loan you take out from your broker to buy more stock",
-            "A guaranteed order to buy stock at a future date"
+            "A small piece of ownership in a company, entitling you to a slice of profits and a shareholder vote",
+            "A loan from your broker that lets you control 100 shares now and pay for them later",
+            "A binding order that requires you to buy 100 shares at the market price on a future date",
+            "A contract giving the buyer the right, but not the obligation, to buy or sell 100 shares at a set price by a set date"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "An option is a contract about a stock, not the stock itself. The buyer pays a premium for the RIGHT, never the obligation, to buy (call) or sell (put) 100 shares at a set price before the contract expires. Ownership is stock. Rights with a deadline are options."
         },
         {
           id: "s1e1-q2",
           question: "Who carries the OBLIGATION in an options contract?",
           options: [
-            "The buyer, because they paid for the contract",
+            "The seller, who wrote the contract",
+            "The buyer, who paid for the contract",
             "The stock exchange where it trades",
-            "The seller, who collected the premium and must deliver if the buyer exercises",
             "Nobody, options are obligation-free for both sides"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Premium buys rights. The buyer can exercise or walk away. The seller took that premium as payment for standing ready: if the buyer exercises, the seller MUST fulfill the contract. Buyer holds choices, seller holds duties. Never forget which jersey you're wearing."
         },
         {
@@ -92,7 +92,7 @@ const season1: Season = {
             pnl: -30
           },
           {
-            label: "Buy 1 AAPL $215 call expiring in 45 days for $4.20 ($420 total), planning to sell if the move comes early.",
+            label: "Buy 1 AAPL $215 call expiring in 45 days for $4.20 ($420 total).",
             result: "AAPL climbs to $219 over four weeks. Your right to buy at $215 is now worth about $6.40 with time still on the clock. You sell the contract for $640. Direction right, time right, ticket cashed.",
             pnl: 220
           },
@@ -112,12 +112,12 @@ const season1: Season = {
         question: "What's the pro move?",
         options: [
           "Throw the whole $500 in. Fortune favors the bold and the group chat is never wrong.",
+          "Pass for now, study the contract, and paper trade it to watch how the play unfolds.",
           "Buy just $100 worth so you can 'learn by doing' on a trade you don't understand.",
-          "Pass on the trade, pull up the contract, and study it: what's the strike, when's expiration, what has to happen for it to pay. Paper trade it and watch.",
           "Send your buddy the $500 and let him run the play for you since he clearly knows more."
         ],
-        bestIndex: 2,
-        coachNotes: "Option three is the only disciplined play on the board. You lose nothing, and you gain the exact education this trade is offering for free: watch what the contract does into Friday and you'll learn more than any blown $500 would teach you. Option one is gambling with extra steps; an expiring-Friday lottery ticket on a tip is how rookies donate to the market. Option two sounds humble but it's the same mistake at a discount; you don't learn from a trade you can't explain, you just lose slower. Option four hands your money AND your education to someone else, which is the worst trade of all. Rule one in The Pit: never run a play you can't draw on the whiteboard."
+        bestIndex: 1,
+        coachNotes: "Option two is the only disciplined play on the board. You lose nothing, and you gain the exact education this trade is offering for free: pull up the contract, find the strike and expiration, ask what has to happen for it to pay, then watch what it does into Friday. You'll learn more than any blown $500 would teach you. Option one is gambling with extra steps; an expiring-Friday lottery ticket on a tip is how rookies donate to the market. Option three sounds humble but it's the same mistake at a discount; you don't learn from a trade you can't explain, you just lose slower. Option four hands your money AND your education to someone else, which is the worst trade of all. Rule one in The Pit: never run a play you can't draw on the whiteboard."
       }
     },
     {
@@ -183,12 +183,12 @@ const season1: Season = {
           id: "s1e2-q3",
           question: "What does 'leverage' mean for a call buyer, in plain English?",
           options: [
-            "Your broker lends you money to buy the stock",
-            "A small premium controls 100 shares, so percentage gains AND losses are amplified compared to owning stock",
-            "Your gains are amplified but your losses are protected by the exchange",
-            "You can never lose more than the stock itself would have lost"
+            "Your broker lends you money so you can buy more shares than your cash allows",
+            "Your gains are amplified while your losses stay capped by the exchange",
+            "You can never lose more than the stock itself would have lost",
+            "A small premium controls 100 shares, so gains and losses are both amplified"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Leverage cuts both ways. One contract controls 100 shares for a fraction of their cost, so a winning move can return multiples of your premium. But a flat or falling stock can take the contract to zero, a 100% loss, while shareholders barely feel it. Amplified is amplified, in both directions."
         }
       ],
@@ -224,13 +224,13 @@ const season1: Season = {
         situation: "You bought a call for $300 betting on a product announcement. The announcement happened, it was great, and the stock popped. Your call is now worth $480, up 60%. There are three weeks until expiration and your original thesis, the announcement, has fully played out. The group chat says it's going higher.",
         question: "What do you do with the position?",
         options: [
+          "Sell the call, or at least most of the position, and bank the win.",
           "Hold to expiration. Never sell a winner; max gains only.",
-          "Sell the call, or at least most of the position. The thesis played out and the profit is on the table.",
           "Double down. Buy another call with the profits since momentum is hot.",
           "Roll the whole position into next week's far out-of-the-money calls to leverage the leverage."
         ],
-        bestIndex: 1,
-        coachNotes: "Option two is the pro move. You bought the call FOR the announcement; the announcement came and paid you. With the catalyst gone, every remaining day is pure clock-bleed on a contract whose reason for existing is over. Option one confuses a stock mindset with an options mindset: stocks can wait forever, your contract can't, and a 60% gain can melt to zero in three flat weeks. Option three adds risk exactly when your edge has expired. Option four is the same mistake with a flamethrower, swapping a realized win for the lowest-probability tickets on the board. Pros trade the thesis. When the thesis is done, the trade is done."
+        bestIndex: 0,
+        coachNotes: "Option one is the pro move. You bought the call FOR the announcement; the announcement came and paid you: the thesis played out, and the profit on the table is the trade working as designed. With the catalyst gone, every remaining day is pure clock-bleed on a contract whose reason for existing is over. Option two confuses a stock mindset with an options mindset: stocks can wait forever, your contract can't, and a 60% gain can melt to zero in three flat weeks. Option three adds risk exactly when your edge has expired. Option four is the same mistake with a flamethrower, swapping a realized win for the lowest-probability tickets on the board. Pros trade the thesis. When the thesis is done, the trade is done."
       }
     },
     {
@@ -284,24 +284,24 @@ const season1: Season = {
           id: "s1e3-q2",
           question: "What's the key risk difference between buying a put and shorting 100 shares of stock?",
           options: [
-            "There's no difference, they're identical bets",
-            "Shorting stock has capped risk while puts have unlimited risk",
-            "The put buyer's max loss is the premium, while a short seller's loss is unlimited if the stock keeps rising",
-            "Puts profit when stocks rise, shorts profit when stocks fall"
+            "There's no real difference; the two positions carry the same risk",
+            "The short seller risks only a borrow fee; the put buyer's risk is unlimited",
+            "Puts profit when stocks rise, while shorts profit when stocks fall",
+            "The put buyer risks only the premium; the short seller's risk is unlimited"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Both bet on a drop, but the jerseys are different. A short seller loses dollar-for-dollar forever as a stock climbs, and there's no ceiling on a stock price. A put buyer betting the same drop can only ever lose the premium paid. Defined risk versus undefined risk: that's why rookies betting the under should learn puts first."
         },
         {
           id: "s1e3-q3",
           question: "You own 100 shares bought at $100 and buy a $95-strike put for $2.00 ($200) as insurance. The stock crashes to $80. Counting shares and put together, what's your approximate worst-case total loss?",
           options: [
-            "$700: $5 per share down to the $95 floor, plus the $200 premium",
-            "$2,000: the full drop from $100 to $80",
-            "$200: just the premium, the shares are fully protected",
-            "$500: the drop from $100 to $95 only"
+            "$2,000: the full drop from $100 down to $80 on all 100 shares",
+            "$200: just the premium, since the shares are fully protected",
+            "$700: the $500 drop to the $95 floor plus the $200 premium",
+            "$500: the drop from $100 to the $95 floor, with the premium refunded"
           ],
-          correctIndex: 0,
+          correctIndex: 2,
           explanation: "The put guarantees you can sell at $95, so the most your shares can effectively lose is $5 each, $500, no matter how far the stock falls. Add the $200 you paid for the insurance and your worst case is $700 instead of $2,000. The premium is the cost of the floor; the floor is the whole point."
         }
       ],
@@ -339,11 +339,11 @@ const season1: Season = {
         options: [
           "Sell all 100 shares now and buy back after earnings. Can't lose if you're not playing.",
           "Do nothing. You're a long-term investor and insurance is for cowards.",
-          "Buy the $85 put as a protective put: pay $250 to cap your downside through the event while keeping all your upside.",
-          "Sell your shares AND buy puts so you profit huge if it tanks."
+          "Sell your shares AND buy puts so you profit big if the print tanks.",
+          "Hold your shares and buy the $85 put as insurance through the event."
         ],
-        bestIndex: 2,
-        coachNotes: "Option three is the textbook protective put: for $250 you lock in the right to sell at $85, capping your worst case at roughly $750 of give-back while leaving your shares free to run if earnings smash. That's insurance doing its one job. Option one isn't crazy, but it abandons your long-term thesis, can trigger taxes, and you lose the upside if the print is great; you said you believe in the company, so act like it. Option two confuses conviction with exposure; long-term faith doesn't require eating every 15% air pocket unprotected when a defined-cost floor is available. Option four is no longer hedging, it's a brand-new bearish bet that contradicts your own thesis. Insurance protects the play. It isn't the play."
+        bestIndex: 3,
+        coachNotes: "Option four is the textbook protective put: for $250 you lock in the right to sell at $85, capping your worst case at roughly $750 of give-back while leaving your shares free to run if earnings smash. That's insurance doing its one job: a known cost that caps the downside through the event while keeping all your upside. Option one isn't crazy, but it abandons your long-term thesis, can trigger taxes, and you lose the upside if the print is great; you said you believe in the company, so act like it. Option two confuses conviction with exposure; long-term faith doesn't require eating every 15% air pocket unprotected when a defined-cost floor is available. Option three is no longer hedging, it's a brand-new bearish bet that contradicts your own thesis. Insurance protects the play. It isn't the play."
       }
     },
     {
@@ -397,12 +397,12 @@ const season1: Season = {
           id: "s1e4-q2",
           question: "What does the STRIKE price of a call option represent?",
           options: [
-            "The price you paid for the option contract",
-            "The fixed price at which you have the right to BUY the shares",
+            "The fixed price at which the contract lets you buy the shares",
+            "The per-share price you paid for the option contract",
             "The stock's price on the day you bought the option",
-            "The price the stock is guaranteed to reach"
+            "The price the market expects the stock to reach before expiration"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "The strike is the locked-in transaction price the contract gives you rights at: buy at the strike for calls, sell at the strike for puts. What you paid for the contract is the premium, a different number entirely. The strike is the yard line your play is measured against."
         },
         {
@@ -411,11 +411,11 @@ const season1: Season = {
           options: [
             "The contract automatically extends since your thesis was right",
             "You get paid Monday because the move happened close enough",
-            "Your contract expired at Friday's close; if it finished worthless, you lost the full premium and Monday's move pays you nothing",
+            "Your contract died Friday; Monday's move pays you nothing",
             "The broker refunds half your premium for a near miss"
           ],
           correctIndex: 2,
-          explanation: "Expiration is the final whistle, and there is no overtime in this league. The contract lives until the close on expiration day and not one second longer. A correct thesis on the wrong clock is a losing trade, which is why your expiration must cover the timeline of your thesis, with room to spare."
+          explanation: "Expiration is the final whistle, and there is no overtime in this league. The contract lives until the close on expiration day and not one second longer: if it finished worthless, the full premium is gone, and nothing that happens next week changes that. A correct thesis on the wrong clock is a losing trade, which is why your expiration must cover the timeline of your thesis, with room to spare."
         }
       ],
       paperTrade: {
@@ -450,13 +450,13 @@ const season1: Season = {
         situation: "You've budgeted $300 of risk for a trade idea. You find a call quoted at $3.00 and set up an order for 10 contracts, thinking 10 times $3 is $30, a steal. Just before you hit confirm, the order ticket flashes an estimated cost of $3,000.",
         question: "What's the pro move?",
         options: [
+          "Stop, resize to a single contract, and re-check the ticket before you submit.",
           "Confirm anyway. The platform is probably displaying it weird and it'll sort itself out.",
-          "Stop. Recognize the per-share quote times the 100-share multiplier means each contract is $300, resize the order to 1 contract, and re-check the ticket before submitting.",
-          "Switch to a different option quoted at $0.30 so 10 contracts only costs $300, regardless of strike or expiration.",
+          "Switch to a different option quoted at $0.30 so 10 contracts only costs $300.",
           "Confirm the order but plan to sell half tomorrow to fix the sizing."
         ],
-        bestIndex: 1,
-        coachNotes: "Option two is the only answer. The ticket did its job: quote times 100 means one contract IS your entire $300 budget, so one contract is the trade. The pause-and-recheck habit costs five seconds and saves accounts. Option one, ignoring a 10x cost discrepancy on a hunch, is how Devon stories happen; the platform isn't wrong, your mental math is. Option three fixes the dollar amount by destroying the trade: a $0.30 option is a different strike or a dying clock, a completely different bet you haven't analyzed, chosen purely because the number fit. Option four means knowingly taking 10x your planned risk overnight, and 'I'll fix it tomorrow' is not a risk plan. When the ticket surprises you, the ticket is the teacher."
+        bestIndex: 0,
+        coachNotes: "Option one is the only answer. The ticket did its job: the per-share quote times the 100-share multiplier means each contract is $300, so one contract IS your entire budget and one contract is the trade. The pause-and-recheck habit costs five seconds and saves accounts. Option two, ignoring a 10x cost discrepancy on a hunch, is how Devon stories happen; the platform isn't wrong, your mental math is. Option three fixes the dollar amount by destroying the trade: a $0.30 option is a different strike or a dying clock, a completely different bet you haven't analyzed, chosen purely because the number fit. Option four means knowingly taking 10x your planned risk overnight, and 'I'll fix it tomorrow' is not a risk plan. When the ticket surprises you, the ticket is the teacher."
       }
     },
     {
@@ -510,12 +510,12 @@ const season1: Season = {
           id: "s1e5-q2",
           question: "What happens to extrinsic value as expiration arrives?",
           options: [
-            "It converts into intrinsic value",
+            "It melts to zero, leaving only intrinsic value behind",
+            "It gradually converts into intrinsic value",
             "It stays constant as long as the stock doesn't move",
-            "It melts away to zero, leaving the option worth only its intrinsic value",
-            "It doubles, because expiration is the most exciting moment"
+            "It doubles as expiration excitement pulls in more buyers"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Extrinsic value is the price of what MIGHT happen, and at the final whistle, nothing more can happen. It decays every day, faster near the end, and reaches zero at expiration. A contract finishing with no intrinsic value finishes worth nothing, no matter what you paid for the possibility."
         },
         {
@@ -523,9 +523,9 @@ const season1: Season = {
           question: "You buy a call, the stock rises slowly in your direction for two weeks... and your option is DOWN money. What's the most likely explanation?",
           options: [
             "Your broker is charging hidden fees on the position",
-            "The option is mispriced and will correct soon",
+            "The option is temporarily mispriced and will snap back soon",
             "Calls only profit from fast moves; slow moves never count",
-            "The slow move added less intrinsic value than time decay melted off the extrinsic value"
+            "Time decay melted value faster than the slow move added it"
           ],
           correctIndex: 3,
           explanation: "This is the classic two-ingredient lesson. Direction was right, but the gain in substance was smaller than the daily melt of the hope you paid for. Option buyers don't just need to be right; they need the move to outrun the decay. Slow-and-right can still lose when your premium was heavy on extrinsic."
@@ -564,8 +564,8 @@ const season1: Season = {
         question: "What do you do?",
         options: [
           "Hold to expiration. The stock hasn't fallen, so the option can recover any day now.",
-          "Buy more calls at the cheaper price to average down.",
-          "Sell the option, salvage the $120 of remaining extrinsic value, and accept that the thesis (a QUICK pop) already failed.",
+          "Buy more calls at the discounted price to average down your cost basis.",
+          "Sell the option and salvage the $120 while the market will still pay it.",
           "Roll it into an even cheaper option expiring in 2 days to win it all back at once."
         ],
         bestIndex: 2,
@@ -623,10 +623,10 @@ const season1: Season = {
           id: "s1e6-q2",
           question: "How much intrinsic value does an OUT-of-the-money option have?",
           options: [
-            "Zero. Its entire premium is extrinsic value",
-            "It depends on how much time is left",
-            "Negative intrinsic value, which is why they're cheap",
-            "Equal to the distance between stock and strike"
+            "Zero, no matter how large the premium is",
+            "It depends on how much time is left on the clock",
+            "A negative amount, which is why they're so cheap",
+            "An amount equal to the distance between stock and strike"
           ],
           correctIndex: 0,
           explanation: "OTM means no intrinsic value by definition: the right isn't worth using at today's prices. Every dollar of an OTM option's premium is extrinsic, the melting ingredient, which is why these contracts go to zero at expiration unless the stock crosses the strike. Intrinsic value never goes negative; it just stops at zero."
@@ -635,12 +635,12 @@ const season1: Season = {
           id: "s1e6-q3",
           question: "What's the core trade-off when you choose OTM instead of ITM?",
           options: [
-            "OTM costs more but wins more often",
-            "There's no trade-off; OTM is simply better leverage",
-            "OTM is cheaper with bigger percentage payoffs IF a big move happens, but a much higher chance of expiring worthless",
-            "ITM options expire faster than OTM options"
+            "OTM costs more up front but finishes in the money more often",
+            "There's no genuine trade-off; OTM is simply better leverage on the exact same move",
+            "ITM options expire sooner than OTM options on the same stock",
+            "OTM is cheaper and pays more IF the big move comes, but usually expires worthless"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Moneyness is a probability dial. OTM tickets are cheap because they usually expire worthless; the market isn't doing you a favor, it's quoting you the odds. ITM costs more because it wins more often and moves with the stock. Neither is 'better': the right bucket is the one that matches the size of the move you actually expect."
         }
       ],
@@ -677,7 +677,7 @@ const season1: Season = {
         question: "How do you deploy the $250?",
         options: [
           "Ten $115 calls. More contracts means more upside, and they only need 'one good day.'",
-          "One $100 ATM call. Your thesis says $105, so buy the strike your own forecast can actually reach.",
+          "Buy a single $100 ATM call and let the one contract be the trade.",
           "Five $115 calls and keep $125 in cash as a compromise.",
           "Skip both and wait for the stock to hit $105 first to confirm, then buy the $115 calls."
         ],
@@ -725,8 +725,8 @@ const season1: Season = {
           id: "s1e7-q1",
           question: "Your call has a delta of about 0.40. The stock rises $1. Roughly what should your option do?",
           options: [
-            "Rise about $1.00, matching the stock",
-            "Rise about $0.40 per share, so about $40 on the contract",
+            "Rise about $1.00 per share, matching the stock",
+            "Rise about $0.40 per share",
             "Rise about $4.00 per share",
             "Nothing, until the stock reaches the strike"
           ],
@@ -739,22 +739,22 @@ const season1: Season = {
           options: [
             "A far out-of-the-money call with a 0.08 delta",
             "An at-the-money call with a 0.50 delta",
-            "A deep in-the-money call with a 0.90 delta",
-            "All options move dollar-for-dollar with the stock"
+            "All options move dollar-for-dollar with the stock",
+            "A deep in-the-money call with a 0.90 delta"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Deep ITM options are mostly intrinsic value, and intrinsic value moves point-for-point with the stock: deltas near 1.00 mean near dollar-for-dollar tracking, like renting the shares for a fraction of their cost. ATM is the 50-cent coin flip; far OTM barely twitches. Moneyness sets the speedometer."
         },
         {
           id: "s1e7-q3",
           question: "You buy a call with a 0.30 delta and the stock rallies toward your strike. What happens to your delta as the rally continues?",
           options: [
-            "It stays at 0.30 for the life of the contract",
-            "It rises, so each additional $1 of stock gain pays your option more than the last",
-            "It falls, because the option has already used up its movement",
+            "It stays fixed at 0.30 for the life of the contract",
+            "It falls as the option uses up its available movement",
+            "It rises as the strike comes into range",
             "It flips negative once the stock passes the strike"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Delta changes as the stock travels. As your strike goes from long shot to live possibility to in the money, delta climbs, 0.30 to 0.50 to 0.70 and beyond, and your option accelerates. That snowball is why winning calls seem to speed up late in a rally, and why fading ones go numb. The speedometer recalibrates with every tick."
         }
       ],
@@ -790,13 +790,13 @@ const season1: Season = {
         situation: "Yesterday you bought a far out-of-the-money call (delta about 0.10) for $80, betting on a big product reveal in three weeks. Today the stock rose $2 on unrelated sector news... and your option gained four dollars. Total. Your group chat is split between 'your broker is scamming you' and 'dump that dead contract.'",
         question: "What's the right read?",
         options: [
-          "Dump it. An option that can't respond to a $2 move is defective.",
+          "Dump it. An option that can't respond to a $2 stock move is defective and will stay dead.",
           "Email the broker to dispute the pricing; the option clearly should have gained more.",
-          "Recognize that a 0.10 delta means about 10 cents per $1 of stock move, so a roughly $4 gain per contract is exactly correct. Then re-check whether a low-delta ticket still matches your actual thesis: a BIG move on the reveal.",
-          "Buy ten more contracts immediately since they're clearly underpriced."
+          "Buy ten more contracts immediately, since they're obviously underpriced for the move.",
+          "Do the delta math, confirm the price is fair, and hold if the big-move thesis stands."
         ],
-        bestIndex: 2,
-        coachNotes: "Option three is the pro read in two steps: first, the math: 0.10 delta times a $2 move is about 20 cents per share... offset by a day of time decay, so roughly $4 on the contract is the market working perfectly, not a scam. Second, and more important, re-check the fit: your thesis is a BIG move in three weeks, and a small-delta ticket is an honest (if long-shot) way to play that, so today's numbness isn't a reason to panic, it's the known cost of the bucket you chose. Option one dumps a position because it did exactly what its delta said it would: that's punishing the contract for your own blind spot. Option two disputes math with customer service. Option four invents an edge from a misreading: the option isn't underpriced, it's low-delta, and ten more of them is ten times the same misunderstanding. Know your delta and you'll never confuse 'numb' with 'broken.'"
+        bestIndex: 3,
+        coachNotes: "Option four is the pro read in two steps: first, the math: a 0.10 delta means about 10 cents per $1 of stock move, so a $2 move is about 20 cents per share... offset by a day of time decay, roughly $4 on the contract is the market working perfectly, not a scam. Second, and more important, re-check the fit: your thesis is a BIG move in three weeks, and a small-delta ticket is an honest (if long-shot) way to play that, so today's numbness isn't a reason to panic, it's the known cost of the bucket you chose. Option one dumps a position because it did exactly what its delta said it would: that's punishing the contract for your own blind spot. Option two disputes math with customer service. Option three invents an edge from a misreading: the option isn't underpriced, it's low-delta, and ten more of them is ten times the same misunderstanding. Know your delta and you'll never confuse 'numb' with 'broken.'"
       }
     },
     {
@@ -839,10 +839,10 @@ const season1: Season = {
           id: "s1e8-q1",
           question: "What is an option SELLER'S maximum possible gain on a trade?",
           options: [
-            "Unlimited, just like the buyer's",
+            "Unlimited, just like the buyer's upside",
             "The premium collected when selling the contract",
-            "100 times the strike price",
-            "It depends on how far the stock moves"
+            "100 times the strike price of the contract",
+            "It depends on how far the stock moves before expiration"
           ],
           correctIndex: 1,
           explanation: "The seller's best case is always the same: the option expires worthless and they keep the premium they collected up front. That's the entire ceiling. Every seller is trading a capped, known gain against a much larger (sometimes unlimited) potential loss. High win rate, small wins, rare disasters: that's the shape."
@@ -851,24 +851,24 @@ const season1: Season = {
           id: "s1e8-q2",
           question: "Why is selling a NAKED call considered the riskiest basic options position?",
           options: [
-            "Because the premium collected is too small to matter",
-            "Because the stock can rise without limit, so the obligation to deliver shares at the strike has no ceiling on its cost",
-            "Because naked calls expire faster than regular calls",
-            "Because brokers charge double commissions on naked calls"
+            "The premiums collected are too small to ever add up to real income",
+            "Naked calls expire on faster clocks than covered ones",
+            "Its loss has no ceiling, since a stock can rise without limit",
+            "Brokers charge double commissions and margin interest on naked calls"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "A naked call seller must deliver 100 shares at the strike if assigned, without owning them, meaning they'd have to buy at whatever the market demands. Since there's no ceiling on a stock price, there's no ceiling on the loss. Capped gain, uncapped loss is the most dangerous shape in the book, which is why it's not rookie material."
         },
         {
           id: "s1e8-q3",
           question: "Why do beginners start by BUYING options instead of selling them?",
           options: [
-            "Buying has a higher win rate than selling",
-            "Brokers legally prohibit all selling forever",
-            "Buying has strictly defined risk: the most you can lose is the premium you chose to pay, so no single trade can blow up your account",
-            "Sold options can't be closed before expiration"
+            "Buying caps the worst case at the premium you chose to pay",
+            "Buying wins more often than selling over any long stretch",
+            "Regulators prohibit retail accounts from ever selling options",
+            "Sold options can't be bought back before they expire"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "It's pure risk math, not training wheels. A buyer's worst case is chosen in advance: the ticket price. A naked seller's worst case can be many multiples of the premium, including margin calls and owing money beyond the account. Buyers actually lose MORE often than sellers, but they lose survivable amounts, and survival is the rookie's first job."
         }
       ],
@@ -905,12 +905,12 @@ const season1: Season = {
         question: "How do you respond to this pitch?",
         options: [
           "Start selling naked calls Monday. 47 straight wins doesn't lie.",
-          "Sell just one naked call on a cheap stock to test it small.",
-          "Recognize the strategy's shape: 47 small capped wins says nothing about the one uncapped loss that can erase them all. Stick to defined-risk buying until you can sell with capped structures, and study HOW his streak ends.",
+          "Sell just one naked call on a cheap, sleepy stock to test the waters small.",
+          "Keep buying defined-risk options for now, and study how streaks like his end.",
           "Split the difference: sell naked calls but only on stocks you're pretty sure won't move."
         ],
         bestIndex: 2,
-        coachNotes: "Option three is the pro read. The streak is real AND the conclusion is wrong: selling naked options produces long, genuine win streaks BY DESIGN, because the strategy wins small and often until the day it loses everything at once: 47 weeks of premiums can vanish in one OptionSellers-style spike, and the streak tells you nothing about that day except that it hasn't happened yet. Option one buys the track record without reading the risk shape: survivorship with a follower count. Option two misunderstands the danger: naked risk isn't safe at small size, it's uncapped at every size: 'one cheap stock' can still triple on a buyout rumor. Option four is the same trap with extra confidence: 'pretty sure it won't move' is exactly the bet every blown-up seller was making, priced at a few hundred bucks of max gain. When someone shows you a win rate, always ask to see the worst day."
+        coachNotes: "Option three is the pro read. The streak is real AND the conclusion is wrong: selling naked options produces long, genuine win streaks BY DESIGN, because the strategy wins small and often until the day it loses everything at once: 47 weeks of premiums can vanish in one OptionSellers-style spike, and the streak tells you nothing about that day except that it hasn't happened yet. Forty-seven small capped wins say nothing about the one uncapped loss that can erase them all, so stay on the defined-risk buying side until you've earned the capped structures that make selling survivable. Option one buys the track record without reading the risk shape: survivorship with a follower count. Option two misunderstands the danger: naked risk isn't safe at small size, it's uncapped at every size: 'one cheap stock' can still triple on a buyout rumor. Option four is the same trap with extra confidence: 'pretty sure it won't move' is exactly the bet every blown-up seller was making, priced at a few hundred bucks of max gain. When someone shows you a win rate, always ask to see the worst day."
       }
     },
     {
@@ -953,24 +953,24 @@ const season1: Season = {
           id: "s1e9-q1",
           question: "An option shows bid $3.40 / ask $3.50. If you place a MARKET order to buy right now, what do you pay?",
           options: [
-            "$3.40, the bid",
+            "$3.40, the standing bid",
             "$3.45, the midpoint, automatically",
-            "About $3.50, the ask (or worse if the quote moves)",
-            "Whatever you decide the option is worth"
+            "About $3.50, the ask",
+            "Whatever price you decide the option is worth"
           ],
           correctIndex: 2,
-          explanation: "A market order takes the price being demanded NOW: for buyers, that's the ask. The bid is where you can instantly SELL. The midpoint is only available if you place a limit order there and someone meets you. On tight spreads the difference is pennies; on wide ones, it's the whole game."
+          explanation: "A market order takes the price being demanded NOW: for buyers, that's the ask, or worse if the quote moves while your order lands. The bid is where you can instantly SELL. The midpoint is only available if you place a limit order there and someone meets you. On tight spreads the difference is pennies; on wide ones, it's the whole game."
         },
         {
           id: "s1e9-q2",
           question: "What's the difference between VOLUME and OPEN INTEREST on an options chain?",
           options: [
-            "They're two names for the same number",
-            "Volume is contracts traded TODAY; open interest is the total contracts currently outstanding (opened but not yet closed or expired)",
-            "Volume counts calls, open interest counts puts",
-            "Open interest resets daily while volume accumulates forever"
+            "Volume is today's trades; open interest is contracts still outstanding",
+            "They're two different names the exchanges use for the same number",
+            "Volume tracks the calls while open interest tracks the puts",
+            "Open interest resets every morning while volume keeps accumulating forever"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Volume is today's action and resets every morning. Open interest is the standing population of the contract: positions opened and still alive. Together they're your liquidity gauge: healthy volume plus high OI usually means tight spreads and easy exits. Single digits on both? That's an empty parking lot."
         },
         {
@@ -978,11 +978,11 @@ const season1: Season = {
           question: "Why do pros use LIMIT orders for options instead of market orders?",
           options: [
             "Limit orders are guaranteed to fill at the midpoint",
-            "Market orders are banned on options exchanges",
-            "A limit order caps the price you'll accept, protecting you from paying the full spread, or far worse when quotes are wide or moving fast",
-            "Limit orders carry lower regulatory fees"
+            "A limit order caps the price you'll accept",
+            "Market orders are banned on most options exchanges",
+            "Limit orders carry lower regulatory fees per contract"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Options spreads can be wide, and quotes can move in milliseconds: a market order signs a blank check for whatever's there, which is how rookies buy at the ask on a canyon-wide spread (or get Flash Crash fills). A limit order names your price: filled there or better, or not at all. Missing a trade costs nothing. Overpaying costs you on the way in AND the way out."
         }
       ],
@@ -1019,8 +1019,8 @@ const season1: Season = {
         question: "How do you get into this trade?",
         options: [
           "Market order on the perfect strike. The right strike matters more than a little slippage.",
-          "Limit order at $1.50 (the mid) on the perfect strike, and if it doesn't fill, force it by raising to the $2.00 ask.",
-          "Take the liquid $1-further strike with the tight spread: a slightly different contract, but with tolls measured in pennies instead of dollars, entered with a limit near the mid.",
+          "Limit at $1.50 on the perfect strike; if it doesn't fill, force it by paying the $2.00 ask.",
+          "Take the liquid strike $1 further out, entered with a limit order near the mid.",
           "Skip options entirely and buy the stock, since this chain is clearly unusable."
         ],
         bestIndex: 2,
@@ -1069,36 +1069,36 @@ const season1: Season = {
           question: "What's the correct ORDER of operations for building a trade?",
           options: [
             "Find a cheap option, then build a thesis that justifies buying it",
-            "Write the thesis, match the contract to it, size by max acceptable loss, write the exit plan, THEN enter with a limit order",
-            "Enter the trade first, then decide your exits based on how it feels",
-            "Pick the expiration first, then find a stock moving that week"
+            "Enter the trade first, then set your exits once you see how it moves",
+            "Pick the expiration first, then hunt for a stock likely to move that week",
+            "Thesis first, then contract, then size, then exit plan, then the entry order"
           ],
-          correctIndex: 1,
-          explanation: "The sequence is the strategy: thesis decides the contract, risk tolerance decides the size, and the exit plan exists BEFORE money moves, because the version of you watching a live P/L is not the version you want making decisions. Rookies run it backwards: find a cheap ticket, invent a story: and the results follow accordingly."
+          correctIndex: 3,
+          explanation: "The sequence is the strategy: thesis decides the contract, risk tolerance decides the size, the exit plan exists BEFORE money moves, and only then does the limit order go in, because the version of you watching a live P/L is not the version you want making decisions. Rookies run it backwards: find a cheap ticket, invent a story: and the results follow accordingly."
         },
         {
           id: "s1e10-q2",
           question: "Why write the exit plan BEFORE entering the trade?",
           options: [
             "Brokers require a documented exit plan to approve options trades",
-            "So you can set it and never look at the position again",
-            "Because once real money is moving, emotions like greed and fear take over, and a pre-written plan makes the decision when you're least equipped to",
+            "So the decisions get made while you're calm, not mid-trade",
+            "So you can set it once and never look at the position again",
             "Because exit plans can't legally be changed after entry"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "The plan is a letter from your smartest self to your most emotional one. Pre-committed numbers: profit target, loss cut, time stop: turn the hardest moments (euphoria at +80%, dread at -40%) into simple execution instead of live negotiation. Discipline isn't making great decisions under pressure; it's arranging to not need to."
         },
         {
           id: "s1e10-q3",
           question: "You planned to risk $300 max on your first trade. The call you want costs $450. What's the disciplined move?",
           options: [
+            "Pass, or find a different contract that fits the $300 limit",
             "Buy it anyway: $150 over budget is close enough for a good setup",
             "Buy two contracts so the winnings make the overage worth it",
-            "Pass, or find a contract that fits the $300 limit (different strike, nearer expiration, or a cheaper underlying): the risk budget outranks the trade idea",
             "Buy it but plan to sell within two days to limit the exposure"
           ],
-          correctIndex: 2,
-          explanation: "Sizing discipline only works if the number is a wall, not a suggestion: today it's $150 over, next month it's 'just one more contract,' and that's the Devon story from Episode 4. No single trade idea is rare enough to justify breaking your risk rule: the market prints new setups every week. Let max loss choose the contract, never the reverse."
+          correctIndex: 0,
+          explanation: "Sizing discipline only works if the number is a wall, not a suggestion: today it's $150 over, next month it's 'just one more contract,' and that's the Devon story from Episode 4. No single trade idea is rare enough to justify breaking your risk rule: the market prints new setups every week, and a different strike, a nearer expiration, or a cheaper underlying can usually fit the budget. The risk budget outranks the trade idea: let max loss choose the contract, never the reverse."
         }
       ],
       paperTrade: {
@@ -1109,7 +1109,7 @@ const season1: Season = {
         brief: "Disney trades at $110 and your written thesis reads: 'DIS to $115-118 within six weeks as park bookings and a streaming price change land.' You have $400 of risk budget for this idea. Three ways to run your first real drive. Call the play.",
         choices: [
           {
-            label: "Run the checklist: buy 1 DIS $112 call, 60 days out, limit-filled at $3.20 ($320). Written exits: sell at +50%, at $116, or at 21 days left; cut at -50%.",
+            label: "Run the checklist: buy 1 DIS $112 call, 60 days out, limit-filled at $3.20 ($320), with exits written first.",
             result: "DIS climbs to $115 in three weeks and your call quotes $4.80: +50%, plan triggered. You sell without drama for $480. DIS later wobbles back to $111 on a downgrade: the giveback you never had to feel. The checklist caught the move and skipped the chop.",
             pnl: 160
           },
@@ -1135,11 +1135,11 @@ const season1: Season = {
         options: [
           "Sell now. Down 30% on day one means the trade is broken: get out before it hits -50%.",
           "Buy another contract: same thesis, 30% cheaper. Improve the average.",
-          "Check the plan: -30% hasn't hit the -50% cut, the thesis is intact (the drop was market-wide, not your story), and the clock is fine. Hold, and do nothing until a written trigger trips.",
-          "Delete the -50% rule: it's too close now, and the thesis deserves room to breathe."
+          "Delete the -50% rule: it's too close now, and the thesis deserves room to breathe.",
+          "Check the position against the written plan, and hold: no trigger has tripped."
         ],
-        bestIndex: 2,
-        coachNotes: "Option three is the graduation exam, and it's the only answer that uses the plan you wrote. Run the three checks: Trigger hit? No: -30% is not -50%. Thesis broken? No: a market-wide inflation flinch says nothing about your company's catalyst. Clock okay? Yes. Then the plan says hold, and the discipline is enduring the discomfort you already budgeted for: this exact feeling is WHY you sized at 4%. Option one is fear rewriting the plan mid-game: sell at -30% today and you'll sell at -20% next time, until no trade survives its first red hour. Option two isn't in the plan either: greed's version of the same edit: adding risk because the price fell, not because the thesis strengthened. Option four is the most dangerous: deleting your loss rule the first time it might fire means you never had one: that's how -50% becomes -100%. You wrote the letter when you were calm. Day one chaos is exactly when you read it back: and obey it."
+        bestIndex: 3,
+        coachNotes: "Option four is the graduation exam, and it's the only answer that uses the plan you wrote. Run the three checks: Trigger hit? No: -30% is not -50%. Thesis broken? No: a market-wide inflation flinch says nothing about your company's catalyst. Clock okay? Yes. Then the plan says hold, and the discipline is enduring the discomfort you already budgeted for: this exact feeling is WHY you sized at 4%. Option one is fear rewriting the plan mid-game: sell at -30% today and you'll sell at -20% next time, until no trade survives its first red hour. Option two isn't in the plan either: greed's version of the same edit: adding risk because the price fell, not because the thesis strengthened. Option three is the most dangerous: deleting your loss rule the first time it might fire means you never had one: that's how -50% becomes -100%. You wrote the letter when you were calm. Day one chaos is exactly when you read it back: and obey it."
       }
     }
   ]

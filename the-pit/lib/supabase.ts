@@ -18,13 +18,6 @@ export interface LBRow {
   updated_at: string;
 }
 
-export interface MessageRow {
-  id: number;
-  handle: string;
-  text: string;
-  created_at: string;
-}
-
 export interface DuelRunRow {
   id: number;
   handle: string;

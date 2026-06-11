@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Rebake the live ticker tape every 30 min during US market hours
+    # (13:00-21:30 UTC covers 9:00-17:30 ET incl. DST drift), Mon-Fri.
+    - cron: "*/30 13-21 * * 1-5"
 
 permissions:
   contents: read
@@ -30,6 +34,10 @@ jobs:
           cache-dependency-path: the-pit/package-lock.json
 
       - run: npm ci
+
+      - name: Fetch live ticker quotes (Yahoo Finance)
+        run: node scripts/fetch-quotes.mjs
+        continue-on-error: true
 
       - name: Build
         run: npm run build

@@ -160,10 +160,10 @@ export default function DuelsPage() {
       }
       // Bank my run so other players can face it.
       supabase.from("duel_runs").insert({
-        handle: me,
-        questions_key: questionsKey,
-        correct: myCorrect,
-        time_ms: myTimeMs,
+        handle: me.slice(0, 24),
+        questions_key: questionsKey.slice(0, 64),
+        correct: Math.min(5, Math.max(0, myCorrect)),
+        time_ms: Math.min(3_600_000, Math.max(0, Math.round(myTimeMs))),
       }).then(() => {});
     }
 

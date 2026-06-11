@@ -46,35 +46,35 @@ const season6: Season = {
           question: "A trader wins 9 of her first 12 options trades. What is the most accurate read of that record?",
           options: [
             "She has a proven edge and should increase size immediately",
-            "Twelve trades is far too small a sample to separate skill from luck",
-            "A 75 percent win rate guarantees long-term profitability",
-            "She should switch strategies before the streak runs out"
+            "A 75 percent win rate over any sample guarantees long-term profitability",
+            "She should switch strategies before the streak runs out",
+            "Twelve trades is too small a sample to separate skill from luck"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Twelve trades is a tiny sample. Randomness alone produces 9-of-12 runs all the time, the same way a fair coin throws streaks of heads. Skill only becomes visible over large samples, which is why pros judge themselves on hundreds of trades and on process quality, not on a hot dozen."
         },
         {
           id: "s6e1-q2",
           question: "Which of these is a complete trading system, as defined in this episode?",
           options: [
-            "A watchlist of stocks plus a strong feel for momentum",
-            "A rule to buy calls whenever the market seems oversold",
-            "Written rules covering what to trade, exact entry, exact exit, and position size",
-            "A subscription to an alerts service with a good track record"
+            "Written rules for what to trade, exact entry, exact exit, and size",
+            "A watchlist of strong stocks plus a well-developed feel for momentum",
+            "A standing rule to buy calls whenever the market looks deeply oversold",
+            "A subscription to a respected alerts service with a verified track record"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "A system must answer all four questions in writing: what, when in, when out, and how big. The other options leave at least one answer to in-the-moment judgment, which means the method changes with your mood and can never be measured or repeated."
         },
         {
           id: "s6e1-q3",
           question: "Why does a casino reliably profit from a roulette edge of only about 5 percent?",
           options: [
+            "It bans winning players quickly enough to remove nearly all of its risk",
+            "Its edge compounds, growing larger every time a gambler loses",
             "It repeats a small real edge thousands of times at controlled bet sizes",
-            "It bans players who win too often, removing all risk",
-            "Its edge grows larger every time a gambler loses",
-            "It only profits because gamblers make emotional mistakes"
+            "It profits only because gamblers make emotional mistakes at the table"
           ],
-          correctIndex: 0,
+          correctIndex: 2,
           explanation: "The casino's secret is repetition plus size control. A small genuine edge, run over thousands of independent bets where no single outcome can hurt the house, converges to steady profit. That is exactly the template a systematic trader copies: small edge, many reps, controlled risk per trade."
         }
       ],
@@ -111,12 +111,12 @@ const season6: Season = {
         question: "What is the disciplined pro move?",
         options: [
           "Post the earnings play. Confidence is part of edge, and the crowd's energy confirms you are seeing it well.",
-          "Stop trading for a quarter. Anyone who cannot explain their wins must be purely lucky.",
-          "Decline to broadcast trades, and before risking new money, write down the exact rules you think you have been following, so the method can be tested.",
-          "Post the play but tell the chat to use half size, so nobody gets badly hurt if it misses."
+          "Decline to broadcast trades, and write down the exact rules you think you have been following.",
+          "Stop trading entirely for a quarter. Anyone who cannot explain their wins must be running on pure luck.",
+          "Post the play but tell the chat to take it at half size, so nobody gets badly hurt if it misses."
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is the classic top-of-streak blowup setup: unexplainable edge plus an audience plus rising stakes. Option B overcorrects; unexplained wins are a yellow flag demanding study, not proof you are a fraud, and quitting teaches you nothing. Option D feels responsible but still broadcasts an unwritten, untested method and adds social pressure to keep performing. Option C is the veteran move: convert the streak into a hypothesis, write the rules, and let data rather than applause decide if you have something. The moment your method exists on paper, it can be checked. Until then it is folklore."
+        bestIndex: 1,
+        coachNotes: "Option A is the classic top-of-streak blowup setup: unexplainable edge plus an audience plus rising stakes. Option C overcorrects; unexplained wins are a yellow flag demanding study, not proof you are a fraud, and quitting teaches you nothing. Option D feels responsible but still broadcasts an unwritten, untested method and adds social pressure to keep performing. Option B is the veteran move: decline before risking new money, convert the streak into a hypothesis, write the rules, and let data rather than applause decide if you have something. The moment your method exists on paper, it can be checked and tested. Until then it is folklore."
       }
     },
     {
@@ -159,24 +159,24 @@ const season6: Season = {
           id: "s6e2-q1",
           question: "Why is a written journal more reliable than a trader's memory of their own performance?",
           options: [
-            "Memory is biased toward emotional highlights and rewrites losses as bad luck",
-            "Journals automatically improve win rate by about 10 percent",
-            "Memory fails only for traders with small accounts",
-            "Brokers require written records for tax purposes"
+            "Journals automatically improve a trader's win rate by about 10 percent",
+            "Memory fails only for newer traders managing small accounts",
+            "Brokers require written trade records for tax reporting purposes",
+            "Memory replays emotional highlights and rewrites losses as bad luck"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "Hindsight bias and self-serving attribution mean your brain stores a flattering, emotionally weighted edit of your trading, replaying exciting wins and excusing losses. The journal preserves what actually happened, which is the only version you can learn from."
         },
         {
           id: "s6e2-q2",
           question: "Which set of fields makes a journal entry most useful for finding patterns later?",
           options: [
-            "Ticker and profit or loss only, to keep the habit sustainable",
             "Setup name, thesis, size, entry, exit, result, and emotional state",
-            "A paragraph describing how the day felt overall",
-            "Only the losing trades, since winners need no analysis"
+            "Ticker and profit or loss only, to keep the habit sustainable",
+            "A long paragraph describing how the whole trading day felt overall",
+            "Only the losing trades, since winning trades need no analysis"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Patterns emerge when you can sort and group trades, which requires structured fields: setup name reveals which plays earn, the emotional tag reveals behavioral leaks, and size plus result lets you compute real statistics. Profit alone, vibes alone, or losers alone cannot answer the question of what to do differently."
         },
         {
@@ -184,12 +184,12 @@ const season6: Season = {
           question: "In your weekly film session, a rule-following trade that lost $300 should be graded...",
           options: [
             "F, because losing money is always a failing result",
+            "A, no matter how the trade happened to turn out",
             "C, splitting the difference between process and outcome",
-            "A, because the decision followed the system; the loss is just the cost of running an edge",
             "Ungraded, since graded journals only apply to winning trades"
           ],
-          correctIndex: 2,
-          explanation: "Grade decisions, not dollars. A valid setup executed by the rules is an A regardless of outcome, because edges lose individual trades by design. Grading by P&L instead would train you to abandon good process after normal losses, which is exactly how working systems get thrown away."
+          correctIndex: 1,
+          explanation: "Grade decisions, not dollars. A valid setup executed by the rules is an A regardless of outcome, because edges lose individual trades by design; the loss is just the cost of running the edge. Grading by P&L instead would train you to abandon good process after normal losses, which is exactly how working systems get thrown away."
         }
       ],
       paperTrade: {
@@ -205,7 +205,7 @@ const season6: Season = {
             pnl: -400
           },
           {
-            label: "Pass on the trade and note in the journal: valid signal, invalid conditions, per the data.",
+            label: "Pass on the trade and note in the journal: valid signal, invalid conditions.",
             result: "The fakeout happens without you. Your journal gains one more confirming data point on the chop-day filter, and your capital is intact for the next trending session, where your edge actually lives.",
             pnl: 0
           },
@@ -225,12 +225,12 @@ const season6: Season = {
         question: "What do you do with the Sunday session?",
         options: [
           "Skip it. Film sessions are for losing weeks, and you have earned the rest.",
-          "Run the full session as scheduled, grading every trade's process, because winning weeks hide rule-breaks that bigger size will eventually punish.",
-          "Glance at the total P&L, log it, and spend the session planning bigger size for next week.",
+          "Log the total P&L and spend the session planning bigger size for next week.",
+          "Run the full session as scheduled, grading every trade's process.",
           "Review only the two smallest winners to find out why they underperformed."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A is how bad habits get laminated: winning weeks are exactly when lucky rule-breaks sneak into your playbook wearing a champion's jersey. Option C is worse, using an unexamined week as the justification for more risk. Option D at least opens the journal but asks a junk question, optimizing winners' size before verifying their process. Option B is the pro move because film review is about decision quality, and decision quality is most distorted in your memory right after a big win. Check every trade: did each one follow the rules? If two of those nine winners were freelances, you did not have a great week. You had a good week and two unpaid invoices from the market."
+        bestIndex: 2,
+        coachNotes: "Option A is how bad habits get laminated: winning weeks are exactly when lucky rule-breaks sneak into your playbook wearing a champion's jersey, and the bigger size you will eventually trade is what punishes them. Option B is worse, using an unexamined week as the justification for more risk. Option D at least opens the journal but asks a junk question, optimizing winners' size before verifying their process. Option C is the pro move because film review is about decision quality, and decision quality is most distorted in your memory right after a big win. Check every trade: did each one follow the rules? If two of those nine winners were freelances, you did not have a great week. You had a good week and two unpaid invoices from the market."
       }
     },
     {
@@ -272,36 +272,36 @@ const season6: Season = {
           id: "s6e3-q1",
           question: "What is the core reason a specialist with 2-3 setups tends to beat a generalist running 10?",
           options: [
-            "Fewer setups means lower commission costs overall",
-            "Repetitions concentrate on one pattern, building pattern recognition and clean per-setup data",
-            "Markets reward loyalty to a single strategy with better fills",
-            "Running fewer setups guarantees a higher win rate on each"
+            "Repetitions concentrate on one pattern, compounding skill and data",
+            "Fewer setups means meaningfully lower commission costs overall",
+            "Markets reward loyalty to a single strategy with consistently better fills",
+            "Running fewer setups guarantees a higher win rate on each one"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Edge grows from reps. Two hundred trades on one pattern builds a deep library of how it wins and fails, plus statistically meaningful data on it. The same trades spread across ten strategies yields twenty reps each, too few to build skill or measure anything. Nothing about specialization changes commissions, fills, or guarantees win rates."
         },
         {
           id: "s6e3-q2",
           question: "Which of these is a fully specified setup rather than a vibe?",
           options: [
-            "Buy calls on strong stocks when the market feels bullish",
-            "Trade momentum names that are moving big on the day",
-            "In an uptrend, on a pullback that holds the rising 20-day average, buy a 30-45 day call spread, stop below the pullback low, target the prior high, risk 1 percent",
-            "Sell premium whenever implied volatility seems too high"
+            "Buy calls on strong stocks whenever the overall market feels bullish, focusing on whichever names look readiest to run that day",
+            "Trade the momentum names making the biggest moves of the day, entering when the tape looks hottest and exiting once the action cools",
+            "Sell premium whenever implied volatility seems too high, picking strikes that feel comfortably out of reach for the stock",
+            "In an uptrend, on a pullback that holds the rising 20-day average, buy a 30-45 day call spread, stop below the pullback low, target the prior high, risk 1 percent"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "A real setup specifies the required condition, exact trigger, instrument, invalidation, target, and size, so a stranger could execute it from the card. The other three all contain undefined judgment words like feels, big, and seems, which means the strategy changes with your mood and cannot be journaled or measured as one thing."
         },
         {
           id: "s6e3-q3",
           question: "A trade outside your playbook wins big while you watch from the sidelines. What did skipping it cost you?",
           options: [
-            "Essentially nothing, because you have no systematic way to capture trades outside your plays, only that single lucky instance",
-            "The full profit of the move, which proves your playbook is too narrow",
-            "Your edge, since missed winners reduce expectancy",
-            "Nothing this time, but you should add the pattern immediately based on this one example"
+            "The full profit of the move, proof your playbook is too narrow",
+            "Essentially nothing beyond that single lucky instance",
+            "Your edge, since every missed winner reduces expectancy",
+            "Nothing yet, but the pattern must be added to the playbook right away"
           ],
-          correctIndex: 0,
+          correctIndex: 1,
           explanation: "You can only systematically capture patterns you have specified, tested, and repped. A one-off winner outside the playbook is survivorship bias on a sample of one; for every visible miss there are invisible losers you also skipped. If a pattern keeps recurring, study it in review and consider spec-ing it properly, but never add a play because one instance worked."
         }
       ],
@@ -337,13 +337,13 @@ const season6: Season = {
         situation: "The year's most hyped IPO starts trading tomorrow, and everyone you know plans to play it. Your playbook has three setups, and none of them can apply: there is no trend history, no established levels, and options will list with extreme implied volatility. You feel real fear of missing what could be a generational first-day move.",
         question: "What is the disciplined specialist's move?",
         options: [
-          "Sit it out entirely, watch how it trades, and journal the price action as study material for a possible future setup.",
           "Take a small position anyway. Generational moves justify a one-time playbook exception.",
           "Invent a quick setup tonight, with a trigger and a stop, so the trade technically has rules.",
-          "Buy a tiny lotto call with money you can afford to lose, purely for the experience."
+          "Buy a tiny lotto call with money you can afford to lose, purely for the experience.",
+          "Sit it out entirely, watch how it trades, and journal the price action."
         ],
-        bestIndex: 0,
-        coachNotes: "Option B is the slippery slope in its purest form: every playbook violation in history was justified as a one-time exception, and exceptional situations are precisely where you have the least edge. Option C wears the costume of process, but a setup invented overnight with zero reps and zero data is a vibe in a lab coat. Option D is the most seductive because the dollar risk is small, but it trains the worst habit there is, paying for entertainment and calling it tuition. Option A is the pro move: the specialist's job on non-playbook days is observation, not participation. Watch it, log it, and if IPO-day behavior recurs and interests you, spec a real setup and study it properly. The market will list hyped IPOs every year for the rest of your life. Missing one costs nothing. Breaking your system costs the system."
+        bestIndex: 3,
+        coachNotes: "Option A is the slippery slope in its purest form: every playbook violation in history was justified as a one-time exception, and exceptional situations are precisely where you have the least edge. Option B wears the costume of process, but a setup invented overnight with zero reps and zero data is a vibe in a lab coat. Option C is the most seductive because the dollar risk is small, but it trains the worst habit there is, paying for entertainment and calling it tuition. Option D is the pro move: the specialist's job on non-playbook days is observation, not participation, and the logged price action becomes study material for a possible future setup. Watch it, log it, and if IPO-day behavior recurs and interests you, spec a real setup and study it properly. The market will list hyped IPOs every year for the rest of your life. Missing one costs nothing. Breaking your system costs the system."
       }
     },
     {
@@ -385,36 +385,36 @@ const season6: Season = {
           id: "s6e4-q1",
           question: "A system wins 50 percent of the time with an average win of $200 and an average loss of $150. What is its expectancy per trade?",
           options: [
-            "+$50, because $200 minus $150 is $50",
-            "+$25, because 0.5 times 200 minus 0.5 times 150 equals 100 minus 75",
-            "$0, because a 50 percent win rate always nets out to breakeven",
-            "+$175, the average of the win and loss amounts"
+            "+$50",
+            "$0",
+            "+$25",
+            "+$175"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Expectancy = winRate times avgWin minus lossRate times avgLoss = 0.5 x 200 - 0.5 x 150 = 100 - 75 = +$25 per trade. The win and loss must each be weighted by their probability; simply subtracting the dollar amounts or averaging them ignores how often each occurs."
         },
         {
           id: "s6e4-q2",
           question: "A trader wins 70 percent of trades with an average win of $100 and an average loss of $300. What should you conclude?",
           options: [
-            "The system is strong because winning 70 percent of the time is elite",
-            "The system loses money: expectancy is 0.7 x 100 - 0.3 x 300 = -$20 per trade",
-            "The system is breakeven, since the high win rate offsets the large losses",
-            "Nothing, because expectancy cannot be computed from these numbers"
+            "The system is strong; 70 percent win rates are elite",
+            "Roughly breakeven; the win rate offsets the big losses",
+            "Nothing; expectancy cannot be computed from these figures",
+            "The system loses money, about $20 per trade"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Run the formula: 0.7 times 100 is +70, 0.3 times 300 is 90, so expectancy is 70 - 90 = -$20 per trade. This is the classic vanity-stat trap: a win rate that feels elite attached to losers three times the size of winners. Every rep of this system costs about $20 on average, and the formula is the only honest scout."
         },
         {
           id: "s6e4-q3",
           question: "If your average winner is twice your average loser, roughly what win rate do you need just to break even?",
           options: [
-            "50 percent, the universal breakeven point",
-            "66.7 percent, two-thirds to match the two-to-one payoff",
             "33.4 percent, just over one-third",
+            "50 percent, the universal breakeven point",
+            "66.7 percent, two-thirds of trades",
             "25 percent, one win for every four trades"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "With wins worth 2R and losses worth 1R, breakeven requires winRate x 2 = lossRate x 1, which solves to a one-third win rate: at 33.3 percent, 0.333 x 2R = 0.667 x 1R. Anything above roughly 33.4 percent is profitable. This is why trend followers thrive while losing most of their trades, and why win rate without reward-to-risk context is meaningless."
         }
       ],
@@ -431,7 +431,7 @@ const season6: Season = {
             pnl: 45
           },
           {
-            label: "Take Setup B. Its expectancy is positive: 0.42 x 310 - 0.58 x 130 = +$54.80 per trade.",
+            label: "Take Setup B. Its expectancy comes out positive despite the losing record.",
             result: "This particular rep stops out for a typical Setup B loss. The journal grades the decision an A anyway: you picked the play with positive expectancy near +$55 a rep, and over the next twenty triggers, that choice is worth about $1,100 versus A's negative grind.",
             pnl: -130
           },
@@ -451,9 +451,9 @@ const season6: Season = {
         question: "What is the disciplined response?",
         options: [
           "Start Monday at small size. A 90 percent win rate over 80 trades is plenty of proof.",
-          "Compute the expectancy first: 0.9 x 70 - 0.1 x 800 = 63 - 80 = -$17 per trade, then show him his own system is losing and decline.",
-          "Decline because copying any strategy is wrong, regardless of its statistics.",
-          "Join, but plan to quit immediately after the first big loser hits."
+          "Run the expectancy math on his spreadsheet, and decline if it comes out negative.",
+          "Decline outright, because copying any strategy is wrong regardless of its statistics.",
+          "Join, but plan to bail out the moment the first of the big losers hits."
         ],
         bestIndex: 1,
         coachNotes: "Option A buys the costume without checking the player; 80 trades is a decent sample, but the sample says the system loses. Option B is the pro move and takes ninety seconds: weight the wins, 0.9 times 70 is 63, weight the losses, 0.1 times 800 is 80, and the machine produces about minus $17 per rep. The rough couple of losers he waved off are not bad luck, they are the system's defining feature. Option C overreaches; studying and even adapting others' systems is fine after you verify the math and fit. Option D is the worst of all worlds, knowingly boarding a negative-expectancy ride and pretending you will feel the exact right moment to jump. The formula exists so friendship and charisma do not get a vote."
@@ -499,24 +499,24 @@ const season6: Season = {
           id: "s6e5-q1",
           question: "What is the core purpose of a daily trading routine?",
           options: [
-            "To guarantee at least one good trade is found every day",
-            "To move as many decisions as possible out of volatile market hours and into calm preparation",
-            "To increase the number of trades taken by improving efficiency",
-            "To impress funding firms that audit traders' schedules"
+            "To move decisions out of volatile market hours and into calm preparation",
+            "To guarantee at least one good trade gets found every single day",
+            "To increase the number of trades taken by making the day more efficient",
+            "To impress the funding firms that audit traders' daily schedules"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "The routine is a decision-relocation machine: levels, plans, size, and guardrails get decided in the quiet, so the noisy open meets a trader who is executing rather than improvising. It deliberately does not promise daily trades; on many days the routine's correct output is no trade at all."
         },
         {
           id: "s6e5-q2",
           question: "Which is the best example of a pre-market plan, as taught in this episode?",
           options: [
-            "I am bullish today and will look for good entries on tech names",
+            "I am bullish today after checking the overnight futures, so I will hunt for good entries on tech names as the morning develops",
+            "I will watch the first hour, get a feel for the tape, and trade whatever shows the most relative strength",
             "If NVDA pulls back to 172 and holds, then I enter my call-spread play risking 1 percent; if it breaks 168, no trade",
-            "I will watch the open and trade whatever shows the most relative strength",
-            "I plan to make $500 today and will stop once I hit it"
+            "My plan is to make $500 today, taking the best-looking trades until I hit that number, then stopping"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "A real plan is written as if-then: a specific trigger, a specific action, a specific size, and a condition that cancels it. The other options are leans, hopes, or dollar wishes, all of which delegate the actual decision to your in-the-moment self, the exact person the routine exists to protect you from."
         },
         {
@@ -524,11 +524,11 @@ const season6: Season = {
           question: "Why does a daily max-loss rule, like stopping at minus 2R, belong in your in-game rules?",
           options: [
             "Because losses beyond 2R are usually impossible to recover from mathematically",
-            "Because brokers charge higher margin after large daily losses",
-            "Because film shows the worst damage typically comes from tilted trading after the first big loss, and the rule removes that decision from your heated self",
-            "Because professional traders are legally required to use one"
+            "Because brokers charge higher margin for the rest of the week after a large daily loss",
+            "Because professional traders are legally required to trade with one",
+            "Because it stops the tilted revenge trading that tends to follow the first big loss"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "The max-loss rule is not really about the first loss, which is survivable by design. It is about the revenge sequence that historically follows it, when decision fatigue and tilt take the wheel. Writing the stop-for-the-day rule in advance means your calm self, not your wounded self, decides when the session ends."
         }
       ],
@@ -545,7 +545,7 @@ const season6: Season = {
             pnl: -610
           },
           {
-            label: "Honor the rule: no trade until 30 minutes after the statement, then reassess for a valid setup.",
+            label: "Honor the rule: no trade until 30 minutes after the statement.",
             result: "You watch the whipsaw shred both sides from flat. At 2:35 the dust settles into a clean trend, your pullback play triggers with defined risk, and you catch the calmer half of the move that actually fit your playbook.",
             pnl: 390
           },
@@ -564,13 +564,13 @@ const season6: Season = {
         situation: "Your alarm failed, and you wake at 9:25 with the open five minutes away. No calendar check, no levels marked, no if-then plans, and futures are ripping higher on news you have not read. Your favorite setup may well fire in the first half hour, and you can feel the day starting without you.",
         question: "What does the professional do?",
         options: [
+          "Stand down from the open, run the full prep calmly, and engage later only on a playbook trigger.",
           "Trade the open carefully on instinct; your experience can cover one unprepped morning.",
           "Run your prep right now at triple speed, then trade immediately at 9:35 with whatever plan exists.",
-          "Stand down from the open, run the full prep calmly, and only engage later if a written playbook setup triggers; accept that the morning may be a scratch.",
-          "Skip the whole day and the evening review, since the routine is already broken."
+          "Skip the whole day and the evening review, since the routine is already broken anyway."
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is the trap dressed as confidence: instinct without preparation is exactly the improvising-at-the-bell trader this whole episode is built to retire. Option B respects prep in name but produces a rushed, adrenalized version of it, and plans written in a panic inherit the panic. Option D throws away the day's remaining value over a sunk cost; the routine is a system, not a streak, and the evening log still matters tonight. Option C is the pro move because it treats preparation as a prerequisite, not a decoration: no prep, no trading, the same way a pilot does not skip the checklist because boarding ran late. Missing one morning costs a little opportunity. Trading unprepped teaches you that the checklist is optional, and that lesson will eventually send you a bill."
+        bestIndex: 0,
+        coachNotes: "Option B is the trap dressed as confidence: instinct without preparation is exactly the improvising-at-the-bell trader this whole episode is built to retire. Option C respects prep in name but produces a rushed, adrenalized version of it, and plans written in a panic inherit the panic. Option D throws away the day's remaining value over a sunk cost; the routine is a system, not a streak, and the evening log still matters tonight. Option A is the pro move because it treats preparation as a prerequisite, not a decoration: no prep, no trading, the same way a pilot does not skip the checklist because boarding ran late. Accept that the morning may be a scratch; missing one costs a little opportunity. Trading unprepped teaches you that the checklist is optional, and that lesson will eventually send you a bill."
       }
     },
     {
@@ -612,10 +612,10 @@ const season6: Season = {
           id: "s6e6-q1",
           question: "What is resulting, and why is it dangerous?",
           options: [
-            "Calculating results weekly instead of daily, which delays feedback",
-            "Judging decision quality by outcome, which teaches you to abandon good process after normal losses and repeat lucky mistakes",
-            "Reviewing only losing trades, which biases the journal",
-            "Comparing your results to other traders, which causes envy"
+            "Calculating results weekly instead of daily, which delays the feedback loop",
+            "Judging decisions by outcome, which trains exactly the wrong lessons",
+            "Reviewing only losing trades, which biases the journal sample",
+            "Comparing your results to other traders, which breeds envy"
           ],
           correctIndex: 1,
           explanation: "Resulting, a term from poker, is grading decisions by how they happened to turn out in a game full of randomness. Since good decisions routinely lose and bad ones routinely win in small samples, resulting systematically trains the wrong lessons: it fires your edge after a losing streak and promotes your worst habits after a lucky hit."
@@ -625,23 +625,23 @@ const season6: Season = {
           question: "Which trade belongs in the most dangerous square of the decision-outcome grid?",
           options: [
             "A playbook setup at correct size that hit its stop for a planned loss",
-            "A playbook setup that hit its profit target",
-            "An oversized, unplanned revenge trade that happened to make $900",
-            "An oversized, unplanned revenge trade that lost $900"
+            "A playbook setup at normal size that hit its profit target",
+            "An oversized, unplanned revenge trade that lost $900",
+            "An oversized, unplanned revenge trade that happened to make $900"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Bad decision, good outcome is the most dangerous square because the market just paid you to learn a habit that will eventually ruin you. The winning revenge trade feels like vindication and gets emotionally bookmarked, while its true expectancy stays deeply negative. The losing version at least delivers its lesson with the bill attached."
         },
         {
           id: "s6e6-q3",
           question: "Your written rules say: after a stop-out, take a 15-minute break, and re-enter only the same setup if it re-triggers at normal size. What is this rule actually for?",
           options: [
+            "Cooling tilt down while keeping valid process available",
             "Ensuring you never lose twice on the same ticker in one day",
-            "Letting emotional arousal subside and blocking tilt from accessing the order ticket, while still allowing valid process to continue",
-            "Punishing yourself for the loss so it is not repeated",
-            "Reducing total trade count to save on commissions"
+            "Punishing yourself for the loss so the mistake is not repeated",
+            "Reducing your total trade count to save on commissions"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "The fence has two jobs. The break lets the physiological tilt response cool before any new decision is made, and the narrow re-entry clause preserves legitimate process: the original setup was never the problem, so it may continue, but the angry, unrelated trade your flooded brain wants is structurally locked out. It manages emotion with rules instead of willpower."
         }
       ],
@@ -653,7 +653,7 @@ const season6: Season = {
         brief: "At 10:15 you took a textbook stop-out on your NVDA pullback play, a clean minus $350, valid setup, correct size, stop honored, a certified A-grade loss. You took your mandatory 15-minute break. Now it is 11:05, and NVDA has come back down, reformed the exact same pullback structure, and re-triggered your setup by the book. Your chest still remembers the morning.",
         choices: [
           {
-            label: "Take the re-trigger at normal size, exactly per the playbook and your re-entry rule.",
+            label: "Take the re-trigger at normal size, exactly per the re-entry rule.",
             result: "The second attempt holds the level and runs to target over the next two sessions. The journal logs a perfect pair: an A-grade loss and an A-grade win on the same setup, same day, same size, which is what running a system actually looks like.",
             pnl: 540
           },
@@ -677,13 +677,13 @@ const season6: Season = {
         situation: "By 1 p.m. you have taken three losses in a row, minus 1R each, all on valid playbook setups at correct size with stops honored. Your daily loss limit, written at minus 4R, has not been hit. You feel the heat rising anyway, and a voice says the system is broken today and another says win it back before the close.",
         question: "What is the disciplined move?",
         options: [
-          "Keep trading the playbook as written; three valid losses is normal variance and the loss limit has not been hit, but apply extra scrutiny to any new trigger.",
           "Switch strategies for the afternoon, since today's conditions have clearly defeated your setups.",
           "Double size on the next trigger; after three losses, the odds of a win are overdue.",
+          "Keep trading the playbook as written, with extra scrutiny on any new trigger.",
           "Stop for the day even though the limit is not hit, then redesign the system tonight while it is fresh."
         ],
-        bestIndex: 0,
-        coachNotes: "Option C is the gambler's fallacy with leverage: setups have no memory, three losses do not make a win due, and doubling here is tilt in a math costume. Option B is strategy-hopping triggered by a routine losing streak, the exact resulting error this episode exists to kill: any real edge regularly produces three straight losses. Option D sounds prudent but smuggles in two mistakes, abandoning remaining valid expectancy your rules still permit, and redesigning a system on the same day it hurt you, which is when your judgment about it is worst. Option A is the pro move with a veteran's footnote: the loss limit was set at minus 4R by your calm self precisely to handle this afternoon, so trust it, keep size fixed, and let extra scrutiny guard against your heated self lowering the bar on what counts as a trigger. If the heat is genuinely unmanageable, the honest play is to invoke a pre-written tilt rule, not to improvise a new system at 1 p.m."
+        bestIndex: 2,
+        coachNotes: "Option B is the gambler's fallacy with leverage: setups have no memory, three losses do not make a win due, and doubling here is tilt in a math costume. Option A is strategy-hopping triggered by a routine losing streak, the exact resulting error this episode exists to kill: any real edge regularly produces three straight valid losses, and your loss limit has not even been hit. Option D sounds prudent but smuggles in two mistakes, abandoning remaining valid expectancy your rules still permit, and redesigning a system on the same day it hurt you, which is when your judgment about it is worst. Option C is the pro move with a veteran's footnote: the loss limit was set at minus 4R by your calm self precisely to handle this afternoon, so trust it, keep size fixed, and let extra scrutiny guard against your heated self lowering the bar on what counts as a trigger. If the heat is genuinely unmanageable, the honest play is to invoke a pre-written tilt rule, not to improvise a new system at 1 p.m."
       }
     },
     {
@@ -725,12 +725,12 @@ const season6: Season = {
           id: "s6e7-q1",
           question: "What are the three market regimes every options trader should recognize, per this episode?",
           options: [
-            "Bullish, bearish, and neutral",
-            "Trending, choppy or range-bound, and high-volatility",
-            "Earnings season, summer doldrums, and year-end rally",
-            "Overbought, oversold, and fairly valued"
+            "Bullish, bearish, and neutral or sideways",
+            "Earnings season, the summer doldrums, and the year-end rally",
+            "Overbought, oversold, and fairly valued",
+            "Trending, choppy or range-bound, and high-volatility"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "The working taxonomy is trending tape, where directional plays follow through; chop, where price oscillates and breakouts fail; and high-vol, where swings are violent and option premium is expensive. Bull versus bear is just trend direction, and calendar effects or valuation labels do not describe how price action and volatility actually behave day to day."
         },
         {
@@ -738,23 +738,23 @@ const season6: Season = {
           question: "Your breakout setup earns +0.4R per trade in trending regimes and loses -0.35R per trade in chop. The market has been range-bound for six weeks. What is the veteran adjustment?",
           options: [
             "Keep running it at full size and frequency; the stats will average out over the year",
-            "Permanently retire the setup, since it has a losing mode",
-            "Cut frequency to only A-plus triggers and cut size to half or less, or stand aside entirely until trend evidence returns",
+            "Cut frequency to A-plus triggers only and cut size to half or less",
+            "Permanently retire the setup, since it has shown a losing mode",
             "Reverse the signals and fade every breakout at double size"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "A seasonal edge is flown by season: hostile regime means fewer and smaller, or zero, not business as usual and not abandonment. Averaging out is exactly how a trader donates a trend season's profits to a chop season. Reversing signals sounds clever but is an entirely new, untested system being adopted at the moment of maximum frustration."
         },
         {
           id: "s6e7-q3",
           question: "Why is high implied volatility, like a VIX in the 30s, a regime consideration for options traders specifically?",
           options: [
-            "High VIX means options stop being tradeable until it falls",
-            "Premium is expensive, so long options need bigger moves to profit, while short premium pays more but carries violent tail risk; the options math itself changes",
-            "High VIX only affects index options, never single stocks",
-            "It signals that a trend regime is guaranteed to start within days"
+            "Options stop being tradeable once the VIX passes 30, until it falls back to normal",
+            "High VIX affects index options only, never single-stock contracts",
+            "The pricing of the options themselves changes, for buyers and sellers alike",
+            "It signals that a new trend regime is guaranteed to start within days"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Volatility regime changes the price of the instrument itself, not just the chart. Expensive premium raises the bar for option buyers, since the expected move is already in the price, and fattens collections for sellers while exposing them to outsized, fast-moving losses. Same chart pattern, different vol season, different correct structure and size."
         }
       ],
@@ -771,7 +771,7 @@ const season6: Season = {
             pnl: -500
           },
           {
-            label: "Pass. Your regime rules demand A-plus triggers only in chop, and this is a B.",
+            label: "Pass. B-grade triggers do not qualify in this regime.",
             result: "The fakeout plays out without you. Your written regime filter just converted five weeks of journal data into one avoided loss, which is exactly the job you built it for.",
             pnl: 0
           },
@@ -790,13 +790,13 @@ const season6: Season = {
         situation: "Overnight news has slammed futures down 3 percent, and the VIX has jumped from 17 to 34 in two sessions. Your playbook holds two trend-following setups and one range play, all built and journaled in calm, low-vol tape. You have no logged trades in conditions like these. The moves are enormous, options premium has doubled, and your group chat calls it the opportunity of the year.",
         question: "What is the disciplined regime read?",
         options: [
+          "Cut to minimal or no trading, journal the storm, and pre-write criteria for re-engaging small.",
           "Trade your setups at full size; bigger moves mean your winners will be bigger than ever.",
-          "Recognize you have zero data in this regime, cut to minimal or no trading, observe and journal the conditions, and pre-define what evidence would justify re-engaging at small size.",
           "Sell the expensive premium aggressively, since doubled option prices are free money for sellers.",
           "Buy a basket of cheap-feeling calls on beaten-down names to bottom-fish the panic."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A misses that high-vol regimes break the assumptions your setups were built on: stops gap, follow-through reverses, and premium costs invalidate your usual structures, so bigger moves cut against you as easily as for you. Option C is the most dangerous kind of plausible: yes, rich premium favors sellers on average, but selling volatility in a spiking-vol storm without experience or tail-risk controls is how accounts die in a single week. Option D is bottom-fishing on feel, with no setup, in the regime where feel is least reliable. Option B is the veteran move and the honest one: your stat line in this season is a blank page, and pros do not bet size on a blank page. Stand mostly aside, log how your patterns behave in the storm, and write the re-entry criteria now, calmly. Storms recur; the trader who studied this one small will own a playbook for the next one."
+        bestIndex: 0,
+        coachNotes: "Option B misses that high-vol regimes break the assumptions your setups were built on: stops gap, follow-through reverses, and premium costs invalidate your usual structures, so bigger moves cut against you as easily as for you. Option C is the most dangerous kind of plausible: yes, rich premium favors sellers on average, but selling volatility in a spiking-vol storm without experience or tail-risk controls is how accounts die in a single week. Option D is bottom-fishing on feel, with no setup, in the regime where feel is least reliable. Option A is the veteran move and the honest one: you have zero logged data in conditions like these, your stat line in this season is a blank page, and pros do not bet size on a blank page. Stand mostly aside, log how your patterns behave in the storm, and write the evidence that would justify re-engaging now, calmly. Storms recur; the trader who studied this one small will own a playbook for the next one."
       }
     },
     {
@@ -839,35 +839,35 @@ const season6: Season = {
           question: "Why is a trading platform's reward pattern compared to a slot machine?",
           options: [
             "Both are rigged so the house always wins every individual bet",
-            "Both deliver unpredictable, variable rewards, the reward schedule most powerfully habit-forming to the human brain",
-            "Both require no skill, making outcomes purely random",
-            "Both pay out more often the longer you play in a session"
+            "Both require zero skill, making every outcome purely random chance",
+            "Both deliver rewards on an unpredictable, variable schedule",
+            "Both pay out more often the longer you stay in a session"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Variable-ratio rewards, payoffs arriving on an unpredictable schedule, generate the strongest compulsive engagement known in behavioral science, and dopamine fires on anticipation, not just wins. Markets are not pure chance like a slot machine, which is exactly the danger: a real edge exists, but the delivery mechanism is engineered, by accident, to make you trade far more than the edge justifies."
         },
         {
           id: "s6e8-q2",
           question: "In expectancy terms, what does a boredom trade outside your playbook actually cost?",
           options: [
-            "Nothing, as long as it happens to win",
-            "Only the commission and spread on the trade",
-            "It substitutes a zero-or-negative expectancy bet for capital and attention reserved for positive-expectancy setups, directly degrading your stat line",
-            "It costs nothing if sized small enough"
+            "Expectancy: it puts capital and attention into a bet with no proven edge",
+            "Nothing at all, as long as the trade ultimately happens to finish as a winner",
+            "Only the commission and the bid-ask spread paid on the order",
+            "Nothing measurable, provided the position is sized small enough"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Edge lives only in your specified, journaled setups; trades outside them carry no proven edge, plus costs, plus the attention drain that degrades execution of your real plays. Winning occasionally makes it worse, not better, by reinforcing the habit, and small size only shrinks each installment of a payment plan that never ends."
         },
         {
           id: "s6e8-q3",
           question: "What is the professional response to a strong urge to trade when no setup has triggered?",
           options: [
-            "Take a tiny position to release the pressure without real risk",
-            "Redirect the energy into system work: journal review, watchlist screening, or backtesting, while fences like trade caps and alert-based monitoring keep the order ticket out of reach",
+            "Take a tiny position just to release the pressure without meaningful risk",
             "Force yourself to stare at the screen without acting, building raw willpower",
-            "Close the laptop and accept that the urge means you are not cut out for trading"
+            "Close the laptop for good and accept that the urge proves trading is not for you",
+            "Redirect the energy into system work like journaling, screening, or backtesting"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Willpower loses to dopamine over a long season, so pros fight structure with structure: friction before orders, alerts instead of tape-staring, caps that make bullets precious, and a productive outlet for the restlessness itself. The urge is normal energy, not a character verdict; the tiny pressure-release trade is precisely how the slot machine wins."
         }
       ],
@@ -889,7 +889,7 @@ const season6: Season = {
             pnl: -240
           },
           {
-            label: "No trade. Run the restlessness protocol: re-screen the watchlist, update the journal, review one setup card. Let the alerts do the watching.",
+            label: "No trade. Run the restlessness protocol and let the alerts do the watching.",
             result: "The screen stays quiet and so do you. Thirty minutes of film work surfaces a note that your best setup has been triggering near the open lately, worth watching. P&L for the afternoon: zero, which today was the maximum available score.",
             pnl: 0
           }
@@ -904,12 +904,12 @@ const season6: Season = {
         question: "How do you read this week, and what do you do tomorrow?",
         options: [
           "Accept the chat's framing: one trade a week is hobbyist volume, so loosen the trigger criteria tomorrow to get your reps up.",
-          "Read the week as the system working perfectly: one valid trigger, one clean execution. Tomorrow changes nothing; alerts armed, criteria intact, and the chat's volume is their bill, not your benchmark.",
+          "Read the week as the system working: one valid trigger, one clean execution. Tomorrow changes nothing.",
           "Compromise with one discretionary trade tomorrow, sized small, just to stay sharp and quiet the chat.",
           "Mute the chat and also skip Friday entirely, since social pressure has clearly compromised your judgment."
         ],
         bestIndex: 1,
-        coachNotes: "Option A swaps your stat line for a social one: reps only compound when they are reps of the right thing, and loosened criteria are how playbooks dissolve. Option C is the most tempting because it sounds measured, but staying sharp is what film review and backtesting are for; a small discretionary trade is a dopamine payment with a professional-sounding invoice. Option D gets the mute right and the skip wrong, abandoning a possible A-grade Friday trigger to overcorrect for a feeling, which is still the feeling driving the bus. Option B is the veteran read: activity is not evidence of skill, and the week's true box score is one valid trigger, one A-grade execution, zero leaks. The chat is measuring effort by lever pulls. You are paid by expectancy, and this week, your expectancy bill was paid in full by Monday."
+        coachNotes: "Option A swaps your stat line for a social one: reps only compound when they are reps of the right thing, and loosened criteria are how playbooks dissolve. Option C is the most tempting because it sounds measured, but staying sharp is what film review and backtesting are for; a small discretionary trade is a dopamine payment with a professional-sounding invoice. Option D gets the mute right and the skip wrong, abandoning a possible A-grade Friday trigger to overcorrect for a feeling, which is still the feeling driving the bus. Option B is the veteran read: alerts stay armed, criteria stay intact, and activity is not evidence of skill; the week's true box score is one valid trigger, one A-grade execution, zero leaks. The chat is measuring effort by lever pulls, and their volume is their bill, not your benchmark. You are paid by expectancy, and this week, your expectancy bill was paid in full by Monday."
       }
     },
     {
@@ -951,36 +951,36 @@ const season6: Season = {
           id: "s6e9-q1",
           question: "What does increasing position size actually do to a trading system?",
           options: [
+            "It amplifies whatever already exists, good and bad, adding no skill",
             "It improves the system's expectancy by capturing more profit per setup",
-            "It amplifies whatever already exists, scaling up a real edge and equally scaling up leaks, tilt, and unproven assumptions, while adding zero skill",
             "It reduces risk by making each win count for more, shortening drawdowns",
-            "Nothing measurable, as long as the win rate stays the same"
+            "Nothing measurable happens, as long as the win rate holds steady"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Size is a pure amplifier: it multiplies the dollar value of your expectancy, positive or negative, and raises the emotional load on every decision. It cannot add edge, and if the larger dollars degrade your execution, it actively subtracts edge while applying the damage to more money. That is why size is earned on evidence rather than granted on confidence."
         },
         {
           id: "s6e9-q2",
           question: "Which record best satisfies the milestone gate for sizing a setup up from 1 percent to 1.25 percent risk?",
           options: [
-            "Eleven trades this month with nine winners and a feeling of total clarity",
-            "Sixty logged trades on the setup at +0.3R expectancy, A-average process grades, including a five-loss streak traded without a single rule break",
-            "A friend with a similar account running 3 percent successfully for a year",
-            "Two hundred backtested historical signals showing the setup worked in the past"
+            "Eleven trades this month with nine winners and a feeling of total clarity about the tape",
+            "A friend with a similar account size running 3 percent risk successfully for a full year",
+            "Sixty logged trades at +0.3R, A-average grades, and a five-loss streak traded without a rule break",
+            "Two hundred backtested historical signals showing the setup would have worked for a decade"
           ],
-          correctIndex: 1,
-          explanation: "The gate demands a meaningful live sample of fifty to a hundred trades, positive expectancy in R, process grades proving the stats came from rule-following, and a losing streak survived at current size. Option B checks every box. A hot eleven trades is variance, someone else's capacity is not yours, and backtests, while useful, do not demonstrate your execution under live emotional load."
+          correctIndex: 2,
+          explanation: "The gate demands a meaningful live sample of fifty to a hundred trades, positive expectancy in R, process grades proving the stats came from rule-following, and a losing streak survived at current size. Option C checks every box. A hot eleven trades is variance, someone else's capacity is not yours, and backtests, while useful, do not demonstrate your execution under live emotional load."
         },
         {
           id: "s6e9-q3",
           question: "Why do professional sizing rules cut risk automatically during drawdowns, when the gambler's instinct is to size up and win it back?",
           options: [
-            "Because regulations require reduced risk after losses",
+            "Because regulations require traders to reduce risk after losses",
+            "Because smaller size keeps drawdowns shallow, survivable, and recoverable",
             "Because cutting size guarantees the drawdown will reverse quickly",
-            "Because reduced size makes drawdowns shallower and survivable, protects execution quality under emotional strain, and ensures no losing streak can compound into ruin, while sizing up into losses does the opposite",
             "Because drawdowns prove the system is broken and should be traded smaller forever"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "The fixed-percent framework already shrinks dollar risk as the account falls, and explicit drawdown rules cut further, making the loss curve flatten rather than steepen. This protects both capital and the trader's execution, which degrades under strain. Sizing up to win it back inverts the asymmetry, accelerating exactly when accuracy and emotional capacity are at their worst; it is the signature move of blown accounts."
         }
       ],
@@ -992,7 +992,7 @@ const season6: Season = {
         brief: "Your quarterly review is on the desk. Signature setup A: 64 logged trades, +0.31R expectancy, A-minus average process grade, and a six-loss streak in July traded without a rule break. Current risk: 1 percent of your $40,000 account, $400 per trade. You feel ready for more, and honestly, you felt ready months ago. An A-grade SPY trigger is forming for Monday. Choose your sizing policy going forward.",
         choices: [
           {
-            label: "Step risk up to 1.25 percent, $500 per trade, and hold it for a 40-trade evaluation window watching process grades.",
+            label: "Step risk up to 1.25 percent, $500 per trade, and hold it for a 40-trade evaluation window.",
             result: "Monday's trigger plays out as an ordinary winner at the new size. More importantly, the next forty trades confirm the raise: grades hold in the A range, the stat line scales cleanly, and the size-up compounds quietly, exactly as a salary should.",
             pnl: 620
           },
@@ -1017,12 +1017,12 @@ const season6: Season = {
         question: "What do you do with today?",
         options: [
           "Trade today at triple size; clarity like this is rare and the system should flex to capture it.",
-          "Trade today at normal size per the written policy, log yesterday like any other trade, and let the size-up question wait for the quarterly review where it belongs.",
           "Take today off entirely; a win that big means you are due for a loss, and protecting the high feels right.",
-          "Trade at normal size but move yesterday's 6R into a separate aggressive account where the rules do not apply."
+          "Trade at normal size but move yesterday's 6R into a separate aggressive account where the rules do not apply.",
+          "Trade today at normal size per the written policy, and log yesterday like any other trade."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A is the euphoria trade, tilt's cheerful twin: feeling like a different trader is precisely when you are most likely to trade like a worse one, and one 6R day adds a single data point to a gate that requires fifty. Option C is superstition wearing a seatbelt; you are not due for anything, and skipping valid triggers to protect a feeling hands outcomes a vote that belongs to process. Option D is the most creative way to break the rules, laundering euphoria through an account labeled aggressive, where the same dollars get exempted from the same discipline, and it is how big wins quietly become seed capital for blowups. Option B is the hall-of-fame move precisely because it is anticlimactic: yesterday changes the account balance, not the system, and the fixed-percent framework already gives you a slightly larger 1R automatically. The pros' secret about career days is that they are logged, graded, and metabolized exactly like Tuesdays. The size-up will come, through the gate, on schedule, and it will be boring, which is how you know it will hold."
+        bestIndex: 3,
+        coachNotes: "Option A is the euphoria trade, tilt's cheerful twin: feeling like a different trader is precisely when you are most likely to trade like a worse one, and one 6R day adds a single data point to a gate that requires fifty. Option B is superstition wearing a seatbelt; you are not due for anything, and skipping valid triggers to protect a feeling hands outcomes a vote that belongs to process. Option C is the most creative way to break the rules, laundering euphoria through an account labeled aggressive, where the same dollars get exempted from the same discipline, and it is how big wins quietly become seed capital for blowups. Option D is the hall-of-fame move precisely because it is anticlimactic: yesterday changes the account balance, not the system, the fixed-percent framework already gives you a slightly larger 1R automatically, and the size-up question waits for the quarterly review where it belongs. The pros' secret about career days is that they are logged, graded, and metabolized exactly like Tuesdays. The size-up will come, through the gate, on schedule, and it will be boring, which is how you know it will hold."
       }
     },
     {
@@ -1064,8 +1064,8 @@ const season6: Season = {
           id: "s6e10-q1",
           question: "What are the four sections of the written playbook assembled in this episode?",
           options: [
-            "Predictions, targets, watchlists, and a wish list of future strategies",
-            "Signature play cards, risk rules including sizing gates, the routine with its review cadence, and the behavioral fences",
+            "Predictions, price targets, watchlists, and a wish list of strategies to learn someday",
+            "Signature play cards, risk and sizing rules, the routine, and the behavioral fences",
             "A market outlook, a list of favorite tickers, broker settings, and tax notes",
             "Entry signals only, since exits and size should stay flexible to fit conditions"
           ],
@@ -1076,25 +1076,25 @@ const season6: Season = {
           id: "s6e10-q2",
           question: "Under the amendment rule, when may the playbook be changed?",
           options: [
+            "Only at scheduled reviews, in writing, with the supporting evidence stated",
             "Whenever a trade is going badly enough to justify an exception",
-            "Only during scheduled reviews, in writing, with the supporting evidence stated, and never mid-session or on the day of a big win or loss",
-            "Never; a system only works if it is permanently frozen",
-            "Any time, as long as the change is typed into the document afterward"
+            "Never; a system only works if it stays permanently frozen as written",
+            "Any time at all, as long as the change gets typed into the document afterward"
           ],
-          correctIndex: 1,
-          explanation: "The playbook is living but gated: revisions happen at scheduled reviews, cold, with evidence, and carry a version and date. Between revisions it binds completely. Mid-trade editing makes it a mood with a word processor, while permanent freezing ignores what your accumulating stats will genuinely teach. The gate, not the freeze, is what makes it both binding and improvable."
+          correctIndex: 0,
+          explanation: "The playbook is living but gated: revisions happen at scheduled reviews, cold, with evidence, and carry a version and date, never mid-session and never on the day of a big win or loss. Between revisions it binds completely. Mid-trade editing makes it a mood with a word processor, while permanent freezing ignores what your accumulating stats will genuinely teach. The gate, not the freeze, is what makes it both binding and improvable."
         },
         {
           id: "s6e10-q3",
           question: "Why do written rules outperform the same rules held in your head?",
           options: [
-            "Writing improves memory, so you are less likely to forget the rules exist",
-            "Written rules look more professional if anyone audits your trading",
-            "Ink ends the in-the-moment negotiation: your heated self is a persuasive lawyer, and unwritten rules are always available for debate against fear, greed, and a loud chart",
-            "They do not; discipline is a personality trait and paper cannot change it"
+            "Writing improves memory, making you less likely to forget the rules exist",
+            "Written rules look more professional if anyone ever audits your trading",
+            "They do not; discipline is a personality trait and paper cannot change it",
+            "Ink ends the in-the-moment negotiation that unwritten rules always lose"
           ],
-          correctIndex: 2,
-          explanation: "The failure mode of mental rules is not forgetting, it is renegotiation: under emotional load, the in-the-moment self argues exceptions, and it argues well. A written, dated rule closes the debate before it starts, the same way a pilot's checklist or the Turtles' rulebook did. Discipline, this season has argued throughout, is not a trait but a structure, and writing is the load-bearing wall."
+          correctIndex: 3,
+          explanation: "The failure mode of mental rules is not forgetting, it is renegotiation: under emotional load, the heated self is a persuasive lawyer, arguing exceptions against fear, greed, and a loud chart, and it argues well. A written, dated rule closes the debate before it starts, the same way a pilot's checklist or the Turtles' rulebook did. Discipline, this season has argued throughout, is not a trait but a structure, and writing is the load-bearing wall."
         }
       ],
       paperTrade: {
@@ -1105,7 +1105,7 @@ const season6: Season = {
         brief: "Playbook v1.0 is signed, dated, and taped beside the monitor; today is its first live session. At 10:40, your A-grade pullback setup triggers on AMD, regime confirmed trending, exactly per setup card number one, normal risk $400. At 10:43, a trader you genuinely respect messages you: massive unusual call buying in a biotech, not on any card, once-a-year type of flow, get in now. Both windows are open. The page is on the wall.",
         choices: [
           {
-            label: "Run the playbook: take the AMD trigger at card size, and let the biotech tip pass unanswered until after the close.",
+            label: "Run the playbook: take the AMD trigger at card size, and let the tip wait until the close.",
             result: "AMD behaves like rep number whatever-hundred of your setup, grinding to target in four sessions for a standard win. The biotech spikes, then round-trips violently two days later; flow-followers who stayed too long gave it all back. Day one of the document ends with one A-grade rep and one logged temptation, refused.",
             pnl: 470
           },
@@ -1130,12 +1130,12 @@ const season6: Season = {
         question: "What does version 1.0 look like?",
         options: [
           "All three setups plus two more from a course you admire, full risk framework, an ambitious 90-minute daily routine: comprehensive from day one.",
-          "Setups A and B with full cards, C explicitly parked as a study project with paper-trade status, the fixed-percent risk rules and gates, a routine sized to your real schedule, and a tilt fence targeting the revenge-entry leak by name; one to three pages, versioned, dated, signed.",
           "Only setup A, with everything else stripped out until the stats are overwhelming; the document should contain nothing short of certainty.",
-          "Skip the document for another six months; with B marginal and C unproven, writing now would just lock in immaturity."
+          "Setups A and B with full cards, C parked at paper-trade status, the risk rules and gates, a realistic routine, and a fence naming the revenge-entry leak.",
+          "Skip the document for another six months; with B marginal and C unproven, writing now would just lock today's immaturity into print."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A confuses impressive with usable: setups you have never traded do not belong on cards, and a 90-minute fantasy routine is the kind that dies by Thursday, taking the document's authority with it. Option C overcorrects into paralysis-by-purity, discarding B's positive 41-trade record and exiling C from even structured study; a playbook can hold graduated levels of commitment as long as each is labeled. Option D misunderstands versioning entirely, demanding the final draft before allowing a first one, when the whole design of the amendment process is that v1.0 is supposed to be improvable. Option B is graduation-day thinking: it writes down exactly what the evidence supports, A and B as binding cards, C honestly quarantined at paper-trade status with a promotion gate, the tilt fence aimed at your actual documented leak rather than generic discipline slogans, and a routine your real life can execute daily. Short, true, dated, and signed beats long, aspirational, and abandoned, every single time. The document is not a trophy of what you know. It is a contract with the only trader who can break you, and tonight you both sign."
+        bestIndex: 2,
+        coachNotes: "Option A confuses impressive with usable: setups you have never traded do not belong on cards, and a 90-minute fantasy routine is the kind that dies by Thursday, taking the document's authority with it. Option B overcorrects into paralysis-by-purity, discarding B's positive 41-trade record and exiling C from even structured study; a playbook can hold graduated levels of commitment as long as each is labeled. Option D misunderstands versioning entirely, demanding the final draft before allowing a first one, when the whole design of the amendment process is that v1.0 is supposed to be improvable. Option C is graduation-day thinking: it writes down exactly what the evidence supports, A and B as binding cards, C honestly quarantined at paper-trade status with a promotion gate, the tilt fence aimed at your actual documented leak rather than generic discipline slogans, and a routine your real life can execute daily, all in one to three versioned, dated, and signed pages. Short, true, dated, and signed beats long, aspirational, and abandoned, every single time. The document is not a trophy of what you know. It is a contract with the only trader who can break you, and tonight you both sign."
       }
     }
   ]

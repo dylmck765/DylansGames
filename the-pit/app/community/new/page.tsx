@@ -37,13 +37,13 @@ export default function NewThesisPage() {
 
     await supabase.from("posts").insert({
       id,
-      handle: state.profile.handle,
+      handle: state.profile.handle.slice(0, 24),
       ticker: ticker.trim().toUpperCase().slice(0, 6),
       direction,
-      title: title.trim(),
-      catalyst: catalyst.trim(),
-      thesis: thesis.trim(),
-      max_loss: maxLoss.trim(),
+      title: title.trim().slice(0, 90),
+      catalyst: catalyst.trim().slice(0, 300),
+      thesis: thesis.trim().slice(0, 1200),
+      max_loss: maxLoss.trim().slice(0, 200),
       upvotes: 0,
     });
 
@@ -95,15 +95,15 @@ export default function NewThesisPage() {
           onChange={(e) => setTitle(e.target.value)} />
 
         <label className="lbl">Catalyst — why NOW?</label>
-        <textarea className="input" rows={2} placeholder="Earnings Thursday? Breakout over a key level?"
+        <textarea className="input" rows={2} maxLength={300} placeholder="Earnings Thursday? Breakout over a key level?"
           value={catalyst} onChange={(e) => setCatalyst(e.target.value)} />
 
         <label className="lbl">The Thesis</label>
-        <textarea className="input" rows={4} placeholder="Your directional case. Levels, timeframe, what proves you right."
+        <textarea className="input" rows={4} maxLength={1200} placeholder="Your directional case. Levels, timeframe, what proves you right."
           value={thesis} onChange={(e) => setThesis(e.target.value)} />
 
         <label className="lbl">Max Loss — define the risk</label>
-        <textarea className="input" rows={2} placeholder='e.g. "Risking $250 — full premium on 1 contract."'
+        <textarea className="input" rows={2} maxLength={200} placeholder='e.g. "Risking $250 — full premium on 1 contract."'
           value={maxLoss} onChange={(e) => setMaxLoss(e.target.value)} />
 
         <button className="btn btn-primary btn-block" style={{ marginTop: 16 }}

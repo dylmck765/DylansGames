@@ -100,7 +100,7 @@ export default function OnboardingPage() {
             placeholder="e.g. DeltaDestroyer"
             value={handle}
             maxLength={24}
-            onChange={(e) => setHandle(e.target.value)}
+            onChange={(e) => setHandle(e.target.value.replace(/[^a-zA-Z0-9 _.\-]/g, ""))}
             onKeyDown={(e) => e.key === "Enter" && handle.trim() && setStep("quiz")}
             autoFocus
           />

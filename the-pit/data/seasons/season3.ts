@@ -45,36 +45,36 @@ const season3: Season = {
           id: "s3e1-q1",
           question: "Which of these is the best plain-English definition of a trading edge?",
           options: [
-            "A stock that has been going up for several weeks",
-            "A repeatable advantage you can describe and execute over many trades",
+            "A repeatable advantage you can describe and execute",
+            "A stock that has been going up for several weeks straight",
             "Inside information about a company's next earnings report",
-            "A trading platform with faster execution than your broker's app"
+            "A platform with faster execution than your broker's app"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Edge is a repeatable advantage. A rising stock is a condition, not an advantage. Inside information is illegal, not an edge. Fast execution helps, but it isn't a reason you win over a sample. If you can describe it and run it a hundred times profitably, it's an edge."
         },
         {
           id: "s3e1-q2",
           question: "A trader wins 40 percent of trades. Average winner is 300 dollars, average loser is 100 dollars. What is the expectancy per trade?",
           options: [
-            "Negative 20 dollars, because the win rate is below 50 percent",
             "Positive 120 dollars",
-            "Positive 60 dollars",
-            "Zero, because wins and losses cancel out"
+            "Negative 20 dollars",
+            "Exactly zero dollars",
+            "Positive 60 dollars"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Expectancy is win rate times average win, minus loss rate times average loss: 0.4 times 300 equals 120, minus 0.6 times 100 equals 60. Positive 60 per trade. A sub-50 percent win rate can be very profitable when the winners are three times the losers. Win rate alone tells you almost nothing."
         },
         {
           id: "s3e1-q3",
           question: "Why is a single winning trade weak evidence that you have an edge?",
           options: [
-            "Because winning trades are usually smaller than losing trades",
+            "Because any single outcome can be luck",
+            "Because wins tend to be smaller than losses",
             "Because edge only exists in options, not stocks",
-            "Because brokers report wins differently than losses",
-            "Because any single outcome can be luck; edge only shows up over a sample of many trades"
+            "Because brokers score wins differently"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "One trade is one possession, not a season. Bad processes win sometimes and great processes lose sometimes. Edge is statistical: it reveals itself over dozens or hundreds of plays. That's why pros grade the decision, not the single result."
         }
       ],
@@ -86,7 +86,7 @@ const season3: Season = {
         brief: "It's May 2023, two weeks before NVDA earnings. You've done real homework: cloud providers all raised capital spending guidance, and channel checks show AI chip orders surging. Separately, a group chat is pumping a small biotech, ZYNT, with no stated reason. You have about 1,500 dollars of risk budget for one play.",
         choices: [
           {
-            label: "Buy 1 NVDA call, 320 strike, 45 days out, for 14.00 (1,400 dollars), based on your documented thesis",
+            label: "Buy 1 NVDA call, 320 strike, 45 days out, for 14.00 (1,400 dollars)",
             result: "Earnings crush estimates and guidance comes in billions above consensus. NVDA gaps from around 305 to over 380. Your call is worth roughly 65.00. You sell for a 5,100 dollar gain.",
             pnl: 5100
           },
@@ -110,13 +110,13 @@ const season3: Season = {
         situation: "You've won six trades in a row, mostly quick calls on whatever was moving that morning. Your account is up 40 percent in three weeks. You can't really explain what the six trades had in common, but you feel unstoppable, and you're about to double your position size.",
         question: "What's the pro move here?",
         options: [
-          "Double size immediately. Hot streaks are real and you ride them while they last",
-          "Pause, review all six trades, and try to write down the repeatable setup. If you can't find one, keep size flat and assume luck until proven otherwise",
-          "Withdraw all profits and stop trading for a month so you can't give it back",
+          "Double your size immediately and ride the hot streak while it still lasts",
+          "Withdraw every dollar of profit and stop trading for a month so you can't give it back",
+          "Pause and review all six trades for a common, repeatable setup before changing size",
           "Switch to bigger, more volatile names since your instincts are clearly working"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B is the pro move: audit the streak before you pay yourself for it. If there's a common setup, you may have found a real edge worth sizing into gradually. If there isn't, you just got six good bounces. Option A is how hot streaks end careers, doubling size on luck means the variance that giveth now taketh at double scale. Option C overcorrects, you don't quit after winning, you study after winning. Option D is the worst of all worlds: untested instincts plus more volatility equals a bigger sample of randomness at higher stakes."
+        bestIndex: 2,
+        coachNotes: "Option C is the pro move: audit the streak before you pay yourself for it. If there's a common setup, you may have found a real edge worth sizing into gradually. If there isn't, you just got six good bounces, so size stays flat and the streak gets treated as luck until proven otherwise. Option A is how hot streaks end careers, doubling size on luck means the variance that giveth now taketh at double scale. Option B overcorrects, you don't quit after winning, you study after winning. Option D is the worst of all worlds: untested instincts plus more volatility equals a bigger sample of randomness at higher stakes."
       }
     },
     {
@@ -170,24 +170,24 @@ const season3: Season = {
           id: "s3e2-q2",
           question: "Why is fighting the trend especially dangerous for an options buyer compared to a stock trader?",
           options: [
-            "Options can't be sold before expiration",
+            "Options expire, so the reversal has to happen on a deadline",
+            "Options can't be sold before their expiration date",
             "Brokers charge higher commissions on counter-trend trades",
-            "Options expire, so you need the reversal to happen on a deadline while time decay works against you",
-            "Put options always cost more than call options"
+            "Put options always cost more per contract than calls"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "A stock trader who is early can simply wait. An option buyer is on the clock: theta decay eats the position daily, and the contract expires. Betting on a reversal means needing the stock to do something it has not been doing, by a specific date. Options can absolutely be sold early, and the other two claims are simply false."
         },
         {
           id: "s3e2-q3",
           question: "A stock is in a strong uptrend. What is the disciplined trend-trader entry?",
           options: [
-            "Buy calls on a pullback toward rising support or a prior breakout level",
             "Buy calls the instant the stock spikes to a new high so you don't miss it",
-            "Buy puts at the new high because what goes up must come down",
-            "Wait for the stock to fall 50 percent so it's cheap"
+            "Buy puts at the fresh high because what goes up must come down",
+            "Wait for the stock to fall 50 percent so the calls are cheap",
+            "Buy calls on a pullback toward rising support or a prior breakout level"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "The pro entry buys the trend at a discount: the pullback to rising support, with a clear invalidation if the higher-low structure breaks. Chasing the spike buys the worst price with no nearby line in the sand. Puts at highs fight possession. Waiting for a 50 percent crash means waiting for the trend to be dead, which is a different trade entirely."
         }
       ],
@@ -223,13 +223,13 @@ const season3: Season = {
         situation: "A mega-cap name your friends all own is up 60 percent in five months, with a clean higher-high, higher-low staircase and accelerating earnings. You missed the whole move. Today it hit another all-time high, and every instinct says it has to pull back. You're staring at the put button.",
         question: "What do you do?",
         options: [
-          "Buy puts. Sixty percent in five months is unsustainable and someone has to fade it",
+          "Buy puts here. Sixty percent in five months is unsustainable and someone has to fade it",
           "Buy calls right now at the all-time high so you finally stop missing it",
-          "Accept you missed this leg. Put the stock on your watchlist and plan a call entry on the next pullback toward support, with the trend intact",
+          "Accept you missed this leg and plan a call entry on the next pullback toward support",
           "Buy puts, but go further out in time so you can outlast the trend"
         ],
         bestIndex: 2,
-        coachNotes: "Option C is the pro move: missing a move costs you nothing, fighting it costs you premium. Plan the with-trend entry at a pullback where your risk is defined. Option A is the classic tuition trade, unsustainable is a feeling, not a structure break. Option B chases the single worst entry in the staircase, the fresh high after a 60 percent run, driven by FOMO rather than a setup. Option D is sneaky-bad: more time reduces the decay pressure but you're still paying to bet against the team with the ball, and longer-dated puts on a trending name are how you lose slowly instead of quickly."
+        coachNotes: "Option C is the pro move: missing a move costs you nothing, fighting it costs you premium. Put it on the watchlist and plan the with-trend entry at a pullback where your risk is defined, so long as the trend stays intact. Option A is the classic tuition trade, unsustainable is a feeling, not a structure break. Option B chases the single worst entry in the staircase, the fresh high after a 60 percent run, driven by FOMO rather than a setup. Option D is sneaky-bad: more time reduces the decay pressure but you're still paying to bet against the team with the ball, and longer-dated puts on a trending name are how you lose slowly instead of quickly."
       }
     },
     {
@@ -271,24 +271,24 @@ const season3: Season = {
           id: "s3e3-q1",
           question: "What typically happens to a resistance level after price breaks decisively above it?",
           options: [
-            "It becomes irrelevant and price never interacts with it again",
-            "It tends to flip into support, as breakout buyers defend it and former sellers buy the retest",
+            "It becomes irrelevant and price stops reacting to it",
             "It becomes even stronger resistance on the next touch",
-            "It guarantees the stock will rise at least 10 percent"
+            "It guarantees the stock rises at least 10 percent more",
+            "It tends to flip into support on the next retest"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "This is role reversal, one of the most reliable patterns in level trading. The crowd that sold the old ceiling regrets it, breakout buyers defend their entries, and the old ceiling becomes the new floor. Nothing is guaranteed in markets, but the tendency is strong enough to build entries around."
         },
         {
           id: "s3e3-q2",
           question: "Why do round numbers like 100 or 500 often act as real support or resistance?",
           options: [
-            "Exchanges legally require extra liquidity at round numbers",
-            "Stocks are mathematically attracted to multiples of ten",
-            "Humans anchor on them, limit orders and option strikes cluster there, so enough participants act at those prices to make them matter",
+            "Humans anchor on them, so orders and option strikes cluster there",
+            "Exchanges legally require market makers to add liquidity at round numbers",
+            "Stocks are mathematically attracted to even multiples of ten",
             "Round numbers only matter for index funds, not individual stocks"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "There's no law or math forcing it, it's behavior. Orders cluster at round numbers, headlines trigger there, and big option strikes concentrate hedging flows nearby. When enough players treat a price as special, it becomes special. Self-fulfilling, but tradeable."
         },
         {
@@ -296,9 +296,9 @@ const season3: Season = {
           question: "A stock has well-tested support at 80. It trades down to 79.55 intraday, then closes at 80.90. How should a level trader read this?",
           options: [
             "Support broke, the thesis is dead, exit everything immediately",
-            "The level held, levels are zones, and a shallow intraday poke that closes back above is a successful test",
-            "The stock is now in a confirmed downtrend",
-            "The level no longer exists because it was touched"
+            "The level held and the dip was a successful test of the zone",
+            "The stock has just printed a confirmed downtrend signal",
+            "The level no longer exists now that it has been touched"
           ],
           correctIndex: 1,
           explanation: "Levels are zones, not laser lines. A brief dip below that reverses and closes back above the level is the level working, often it's the strongest kind of test, because it flushed out weak hands. Pros confirm breaks with a decisive close beyond the zone, not a one-tick wiggle."
@@ -317,7 +317,7 @@ const season3: Season = {
             pnl: -210
           },
           {
-            label: "Wait for a daily close above 250, then buy the retest of the level: 1 call, 260 strike, 6 weeks out, for 4.50",
+            label: "Wait for a daily close above 250, then buy the retest: 1 call, 260 strike, 6 weeks out, for 4.50",
             result: "MSFT closes at 252.30, pulls back to 250.20 three days later, and holds. You enter on the retest. The old ceiling acts as the new floor and MSFT climbs to 263. You sell the call for 9.00.",
             pnl: 450
           },
@@ -336,13 +336,13 @@ const season3: Season = {
         situation: "A stock you've stalked for weeks has resistance at 75. Tonight it reports earnings, beats big, and is indicated to open tomorrow at 81, gapping clean over your level. You planned to buy a breakout of 75, but now the entry you mapped is six dollars below the open. The premarket chat is euphoric.",
         question: "What's the disciplined play?",
         options: [
-          "Market-buy calls at the open. The breakout happened, hesitation is for losers",
-          "Treat 75 to 76 as the new support zone. Let the open settle, and only enter if price retests and holds the gap area or builds a new base above it, with a stop below 75",
-          "Buy puts at the open because gaps always fill",
-          "Forget the levels entirely, earnings gaps make technicals meaningless"
+          "Treat 75 to 76 as new support and only enter on a retest that holds, with a stop below 75",
+          "Market-buy calls the moment the bell rings, the breakout already happened and hesitation is for losers",
+          "Buy puts at the open because gaps like this almost always fill within a day or two",
+          "Ignore the levels entirely, an earnings gap makes the old technicals meaningless"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B is the pro move: your level still matters, its role just flipped. The old ceiling at 75 is now the floor of the gap, and a retest-and-hold gives you a defined-risk entry instead of a euphoria chase. Option A buys the most emotional print of the day, opening gaps often retrace intraday even when the breakout is real, and you'd have no stop reference six dollars above the level. Option C is a slogan, not a stat, gaps on genuine earnings surprises frequently never fill. Option D throws away the map right when it's most useful: post-earnings, the whole market is watching whether the gap-over-resistance holds."
+        bestIndex: 0,
+        coachNotes: "Option A is the pro move: your level still matters, its role just flipped. The old ceiling at 75 is now the floor of the gap, so let the open settle, and a retest-and-hold, or a new base built above the gap area, gives you a defined-risk entry instead of a euphoria chase. Option B buys the most emotional print of the day, opening gaps often retrace intraday even when the breakout is real, and you'd have no stop reference six dollars above the level. Option C is a slogan, not a stat, gaps on genuine earnings surprises frequently never fill. Option D throws away the map right when it's most useful: post-earnings, the whole market is watching whether the gap-over-resistance holds."
       }
     },
     {
@@ -384,37 +384,37 @@ const season3: Season = {
           id: "s3e4-q1",
           question: "Why do directional options trades need a catalyst more than stock trades do?",
           options: [
-            "Options exchanges require a stated catalyst on each order",
-            "Options decay over time and expire, so the position needs a reason for the stock to move within a specific window",
-            "Catalysts eliminate the risk of losing money on options",
-            "Stocks are not affected by news events, only options are"
+            "Options exchanges require traders to state a catalyst on every order ticket",
+            "Catalysts eliminate most of the risk of losing money on options",
+            "Options expire, so the move needs a reason to happen within a set window",
+            "Stocks are not affected by news events, only their options are"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "An option is a bet with a clock. A stock can drift sideways forever and a shareholder just waits, but sideways kills an option through time decay. A catalyst supplies the force and the date, the two things a decaying contract needs. Nothing eliminates risk, and stocks obviously respond to news too."
         },
         {
           id: "s3e4-q2",
           question: "A company reports genuinely good earnings, but the stock drops 8 percent. What is the most likely explanation?",
           options: [
-            "The market made an error and the stock will recover by tomorrow",
-            "Good earnings always cause sell-offs",
-            "Expectations were even higher than the results, the trade was about the gap between reality and what was priced in",
+            "The market made an error and will correct it by tomorrow",
+            "Expectations were even higher than the results",
+            "Good earnings reports always trigger sell-offs",
             "The earnings report must have been fraudulent"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "You trade the gap between outcomes and expectations, not the headline. If a stock ran 20 percent into earnings on hype, good results can still disappoint the bar the market set. This is also why sell the news exists. Markets aren't always right, but a one-day recovery is hope, not analysis."
         },
         {
           id: "s3e4-q3",
           question: "Which of these best passes the reason vs. rumor test?",
           options: [
-            "A streamer with a big following says a stock is about to explode",
-            "An anonymous post claims a buyout is coming, no date or source",
-            "The stock is up 6 percent today so something must be happening",
-            "Cloud providers publicly raised capex guidance 30 percent and your stock is their key supplier, with earnings in three weeks"
+            "Cloud providers raised capex guidance 30 percent, your stock is their key supplier, earnings in three weeks",
+            "A streamer with two million followers says the stock is about to explode and he has been right twice before",
+            "An anonymous post claims a buyout at a big premium is being finalized, with no date, source, or filing",
+            "The stock is up 6 percent today on heavy volume, so clearly something big is happening behind the scenes"
           ],
-          correctIndex: 3,
-          explanation: "The fourth option has a verifiable reason, public guidance, a transmission mechanism, supplier relationship, and a date, earnings. It survives the question why. The others are confidence, anonymity, and price action masquerading as reasons, none can be verified or dated, which makes them rumors."
+          correctIndex: 0,
+          explanation: "The capex answer has a verifiable reason, public guidance, a transmission mechanism, supplier relationship, and a date, earnings. It survives the question why. The others are confidence, anonymity, and price action masquerading as reasons, none can be verified or dated, which makes them rumors."
         }
       ],
       paperTrade: {
@@ -450,12 +450,12 @@ const season3: Season = {
         question: "What's the pro move?",
         options: [
           "Buy the calls now, the risk-reward on a real buyout justifies the gamble",
-          "Buy the stock instead of calls, so at least there's no expiration",
-          "Pass, or at most risk money you'd treat as already lost, an unverifiable rumor with tripled premium offers no edge, and log the name to study how the rumor resolves",
-          "Buy puts, because rumors are usually false and the spike will reverse"
+          "Buy shares instead of calls, so at least there's no expiration to beat",
+          "Buy puts, because rumors are usually false and the spike will reverse",
+          "Pass on the trade and log the name to study how the rumor resolves"
         ],
-        bestIndex: 2,
-        coachNotes: "Option C is the discipline. You can't verify the claim, you can't date it, and the option market has already tripled the price of being wrong, the edge, if there ever was one, belonged to whoever traded the first sixty seconds. Option A confuses a big payoff with a good bet, lottery tickets have big payoffs too. Option B reduces the decay problem but still commits real capital to an anonymous post. Option D is clever-sounding but equally rumor-dependent: you're now paying tripled premium to bet on the rumor's death, with halt risk and a real buyout as your tail risk. No verifiable reason means no trade, in either direction."
+        bestIndex: 3,
+        coachNotes: "Option D is the discipline. You can't verify the claim, you can't date it, and the option market has already tripled the price of being wrong, the edge, if there ever was one, belonged to whoever traded the first sixty seconds. If you absolutely must take the flyer, size it as money you've already written off. Option A confuses a big payoff with a good bet, lottery tickets have big payoffs too. Option B reduces the decay problem but still commits real capital to an anonymous post. Option C is clever-sounding but equally rumor-dependent: you're now paying tripled premium to bet on the rumor's death, with halt risk and a real buyout as your tail risk. No verifiable reason means no trade, in either direction."
       }
     },
     {
@@ -497,36 +497,36 @@ const season3: Season = {
           id: "s3e5-q1",
           question: "What does relative strength actually measure?",
           options: [
-            "Whether a stock's price went up or down this month",
+            "Whether a stock's price went up or down over the past month",
+            "The amount of raw buying volume flowing into a stock each day",
             "A stock's performance compared to its sector and the overall market",
-            "The amount of physical buying volume in a stock",
-            "How far a stock is above its 52-week low"
+            "How far a stock has climbed above its 52-week low price"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Relative strength is comparative: how a name performs versus its peers and the market, not versus zero. A stock up 4 percent while its sector is up 12 is showing relative WEAKNESS despite the gain. Volume and distance from lows are different measurements entirely."
         },
         {
           id: "s3e5-q2",
           question: "On a broad red market day, what behavior marks a true relative-strength leader?",
           options: [
-            "It falls more than the market because it ran up more",
-            "It gets halted for volatility",
-            "It falls less than the market or even closes green, then makes new highs first on the rebound",
-            "It always closes exactly flat"
+            "It falls harder than the market because it ran up more beforehand",
+            "It dips less than the market and reclaims highs first on the rebound",
+            "It usually gets halted for volatility while weaker names trade freely",
+            "It closes exactly flat because institutions pin the price in place"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Strength on defense is the classic tell. Leaders are the names institutions refuse to sell on weak days, so they dip least, and the names institutions buy first on strength, so they recover fastest. A leader falling hardest on red days would be showing distribution, the opposite signal."
         },
         {
           id: "s3e5-q3",
           question: "Why is buying the lagging stock in a hot sector because it's cheaper usually a mistake?",
           options: [
-            "Lagging stocks are often lagging for real reasons, and institutional money has already chosen the leaders",
-            "Cheap stocks cannot legally rise as fast as expensive ones",
-            "Sector moves only ever affect one stock at a time",
-            "Options are not available on lagging stocks"
+            "Cheap stocks cannot legally rise as fast as expensive stocks can",
+            "Sector moves only ever lift one or two stocks in a group at a time",
+            "Options on lagging stocks are too illiquid for anyone to trade them",
+            "Laggards usually lag for real reasons the big money has already seen"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "The laggard's discount usually reflects weaker earnings, products, or positioning, problems the big money already evaluated and rejected. Leaders attract the concentrated institutional flows that drive sustained moves. Laggards sometimes catch up, but more often they keep lagging, cheapness alone is not a catalyst."
         }
       ],
@@ -562,13 +562,13 @@ const season3: Season = {
         situation: "For six months you've profitably traded calls on the leading stock in the leading sector. This month something changed: your stock has fallen MORE than the market on red days, failed to make a new high on the last two rallies while a different sector's leaders are breaking out, and its sector has slipped to the middle of the performance rankings. You have no position right now, but your finger hovers over the same call buttons that worked all year.",
         question: "What do you do?",
         options: [
-          "Buy the dip in your name, it's been the leader for six months and deserves loyalty",
-          "Buy puts on your old leader immediately to play the breakdown",
-          "Re-run your relative-strength rankings across sectors and stocks, and follow the strength to wherever it now lives, even if that's a name you've never traded",
-          "Stop trading directionally since the old pattern broke"
+          "Re-run your relative-strength rankings and follow the strength wherever it now lives",
+          "Buy the dip in your name, six months of leadership has earned it your loyalty and the pullback is a gift",
+          "Buy puts on your old leader immediately to front-run the coming breakdown",
+          "Stop trading directionally for a while, since the old pattern clearly broke"
         ],
-        bestIndex: 2,
-        coachNotes: "Option C is the entire principle: relative strength is a current-conditions edge, and the conditions just rolled over, weaker on defense, failing at highs, sector rank slipping. Re-rank and follow the scoring. Option A is loyalty to a name, which the market never pays for, six months of history is not a thesis. Option B overreacts in the other direction, losing leadership is not the same as a confirmed downtrend, and shorting a former champion on the first stumble is its own trap. Option D quits the game because one play stopped working, rotation isn't the death of the edge, it IS the edge, the whole point is following strength as it moves."
+        bestIndex: 0,
+        coachNotes: "Option A is the entire principle: relative strength is a current-conditions edge, and the conditions just rolled over, weaker on defense, failing at highs, sector rank slipping. Re-rank across sectors and stocks, then follow the scoring, even when it points at a name you've never traded. Option B is loyalty to a name, which the market never pays for, six months of history is not a thesis. Option C overreacts in the other direction, losing leadership is not the same as a confirmed downtrend, and shorting a former champion on the first stumble is its own trap. Option D quits the game because one play stopped working, rotation isn't the death of the edge, it IS the edge, the whole point is following strength as it moves."
       }
     },
     {
@@ -610,24 +610,24 @@ const season3: Season = {
           id: "s3e6-q1",
           question: "Your thesis is that a stock rises after earnings, which are three weeks away. Which expiration best fits?",
           options: [
-            "One week, to keep the cost as low as possible",
-            "Expiring the day before earnings, to avoid the event risk",
-            "Five to six weeks, so the catalyst lands well inside the option's life with cushion after it",
-            "Expiration is irrelevant as long as the direction is right"
+            "One week out, keeping the upfront cost as low as possible",
+            "Five to six weeks out, with cushion beyond the event",
+            "Expiring the day before earnings, to dodge the event risk",
+            "Any expiration works as long as the direction call is right"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "The option must outlive the thesis with room to spare, a three-week catalyst calls for roughly five to six weeks of clock, so the event lands inside the option's life and you have cushion if the move develops over days. One week expires before the reason arrives. Expiring pre-earnings deliberately misses your own catalyst. And direction without a surviving clock pays nothing."
         },
         {
           id: "s3e6-q2",
           question: "Why are very short-dated options dangerous for directional theses, despite being cheap?",
           options: [
-            "They cannot be sold before expiration",
-            "Time decay accelerates sharply near expiration, so the stock must move correctly AND almost immediately",
-            "They have wider bid-ask spreads than any other instrument in finance",
-            "Short-dated options only exist on index products"
+            "They cannot be sold or closed out early, you are locked in until the expiration",
+            "They carry wider bid-ask spreads than any other instrument in finance",
+            "Short-dated contracts only exist on index products, not single stocks",
+            "Decay accelerates near expiration, so the move must come almost immediately"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Theta accelerates viciously in an option's final weeks, every flat day costs real money, and there's no time to be early. You're betting on direction and precise timing simultaneously, a much harder parlay than direction alone. Short-dated options trade freely before expiration and exist on most optionable names, those claims are false."
         },
         {
@@ -635,11 +635,11 @@ const season3: Season = {
           question: "What does paying up for a longer-dated option actually buy you?",
           options: [
             "A guaranteed profit if the stock eventually moves your way",
-            "A higher strike price",
-            "Exemption from time decay",
-            "Slower early decay and forgiveness for imprecise timing, room to be early without being dead"
+            "A higher strike price on the same underlying stock",
+            "Slower early decay and forgiveness for imprecise timing",
+            "A complete exemption from time decay until the final month"
           ],
-          correctIndex: 3,
+          correctIndex: 2,
           explanation: "Longer-dated options decay slowly early in their life, so stalls and detours don't gut the position, you're buying the right to be human about timing. Nothing guarantees profit, the strike is a separate choice entirely, and all options decay eventually, longer ones just decay gently while your thesis develops."
         }
       ],
@@ -656,7 +656,7 @@ const season3: Season = {
             pnl: -660
           },
           {
-            label: "Buy 1 of the 10-week calls for 6.80, covering the catalyst and the re-rating window",
+            label: "Buy 1 of the 10-week calls for 6.80, covering the full thesis window",
             result: "CAT chops for three weeks, dips to 279, then earnings confirm the order wave and the stock runs to 307 over the following month. You sell at 13.60 with two weeks still on the clock, the early chop never threatened the position.",
             pnl: 680
           },
@@ -675,13 +675,13 @@ const season3: Season = {
         situation: "You bought a 3-month call on a trending industrial name, and it's up 40 percent with the trend fully intact, higher highs, higher lows, sector still leading. The catch: three weeks remain until expiration, you're entering the steep part of the decay curve, and the stock just started a normal-looking pullback toward support.",
         question: "What's the pro move?",
         options: [
-          "Hold to expiration, the trend is intact and you don't pay decay if you don't sell",
-          "Sell the current call to bank the win, and if the thesis still justifies a position, roll into a later expiration with part of the profits",
-          "Buy more of the same expiration on this dip to average up",
-          "Convert to hoping, check the position every five minutes until expiration"
+          "Sell the call to bank the win, then roll part of the profits into a later expiration",
+          "Hold it to expiration, the trend is intact and you don't pay any decay if you never sell",
+          "Buy more of the same expiration on this dip to average up while it's cheap",
+          "Convert to hoping, check the position every five minutes until expiration day"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B is the roll, the signature move of pros who respect the clock: the thesis is alive but THIS contract is entering its decay zone, so you bank the win and re-establish on a clock that matches the remaining idea. Option A contains a genuine misconception, you absolutely pay decay while holding, theta is charged daily whether you sell or not, and a three-week clock plus a pullback can erase a 40 percent gain fast. Option C doubles into the worst part of the decay curve right as the stock pulls back, compounding clock risk at the exact wrong moment. Option D isn't a strategy, it's anxiety with a watchlist. When the clock and the thesis stop matching, fix the clock."
+        bestIndex: 0,
+        coachNotes: "Option A is the roll, the signature move of pros who respect the clock: the thesis is alive but THIS contract is entering its decay zone, so you bank the win and re-establish only if the idea still earns a position, on a clock that matches what's left of it. Option B contains a genuine misconception, you absolutely pay decay while holding, theta is charged daily whether you sell or not, and a three-week clock plus a pullback can erase a 40 percent gain fast. Option C doubles into the worst part of the decay curve right as the stock pulls back, compounding clock risk at the exact wrong moment. Option D isn't a strategy, it's anxiety with a watchlist. When the clock and the thesis stop matching, fix the clock."
       }
     },
     {
@@ -723,21 +723,21 @@ const season3: Season = {
           id: "s3e7-q1",
           question: "In plain English, a call option with a 0.70 delta means approximately what?",
           options: [
-            "The option costs 70 dollars per contract",
-            "It gains about 70 cents per 1 dollar stock move, and carries roughly 70 percent odds of finishing in the money",
-            "The stock must rise 70 percent for the option to profit",
-            "The option expires in 70 days"
+            "A premium of 70 dollars per contract, with the price rising 70 cents for each day that passes",
+            "A required 70 percent rise in the stock before the option can profit at expiration",
+            "Seventy calendar days remaining until expiration, with time decay starting on day 35",
+            "Roughly 70 cents of movement per dollar of stock move, and about 70 percent odds of finishing in the money"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Delta does double duty: it's the option's sensitivity, about 70 cents captured per dollar of stock movement, and a rough market-implied probability of finishing in the money. It has nothing to do with the option's dollar cost, days to expiration, or any required percentage move in the stock."
         },
         {
           id: "s3e7-q2",
           question: "Your research says a 50 dollar stock should reach about 55 in six weeks, a solid but moderate move. Which strike choice best matches that thesis?",
           options: [
-            "The 65 strike, because it is the cheapest and you can buy the most contracts",
+            "The 65 strike, the cheapest one with the most contracts",
             "The 40 strike puts, to hedge in case you are wrong",
-            "An ITM or ATM call around the 47 to 50 strikes, where a move to 55 produces a solid profit",
+            "An ITM or ATM call around the 47 to 50 strikes",
             "Whichever strike has the highest trading volume that day"
           ],
           correctIndex: 2,
@@ -747,12 +747,12 @@ const season3: Season = {
           id: "s3e7-q3",
           question: "What is the main hidden risk of buying far out-of-the-money calls on a directional thesis?",
           options: [
-            "They cannot be exercised under exchange rules",
-            "They have zero time decay until the final day",
-            "Brokers restrict selling them before expiration",
-            "The stock can move in your direction, but not far or fast enough, and the calls still expire worthless"
+            "They cannot be exercised early under exchange rules",
+            "The stock can move your way but not far or fast enough",
+            "Brokers restrict selling them until the week of expiration",
+            "They carry zero time decay until the final trading day"
           ],
-          correctIndex: 3,
+          correctIndex: 1,
           explanation: "Far-OTM calls require being right three ways at once: direction, magnitude, and speed. A correct directional call with a moderate move still dies below the strike, the OTM special. They decay like every option, and they can be freely sold or exercised, those claims are false. The market's low delta quote was telling you the odds all along."
         }
       ],
@@ -789,12 +789,12 @@ const season3: Season = {
         question: "What do you do?",
         options: [
           "Buy 11 of the 0.35 teenies, one 40x and the whole month is paid for",
-          "Buy 1 ATM call for 400, matching the strike to your actual 5-to-8 percent thesis",
-          "Skip the strike debate by buying both: 200 into ATM, 200 into teenies",
-          "Buy the teenies but promise yourself you'll sell them at a double"
+          "Buy the teenies but promise yourself you'll sell them at a double",
+          "Buy a single ATM call with the whole 400 dollar allocation",
+          "Split the difference: 200 into the ATM call, 200 into the teenies"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B matches strike to thesis: a 5-to-8 percent expected move pays an ATM strike directly, while the 15 percent OTM strike needs roughly double your own forecast just to reach the money. Option A is the chat-room special, the 40x story from last quarter is survivorship bias with a megaphone, nobody posts the nine quarters of zeros. Option C feels balanced but half your capital still sits in a strike your research calls unreachable, half a bad bet is still a bad bet. Option D adds an exit plan to a position that shouldn't exist, post-earnings, OTM options often get crushed by collapsing volatility even when the stock moves your way, so the disciplined double may never be on offer. Strike selection is a research output, not a chat-room mood."
+        bestIndex: 2,
+        coachNotes: "Option C matches strike to thesis: a 5-to-8 percent expected move pays an ATM strike directly, while the 15 percent OTM strike needs roughly double your own forecast just to reach the money. Option A is the chat-room special, the 40x story from last quarter is survivorship bias with a megaphone, nobody posts the nine quarters of zeros. Option D feels balanced but half your capital still sits in a strike your research calls unreachable, half a bad bet is still a bad bet. Option B adds an exit plan to a position that shouldn't exist, post-earnings, OTM options often get crushed by collapsing volatility even when the stock moves your way, so the disciplined double may never be on offer. Strike selection is a research output, not a chat-room mood."
       }
     },
     {
@@ -837,34 +837,34 @@ const season3: Season = {
           id: "s3e8-q1",
           question: "Your checklist scores a setup four out of five, everything checks except there is no identifiable catalyst. What does the checklist discipline say?",
           options: [
-            "Take the trade at half your normal size to compensate",
-            "Take the trade but with a shorter expiration to save premium",
-            "No trade, log the setup, and set an alert for when the missing box might check, like an upcoming earnings window",
+            "No trade, log the setup, and set an alert for the missing box",
+            "Take the trade at half your normal size to compensate for the gap",
+            "Take the trade but with a shorter expiration to save on premium",
             "Replace the catalyst box with a different indicator that does check"
           ],
-          correctIndex: 2,
-          explanation: "The rule is five-for-five or flat. Half-size on a flawed setup is half-speed toward the same problem, the missing box, especially a catalyst, is often the exact factor that decides the outcome. A shorter expiration makes a no-catalyst trade WORSE, pure decay on a faster clock. And swapping criteria mid-decision is how checklists die. Pass, journal, alert."
+          correctIndex: 0,
+          explanation: "The rule is five-for-five or flat. Half-size on a flawed setup is half-speed toward the same problem, the missing box, especially a catalyst, is often the exact factor that decides the outcome. A shorter expiration makes a no-catalyst trade WORSE, pure decay on a faster clock. And swapping criteria mid-decision is how checklists die. Pass, journal, and set the alert for when the missing box might check, like an upcoming earnings window."
         },
         {
           id: "s3e8-q2",
           question: "What is the primary job of a pre-trade checklist?",
           options: [
-            "To kill marginal trades, the boredom, FOMO, and revenge plays that bleed accounts",
-            "To find more trade ideas every day",
-            "To guarantee each trade is profitable",
-            "To eliminate the need for position sizing"
+            "To surface more trade ideas every single day",
+            "To guarantee each individual trade is profitable",
+            "To kill marginal trades before you take them",
+            "To eliminate the need for careful position sizing"
           ],
-          correctIndex: 0,
-          explanation: "The checklist is a filter, not a scanner, its value is the trades it stops you from taking under pressure, when memory fails and emotion lies. It generates fewer trades, not more, guarantees nothing about any single outcome, and sizing is literally one of its boxes, not something it replaces."
+          correctIndex: 2,
+          explanation: "The checklist is a filter, not a scanner, its value is the boredom, FOMO, and revenge plays it stops you from taking under pressure, when memory fails and emotion lies. It generates fewer trades, not more, guarantees nothing about any single outcome, and sizing is literally one of its boxes, not something it replaces."
         },
         {
           id: "s3e8-q3",
           question: "Why does the five-for-five rule pair naturally with larger position sizing when a setup finally qualifies?",
           options: [
-            "Because rare setups are legally allowed higher leverage",
-            "Because passing on marginal trades preserves capital and confidence for the rare setups where every factor aligns and conviction is genuinely earned",
-            "Because five-for-five setups cannot lose",
-            "Because brokers reduce commissions on checklist trades"
+            "Because setups that grade out at five-for-five are legally allowed to carry higher leverage",
+            "Because passing on marginal setups preserves capital and conviction for the rare ones",
+            "Because a five-for-five setup is effectively guaranteed not to lose money",
+            "Because brokers reduce commissions for traders who document a checklist"
           ],
           correctIndex: 1,
           explanation: "The discipline compounds: capital not bled on four-out-of-five trades is available when the real pitch arrives, and conviction built on verifiable criteria lets you size and hold without flinching. Five-for-five setups absolutely still lose sometimes, the edge is expectancy across the season, not certainty on any play. The legal and commission claims are nonsense."
@@ -878,7 +878,7 @@ const season3: Season = {
         brief: "Run the checklist on LULU: uptrend intact, higher highs and higher lows for four months, CHECK. Pulled back to the 385-390 breakout retest zone, CHECK. Earnings in three weeks with two peers having just reported strong results, CHECK. But, consumer discretionary ranks seventh of eleven sectors, and LULU has fallen HARDER than the market on two of the last three red days. Relative strength: NO CHECK. A perfect 8-week, 0.55-delta contract exists, CHECK. Four out of five. You have 1,000 dollars allocated.",
         choices: [
           {
-            label: "Pass on the trade, journal it, and set an alert to re-grade if sector rank improves or after the earnings reaction",
+            label: "Pass, journal the setup, and set an alert to re-grade if the sector rank improves",
             result: "LULU reports decent earnings but the weak sector drags: the stock pops to 401, fades, and closes the month at 379. The calls you didn't buy round-trip to a loss. Your 1,000 stays intact for a five-for-five setup that appears two weeks later.",
             pnl: 0
           },
@@ -902,13 +902,13 @@ const season3: Season = {
         situation: "You've run the checklist faithfully for two months: seven trades, five winners, account up nicely. But it's been eleven days since the last five-for-five setup, and you're bored stiff. Today a popular trader you respect posts a heater of a call idea. You grade it honestly: trend yes, level no, entry floats mid-range, catalyst vague, RS yes, contract fine. Three and a half out of five, and your finger is hovering anyway.",
         question: "What do you do?",
         options: [
-          "Take it, an eleven-day drought means you're due, and this trader's track record substitutes for the missing boxes",
+          "Take it, you're due after eleven days and his track record covers the missing boxes",
           "Take it small, splitting the difference between discipline and opportunity",
-          "Pass, recognize that boredom is the attack vector, and treat the eleven-day drought as the checklist working exactly as designed",
-          "Loosen the checklist to three-of-five going forward since five-for-five setups are too rare"
+          "Loosen the checklist to three-of-five, since five-for-five setups are too rare",
+          "Pass, and treat the eleven-day drought as the checklist doing its job"
         ],
-        bestIndex: 2,
-        coachNotes: "Option C wins, and the reframe is the whole game: droughts aren't the checklist failing, they're the checklist SUCCEEDING, eleven days of not donating premium to marginal setups is why the account is up. Boredom is the most expensive emotion in trading, it manufactures conviction out of restlessness. Option A outsources your boxes to someone else's confidence, his track record doesn't transfer to your entry, your clock, or your sizing, and due is a casino word, setups have no memory. Option B, the small treat, trains the worst habit: negotiating with your own rules under emotional pressure, and the next negotiation starts from there. Option D is the most dangerous of all, recalibrating standards DOWNWARD in response to boredom, the checklist's entire value is that it doesn't bend on the days you do."
+        bestIndex: 3,
+        coachNotes: "Option D wins, and the reframe is the whole game: droughts aren't the checklist failing, they're the checklist SUCCEEDING, eleven days of not donating premium to marginal setups is why the account is up. Boredom is the attack vector here, the most expensive emotion in trading, it manufactures conviction out of restlessness. Option A outsources your boxes to someone else's confidence, his track record doesn't transfer to your entry, your clock, or your sizing, and due is a casino word, setups have no memory. Option B, the small treat, trains the worst habit: negotiating with your own rules under emotional pressure, and the next negotiation starts from there. Option C is the most dangerous of all, recalibrating standards DOWNWARD in response to boredom, the checklist's entire value is that it doesn't bend on the days you do."
       }
     },
     {
@@ -951,36 +951,36 @@ const season3: Season = {
           id: "s3e9-q1",
           question: "Why is choppy, range-bound price action especially damaging to option BUYERS, beyond being merely boring?",
           options: [
-            "Exchanges widen spreads during sideways markets as a penalty",
-            "Time decay grinds premium down every flat day, so a stock going nowhere produces steady losses in both calls and puts",
-            "Chop only damages put holders, calls are immune",
-            "Range-bound stocks lose their option chains after a few weeks"
+            "Exchanges widen bid-ask spreads in sideways markets",
+            "Chop only damages put holders, calls are immune to it",
+            "Time decay grinds the premium down every flat day",
+            "Range-bound stocks lose their option chains entirely"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "An option buyer pays theta daily whether the stock moves or not, so chop is a wood chipper: no directional progress, steady premium bleed, in calls AND puts alike. A stock trader can sit through sideways action for free, an options buyer cannot. The other options describe rules that don't exist."
         },
         {
           id: "s3e9-q2",
           question: "What is the most reliable defense against breakout fakeouts at a key level?",
           options: [
-            "Buy the first intraday touch of the level to get the best price",
-            "Avoid trading breakouts entirely, they never work",
-            "Double the position size so the breakout has to work",
-            "Require a decisive close through the level, ideally followed by a retest that holds, before entering"
+            "Require a decisive close through the level, then a retest that holds",
+            "Buy the first intraday touch of the level to capture the best price",
+            "Avoid trading breakouts entirely, since they almost never follow through",
+            "Double the position size so the breakout is forced to work in your favor"
           ],
-          correctIndex: 3,
+          correctIndex: 0,
           explanation: "Confirmation discipline, the close through the level plus a held retest, filters out the intraday pokes that trap breakout chasers and reverse. You sacrifice the first point of the move and dodge the majority of traps, late but confirmed beats early but trapped. Breakouts absolutely work when confirmed, and sizing up on an unconfirmed signal just supersizes the trap."
         },
         {
           id: "s3e9-q3",
           question: "During a strong multi-week rally inside a longer downtrend, what tells a structure trader the rally is still a counter-trend bounce rather than a new uptrend?",
           options: [
-            "The rally has lasted more than two weeks",
-            "Volume increased during the rally",
-            "The index has not broken its pattern of lower highs, and overhead resistance like a falling long-term moving average remains intact above",
-            "Sentiment on social media turned bullish"
+            "The rally has lasted more than two weeks without a meaningful pullback",
+            "The pattern of lower highs is unbroken and overhead resistance remains intact",
+            "Volume expanded during the rally, which proves institutions are accumulating",
+            "Sentiment on social media turned bullish during the move higher"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Possession changes when structure changes: a genuine new uptrend requires breaking the prior lower-high sequence and holding above key overhead resistance. Until then, even a violent 17 percent rally, like summer 2022, remains a bounce within a downtrend. Duration, volume, and bullish sentiment all accompanied that famous trap, none of them confirmed a trend change, and sentiment is usually loudest right at the top of the bounce."
         }
       ],
@@ -997,7 +997,7 @@ const season3: Season = {
             pnl: -360
           },
           {
-            label: "Stay flat, write the plan now: alert at the 23.20 breakout level, entry only on a pullback that holds it, with a fresh checklist grade at that point",
+            label: "Stay flat, set an alert at 23.20, and only enter on a pullback that holds",
             result: "Two and a half weeks later PLTR pulls back to 23.60, holds the level for three days, and your alert fires. You grade the setup, buy an 8-week call on the confirmed retest at calmer premium, and catch the next leg to 29 for a clean win on a planned entry.",
             pnl: 620
           },
@@ -1016,13 +1016,13 @@ const season3: Season = {
         situation: "Your watchlist has been pure chop for two weeks, every name range-bound, every breakout dying in a day, your last two small trades stopped out flat-to-down. Tonight a streamer with 400,000 followers goes live: a small-cap he loves is going to triple, chat is a wall of rocket emojis, and the stock is already up 30 percent after hours on no filing, no news, just the stream. Your trading capital is sitting at 100 percent cash and your week has been miserable.",
         question: "What do you do?",
         options: [
-          "Buy at the open tomorrow, two dead weeks means you're owed a runner and 400,000 people can't be wrong",
-          "Stay flat, recognize chop plus boredom plus a no-catalyst vertical as a stacked trap, and let the cash position ride until conditions produce a checklist-grade setup",
+          "Buy at the open tomorrow, you're owed a runner and 400,000 viewers can't be wrong",
           "Buy a tiny position just to feel involved, you can't win if you don't play",
-          "Short it at the open since streamer pumps always collapse"
+          "Short it at the open, since streamer pumps always collapse within days",
+          "Stay flat and let the cash ride until a checklist-grade setup appears"
         ],
-        bestIndex: 1,
-        coachNotes: "Option B stacks every lesson in this episode: chop already said no-edge, two stopped-out trades said conditions are hostile, and a no-catalyst after-hours vertical driven by a stream is the FOMO trap in its purest lab-grade form, boredom and a losing week are the exact emotional state traps are built to harvest. Option A is three fallacies in a trench coat: owed isn't a thing, crowd size isn't confirmation, and up 30 percent on nothing is the entry price of a trap, not a trend. Option C, the just to feel involved trade, is how discipline actually dies, not in one blowup but in small permissions, and feeling involved is a casino product, not a trading edge. Option D correctly smells the pump but volunteers for the buzzsaw: low-float pumps can double again before they collapse, borrow costs are brutal, and timing the top of mania is its own no-edge trade. Cash, patience, and an intact checklist are the play, flat is a position."
+        bestIndex: 3,
+        coachNotes: "Option D stacks every lesson in this episode: chop already said no-edge, two stopped-out trades said conditions are hostile, and a no-catalyst after-hours vertical driven by a stream is the FOMO trap in its purest lab-grade form, boredom and a losing week are the exact emotional state traps are built to harvest. Option A is three fallacies in a trench coat: owed isn't a thing, crowd size isn't confirmation, and up 30 percent on nothing is the entry price of a trap, not a trend. Option B, the just to feel involved trade, is how discipline actually dies, not in one blowup but in small permissions, and feeling involved is a casino product, not a trading edge. Option C correctly smells the pump but volunteers for the buzzsaw: low-float pumps can double again before they collapse, borrow costs are brutal, and timing the top of mania is its own no-edge trade. Cash, patience, and an intact checklist are the play, flat is a position."
       }
     },
     {
@@ -1065,12 +1065,12 @@ const season3: Season = {
           id: "s3e10-q1",
           question: "What separates a real watchlist from a pile of tickers?",
           options: [
-            "A real watchlist has at least 50 names for proper diversification",
-            "A real watchlist is small, 10 to 20 names that each earn their spot, with written levels, catalyst dates, and IF-THEN triggers per name",
-            "A real watchlist only contains stocks that are currently going up",
-            "A real watchlist is sorted alphabetically and checked once a month"
+            "It has at least 50 names to guarantee proper diversification",
+            "It only contains stocks that are currently making new highs",
+            "It is small, 10 to 20 names, each carrying a written scouting card",
+            "It is sorted alphabetically and reviewed once a month"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "The scouting report's value is depth per name, not name count: trend state, drawn levels, dated catalysts, and a pre-written IF-THEN trigger turn a ticker into a game plan. Eighty scrolled tickers is a screensaver. Names can earn slots while coiling, not just rising, and monthly alphabetical check-ins are how reports go stale."
         },
         {
@@ -1078,23 +1078,23 @@ const season3: Season = {
           question: "Why are IF-THEN triggers written in advance so much more valuable than decisions made live during market hours?",
           options: [
             "Brokers execute pre-written plans at better prices",
+            "They move the decision to the calm version of you",
             "Written plans are legally binding so you cannot deviate",
-            "Live decisions are illegal under pattern-day-trader rules",
-            "The calm, unpressured version of you thinks in expectancy, while the live version thinks in emotion, pre-writing moves the decision to the better decision-maker"
+            "Live decisions violate pattern-day-trader regulations"
           ],
-          correctIndex: 3,
+          correctIndex: 1,
           explanation: "The trigger written on a quiet Tuesday is produced by a brain weighing odds and sizing rationally, the live decision happens under FOMO, fear, and time pressure, the exact conditions Episode 9's traps exploit. Pre-writing doesn't change execution prices or carry legal force, it changes WHICH version of you makes the call."
         },
         {
           id: "s3e10-q3",
           question: "What is the main purpose of weekly watchlist maintenance, re-ranking, re-grading, and cutting names?",
           options: [
-            "To keep the scouting report current, because leadership rotates and a stale report gives false confidence that's worse than no report",
-            "To generate more trades each week",
-            "To ensure every sector is always represented on the list",
-            "To satisfy brokerage account requirements"
+            "To generate a larger number of trade ideas each week",
+            "To make sure every sector is always represented on the list",
+            "To satisfy brokerage account documentation requirements",
+            "To keep the scouting report current as leadership rotates"
           ],
-          correctIndex: 0,
+          correctIndex: 3,
           explanation: "Relative strength rotates, levels break, catalysts pass, a card that was true three weeks ago can be confidently wrong today, and acting on stale intel is worse than acting on none. Maintenance is a quality process, not a trade generator, and the roster should concentrate where strength lives, not spread evenly across all sectors. No broker requires any of this, discipline does."
         }
       ],
@@ -1106,7 +1106,7 @@ const season3: Season = {
         brief: "Three weeks ago you wrote a scouting card for CRWD: uptrend intact, second-strongest name in the leading cybersecurity group, breakout level 92, support 88, earnings in six weeks, IF pullback holds 88-89 THEN buy one 10-week 95 call, budget 600 dollars. Today a broad market dip tags CRWD at 88.60 and your alert fires. The dip is scary, your feed is bearish, and a different stock, an EV name up 22 percent today, is trending everywhere.",
         choices: [
           {
-            label: "Run the card: confirm the level is holding, re-grade the checklist in two minutes, and execute the pre-written trade, one 10-week 95 call for 5.50",
+            label: "Run the card: confirm the level holds, then execute the pre-written 10-week 95 call for 5.50",
             result: "The support zone holds as planned, the market dip passes, and CRWD reclaims the trend, breaking 92 and running to 99 after earnings. You sell the call for 10.80, the trade you designed three weeks ago, executed in two minutes.",
             pnl: 530
           },
@@ -1130,13 +1130,13 @@ const season3: Season = {
         situation: "It's Sunday night, your weekly 30-minute maintenance window. The audit is uncomfortable: your favorite name, a stock that made you four winning trades this year, has slipped to lower highs and its sector has fallen from second to eighth in your rankings. Meanwhile an unfamiliar industrial-automation group has climbed to the top of the sector table for a third straight week, and you know none of its names. You're tired and tempted to skip the whole session.",
         question: "What's the pro move?",
         options: [
-          "Keep your favorite name on the list, it's earned a lifetime roster spot with four wins, and skip scouting the unfamiliar group until you have more energy",
-          "Cut or bench the deteriorating favorite, spend the 30 minutes scouting two or three leaders in the rising industrial group, and write fresh cards with levels and catalyst dates even though they're strangers",
+          "Keep the favorite, four wins have earned it a lifetime roster spot, and scout the new group another week",
+          "Bench the deteriorating favorite and spend the session scouting leaders in the rising group",
           "Skip maintenance this week, the list worked fine last month and one stale week can't hurt",
           "Delete the whole watchlist and rebuild from scratch monthly so nothing ever goes stale"
         ],
         bestIndex: 1,
-        coachNotes: "Option B is the scouting department doing its actual job: rosters are rented, never owned, and four past wins are exactly the sentimental attachment that keeps deteriorating names on lists, the stock doesn't know it made you money, and lower highs in a sinking sector is the Episode 5 rotation signal in plain sight. Scouting the unfamiliar leaders IS the edge, everyone's comfortable trading last quarter's winners, preparation means knowing the next group before it's obvious. Option A is loyalty plus laziness, the two solvents that dissolve watchlists. Option C is how one stale week becomes a stale month, maintenance skipped under fatigue is the audit failing exactly when it's needed, deterioration doesn't pause because you're tired. Option D overcorrects into chaos: monthly demolition destroys the accumulated knowledge, level history, catalyst calendars, trend context, that weekly pruning preserves. The binder compounds. Burn it monthly and you're a rookie twelve times a year."
+        coachNotes: "Option B is the scouting department doing its actual job: rosters are rented, never owned, and four past wins are exactly the sentimental attachment that keeps deteriorating names on lists, the stock doesn't know it made you money, and lower highs in a sinking sector is the Episode 5 rotation signal in plain sight. Scouting the unfamiliar leaders IS the edge, write fresh cards with levels and catalyst dates even though they're strangers, everyone's comfortable trading last quarter's winners, preparation means knowing the next group before it's obvious. Option A is loyalty plus laziness, the two solvents that dissolve watchlists. Option C is how one stale week becomes a stale month, maintenance skipped under fatigue is the audit failing exactly when it's needed, deterioration doesn't pause because you're tired. Option D overcorrects into chaos: monthly demolition destroys the accumulated knowledge, level history, catalyst calendars, trend context, that weekly pruning preserves. The binder compounds. Burn it monthly and you're a rookie twelve times a year."
       }
     }
   ]

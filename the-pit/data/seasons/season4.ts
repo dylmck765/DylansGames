@@ -44,27 +44,27 @@ const season4: Season = {
         {
           id: "s4e1-q1",
           question: "Your account takes a 50% drawdown. What gain do you now need just to get back to even?",
-          options: ["50%", "75%", "100%", "150%"],
-          correctIndex: 2,
+          options: ["150%", "100%", "75%", "50%"],
+          correctIndex: 1,
           explanation: "Losses and gains are not symmetrical. If $10,000 becomes $5,000, that $5,000 has to double -- a 100% gain -- just to return to $10,000. This is why deep drawdowns are so dangerous: the hole grows faster than your ability to climb out of it."
         },
         {
           id: "s4e1-q2",
           question: "Two traders have identical 55% win rates. Trader A risks 2% per play, Trader B risks 15% per play. Over a long season, what is the most likely difference?",
           options: [
-            "Trader B compounds faster and finishes far richer",
-            "They finish about the same, since the win rate is identical",
-            "Trader A survives the inevitable losing streaks; Trader B risks ruin when one hits",
-            "Trader B only does worse if his win rate drops"
+            "Trader B compounds faster and finishes the season far richer",
+            "They finish about the same, since identical win rates mean identical results",
+            "Trader B only does worse if his win rate drops below 50%",
+            "Trader A survives the inevitable losing streaks; Trader B risks ruin"
           ],
-          correctIndex: 2,
+          correctIndex: 3,
           explanation: "Losing streaks are statistically guaranteed over enough trades, even at a 55% win rate. At 15% risk per play, a five-loss streak costs Trader B more than half his account, and the recovery math turns brutal from there. Same picks, different sizes, completely different careers."
         },
         {
           id: "s4e1-q3",
           question: "You risk 2% of your account on each play and hit a ten-loss streak. Roughly how deep is your drawdown?",
-          options: ["About 10%", "About 18%", "About 35%", "About 50%"],
-          correctIndex: 1,
+          options: ["About 50%", "About 35%", "About 18%", "About 10%"],
+          correctIndex: 2,
           explanation: "Each 2% loss compounds: 0.98 raised to the 10th power is about 0.82, leaving you down roughly 18%. Nasty, but you only need about a 22% gain to recover. Risk 10% per play and the same streak digs a 65% hole. Small size turns a disaster into a bad month."
         }
       ],
@@ -100,13 +100,13 @@ const season4: Season = {
         situation: "You are up 12% this month and feeling sharp. A friend who knows someone swears a small biotech has trial results coming and the calls will 10x. Your account is $25,000 and the calls he likes cost $300 each.",
         question: "What is the disciplined play?",
         options: [
+          "Do your own homework first, and if you still like it, size it like any other play.",
           "Buy 25 contracts ($7,500). Edges like this are rare and you are playing with house money.",
-          "Do your own homework first, and if you actually like it, size it like any other play: one or two contracts, 1-2% of the account at risk.",
           "Skip the homework but buy 5 contracts -- splitting the difference between conviction and caution.",
           "Buy 2 contracts now and plan to double the position every day it drops, to lower your cost basis."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A is the classic blow-up script: house money is still your money, and 30% of the account on a rumor is how seasons end. Option C sizes a bet it never evaluated -- half-discipline is not discipline. Option D pre-commits to averaging down into a falling, decaying asset, turning one mistake into four. Option B is the pro move: the source of an idea never changes the rules. Verify the thesis, then size by max loss like every other play. No tip is good enough to break the playbook for."
+        bestIndex: 0,
+        coachNotes: "Option B is the classic blow-up script: house money is still your money, and 30% of the account on a rumor is how seasons end. Option C sizes a bet it never evaluated -- half-discipline is not discipline. Option D pre-commits to averaging down into a falling, decaying asset, turning one mistake into four. Option A is the pro move: the source of an idea never changes the rules. Verify the thesis, then size by max loss like every other play -- one or two contracts, 1-2% of the account at risk. No tip is good enough to break the playbook for."
       }
     },
     {
@@ -147,32 +147,32 @@ const season4: Season = {
         {
           id: "s4e2-q1",
           question: "You have a $50,000 account and a 2% risk rule. You want a $4.00 option ($400 per contract) and your plan is a hard cut at a 50% loss. What is your max position?",
-          options: ["2 contracts", "5 contracts", "10 contracts", "12 contracts"],
-          correctIndex: 1,
+          options: ["12 contracts", "10 contracts", "5 contracts", "2 contracts"],
+          correctIndex: 2,
           explanation: "2% of $50,000 is a $1,000 risk budget. With a disciplined 50% cut, each contract risks about $200, so $1,000 divided by $200 is 5 contracts. Note that without the cut rule, each contract risks the full $400 and the answer drops to 2. The exit plan is part of the size."
         },
         {
           id: "s4e2-q2",
           question: "What is the right unit for position sizing in options?",
           options: [
-            "Number of contracts",
+            "Dollars at risk in the max-loss scenario",
+            "The number of contracts you trade",
             "Total premium as a percent of your last win",
-            "Dollars at risk if your max-loss scenario hits",
-            "The delta of the position"
+            "The net delta of the combined position"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Contracts tell you nothing without the premium attached -- ten contracts can be $400 or $6,500. Pros size every play by the dollars lost if the worst case hits, then check that number against the 1-2% budget. Everything else is commentary."
         },
         {
           id: "s4e2-q3",
           question: "What was the core sizing failure at Archegos in 2021?",
           options: [
-            "Bad stock picks in dying industries",
-            "Heavy leverage concentrated in a few names, so one bad week forced a liquidation spiral",
-            "Trading options instead of stock",
-            "Positions that were too small to keep up with the market"
+            "A portfolio of bad picks in dying legacy industries",
+            "Using options instead of stock to build the exposure",
+            "Positions that were too small to keep up with the market",
+            "Heavy leverage concentrated in a handful of names"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Archegos was not a story of bad picks -- many of the positions had been huge winners. It was leverage stacked on concentration, which meant a single ordinary pullback triggered margin calls that fed on themselves. Size and concentration, not selection, ended the firm in two days."
         }
       ],
@@ -194,7 +194,7 @@ const season4: Season = {
             pnl: -323
           },
           {
-            label: "Buy 1 contract with a hard cut at a 50% loss ($190 of planned risk, about 1.3%)",
+            label: "Buy 1 contract with a hard 50% cut ($190 of planned risk, about 1.3%)",
             result: "The launch disappoints, the option hits your cut at -50%, and you punt for a $190 loss. Inside budget, by the book. You will not even remember this trade in a month.",
             pnl: -190
           }
@@ -209,12 +209,12 @@ const season4: Season = {
         question: "What do you do with a conviction play that does not fit the budget?",
         options: [
           "Buy 3 contracts. Rules are for average setups, and this one is special.",
-          "Buy 1 contract with a hard 50% cut, putting $400 of planned risk on the line -- max conviction, max allowed size, rule intact.",
           "Skip it entirely. If one contract at full premium busts the budget, it cannot be traded.",
+          "Buy 1 contract with a hard 50% cut, putting $400 of planned risk on the line.",
           "Buy 1 contract now and commit to adding 2 more if it drops, to build a bigger position at better prices."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A is how every blown account justified itself -- this one was special. Conviction is exactly when the cap matters most, because that is when you most want to break it. Option C throws away a legitimate tool: a hard 50% cut halves the planned risk and fits the play inside the rule. Option D is averaging down in disguise, pre-committing $2,400 to a falling position. Option B is the pro move: express conviction through trade selection, never through rule-breaking size."
+        bestIndex: 2,
+        coachNotes: "Option A is how every blown account justified itself -- this one was special. Conviction is exactly when the cap matters most, because that is when you most want to break it. Option B throws away a legitimate tool: a hard 50% cut halves the planned risk and fits the play inside the rule. Option D is averaging down in disguise, pre-committing $2,400 to a falling position. Option C is the pro move: max conviction at max allowed size with the rule intact -- express conviction through trade selection, never through rule-breaking size."
       }
     },
     {
@@ -256,31 +256,31 @@ const season4: Season = {
           id: "s4e3-q1",
           question: "You buy a call option for $2.75. What is your maximum possible loss?",
           options: [
+            "$275 per contract",
             "$2.75 total",
-            "$275 per contract -- the premium paid",
             "Unlimited if the stock keeps falling",
             "The premium plus the strike price"
           ],
-          correctIndex: 1,
+          correctIndex: 0,
           explanation: "Options are quoted per share and a standard contract covers 100 shares, so a $2.75 option costs $275 per contract -- and that premium is the absolute worst case for a long option. No matter what the stock does, a call buyer can never lose more than what was paid at entry."
         },
         {
           id: "s4e3-q2",
           question: "Which of these positions has an UNCAPPED maximum loss?",
-          options: ["Long put", "Long call", "Short (naked) call", "Long call spread"],
-          correctIndex: 2,
+          options: ["Long put", "Short (naked) call", "Long call", "Long call spread"],
+          correctIndex: 1,
           explanation: "A naked short call loses more the higher the stock climbs, and there is no ceiling on a stock price -- that is the same exposure that wrecked short sellers in the 2021 squeezes. Long options and defined-risk spreads cap the worst case at entry. Know which team you are putting on the field."
         },
         {
           id: "s4e3-q3",
           question: "What does a complete pre-kickoff risk card contain?",
           options: [
-            "Your price target and a screenshot of the chart",
-            "Max loss in dollars, max loss as a percent of the account, and the exit trigger",
-            "The contract count and the breakeven price",
-            "Your win rate over the last twenty trades"
+            "Your price target and a screenshot of the marked-up chart",
+            "The contract count, the breakeven price, and the expiry date",
+            "Your win rate and average P&L over the last twenty trades",
+            "Max loss in dollars and in percent, plus the exit trigger"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Three numbers, one sentence, thirty seconds: dollars at risk, percent of the franchise at risk, and exactly what makes you exit. Targets and breakevens are offense -- the card is defense, and it gets written before any money moves."
         }
       ],
@@ -297,7 +297,7 @@ const season4: Season = {
             pnl: -1450
           },
           {
-            label: "Buy 1 put for $700 and write the card: max loss $700 (2% of the account), exit if the premium halves or the report passes.",
+            label: "Buy 1 put for $700 with the card written: max loss 2%, exit if the premium halves.",
             result: "TSLA rips and the put hits your 50% cut. You punt for a planned, pre-known loss and move on. The worst case was written down before the snap -- and you did not even take the full hit.",
             pnl: -350
           },
@@ -316,13 +316,13 @@ const season4: Season = {
         situation: "A trader in your group chat sells naked calls on a hot AI stock every Friday and posts the wins -- free money, they always expire worthless. He is 11 for 11 and wants you in. Your account is $25,000.",
         question: "What is the disciplined response?",
         options: [
-          "Join him. Eleven straight wins is a track record.",
-          "Join him, but at half his size to be safe.",
-          "Pass on uncapped risk entirely. If you want the bearish trade, use a defined-risk structure like a call credit spread, sized so the known max loss fits your 1-2% rule.",
-          "Join him for one trade just to see how it feels, then decide."
+          "Join him at full size. An 11-for-11 record is all the proof a strategy needs.",
+          "Join him, but at half his size so one bad Friday cannot do too much damage.",
+          "Pass entirely; if you want the bearish trade, use a defined-risk call credit spread.",
+          "Join him for just one trade to see how it feels live, then decide whether to continue."
         ],
         bestIndex: 2,
-        coachNotes: "Options A, B, and D all put on a position whose worst case cannot be stated -- and half of unlimited is still unlimited. Eleven wins tells you nothing about the twelfth, which on naked calls can hand back years of free money in one afternoon; ask anyone who was short calls on GameStop in January 2021. Option C is the pro move: keep the same opinion, change the structure. A defined-risk spread caps the worst case at a number you can write on the card before kickoff. Never enter a trade whose worst case you cannot say out loud."
+        coachNotes: "Options A, B, and D all put on a position whose worst case cannot be stated -- and half of unlimited is still unlimited. Eleven wins tells you nothing about the twelfth, which on naked calls can hand back years of free money in one afternoon; ask anyone who was short calls on GameStop in January 2021. Option C is the pro move: keep the same opinion, change the structure. A defined-risk spread caps the worst case at a number you can write on the card before kickoff, sized so the known max loss fits your 1-2% rule. Never enter a trade whose worst case you cannot say out loud."
       }
     },
     {
@@ -364,10 +364,10 @@ const season4: Season = {
           id: "s4e4-q1",
           question: "Why do stock-style hard stop orders break down on options?",
           options: [
-            "Brokers do not allow stop orders on options",
-            "Wide bid-ask spreads and thin quotes mean the triggered market order can fill far below fair value",
-            "Options move too slowly for stops to matter",
-            "Stops on options can only be set at round numbers"
+            "Most brokers refuse to accept stop orders on options accounts",
+            "Wide, thin quotes can fill the triggered market order far below fair value",
+            "Options premiums move too slowly during the trading day for stops to ever trigger",
+            "Exchanges only accept option stops at round-number price increments"
           ],
           correctIndex: 1,
           explanation: "A triggered stop becomes a market order, and options books are often quoted dimes or dollars wide with little real size -- especially during the volatility spikes that fire stops in the first place. You can be filled at the low print of the day on a quote flicker. The level was fine; the weapon was wrong."
@@ -377,11 +377,11 @@ const season4: Season = {
           question: "Your call is down only 15%, but the catalyst you bought it for has come and gone with no reaction. What is the disciplined move?",
           options: [
             "Hold until your price stop at -50% is hit -- rules are rules",
-            "Exit now: the thesis trigger fired, even though the price trigger did not",
             "Add to the position since it is barely down",
-            "Remove all exit triggers and reassess next week"
+            "Remove all exit triggers and reassess next week",
+            "Exit now: the thesis trigger just fired"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "You run two triggers, and whichever fires first wins. The reason for the trade -- the catalyst -- is dead, so every remaining day just pays theta for hope. Exiting at -15% on a dead thesis is a better trade than exiting at -50% on a technicality."
         },
         {
@@ -389,11 +389,11 @@ const season4: Season = {
           question: "What makes a mental stop actually work?",
           options: [
             "Keeping the level flexible so you can adapt in the moment",
-            "A pre-written level, an alert set at that level, and executing with a limit order the moment it fires",
-            "Checking the position every few minutes all day",
-            "Telling your group chat about the level so they hold you accountable"
+            "Watching the position constantly so no important level sneaks past you",
+            "Telling your group chat about the level so they hold you accountable",
+            "A pre-set level, an alert on it, and immediate execution when it fires"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "The mental stop has three parts: decide the level while calm, automate the trigger with an alert, and execute with a patient limit order when it fires. Miss any leg and it collapses -- a flexible level gets renegotiated, no alert means you miss it, and no execution means it was never a stop at all."
         }
       ],
@@ -410,7 +410,7 @@ const season4: Season = {
             pnl: -255
           },
           {
-            label: "Set a price alert at $2.10. If it fires, you personally work a limit order near the mid.",
+            label: "Set a price alert at $2.10; if it fires, work a limit order near the mid.",
             result: "The flush hits, your alert fires, and you fill a $2.05 limit within a minute. A clean punt at your number, with no donation to the spread.",
             pnl: -215
           },
@@ -429,10 +429,10 @@ const season4: Season = {
         situation: "You hold calls on a software name. Overnight, a rival's ugly earnings spook the whole sector, and your option is indicated down 40% at the open with the spread quoted a full dollar wide. Your thesis -- a product launch in two weeks -- has not changed.",
         question: "What is your first move at the bell?",
         options: [
-          "Market-sell everything at the open before it gets worse.",
-          "Buy more immediately -- it is 40% cheaper than yesterday.",
-          "Do nothing and avoid looking at it until next week.",
-          "Pause: check whether the news actually touches your thesis, let the spread settle for a few minutes, then act per your plan -- with limit orders if an exit trigger has fired."
+          "Market-sell everything the moment the bell rings, before it can get any worse.",
+          "Buy more right at the open -- the exact same calls are 40% cheaper than they were yesterday.",
+          "Do nothing and avoid looking at the position again until sometime next week.",
+          "Pause: check whether the news touches your thesis, let the spread settle, then act per plan."
         ],
         bestIndex: 3,
         coachNotes: "Option A sells panic into the widest spread of the day -- the worst fills in the market live in the first few minutes after an ugly open. Option B confuses down with cheap; nothing about your thesis got 40% better overnight. Option C is the freeze: if a trigger fired, you have to act, and looking away is not a plan. Option D is the pro sequence -- thesis check first, then patient execution. Sector sympathy moves are often pure noise to your specific catalyst. If it is noise, the plan holds. If your line truly broke, you punt with a limit order, never a market order into a canyon."
@@ -477,24 +477,24 @@ const season4: Season = {
           id: "s4e5-q1",
           question: "Which of these is thesis invalidation, as opposed to noise?",
           options: [
-            "Your option is down 12% in normal daily chop",
-            "The whole market had a red day",
-            "The catalyst you bought the option for came and went with no move",
-            "The bid-ask spread widened over lunch"
+            "The catalyst behind the trade came and went with no move",
+            "Your option is down 12% in otherwise normal daily chop",
+            "The whole market printed a red day across every sector",
+            "The bid-ask spread on your contract widened over the lunch lull"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Wiggles, red tape days, and spread behavior are weather -- they happen to every position and prove nothing. The catalyst passing without the move is the verdict: the reason for the trade no longer exists. When the why dies, the trade dies, regardless of the current P&L."
         },
         {
           id: "s4e5-q2",
           question: "Why does a hard cut at a 50% loss make sense specifically for long options?",
           options: [
-            "Because options always bounce after falling 50%",
-            "It caps the loss well short of zero, and a halved premium usually means both price and time are working against you",
-            "Because brokers require it",
-            "It guarantees your win rate stays above 50%"
+            "Most brokers require a standing 50% stop order on long options positions",
+            "A 50% loss is the point where assignment risk starts to kick in",
+            "An option down 50% usually has both the stock and the clock against it",
+            "It mathematically guarantees your win rate stays above 50%"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "An option down 50% is fighting on two fronts: the stock has moved against the thesis and theta keeps grinding every day. The rule banks the remaining half instead of riding the souvenir to zero. It is not magic -- it is a pre-commitment that removes the debate at the worst possible moment to be debating."
         },
         {
@@ -537,13 +537,13 @@ const season4: Season = {
         situation: "Your calls are down 45% with 30 days left. There has been no news at all -- the stock has just drifted sideways in normal volatility. Your thesis, an analyst day three weeks out, is still on the calendar. Your written rule: punt at -50% or on thesis invalidation.",
         question: "What do you do at -45%?",
         options: [
-          "Sell everything now -- down 45% feels close enough to the line.",
+          "Sell everything now -- down 45% is close enough to the line to count as hit.",
+          "Hold per the plan: the alert stays at -50% and fires without debate if touched.",
           "Suspend the -50% rule for this trade, since the catalyst has not even happened yet.",
-          "Hold per the plan: keep the alert set at -50% and punt without debate if it hits. The thesis is intact, and the rule stays exactly where you drew it.",
-          "Add another contract to lower your cost basis before the analyst day."
+          "Add another contract now to lower your cost basis ahead of the analyst day."
         ],
-        bestIndex: 2,
-        coachNotes: "Option A punts on feelings -- the rule says 50, not close to 50, and panic-selling intact theses is its own slow leak. Option B is how rules die: one exemption becomes ten, always granted at the worst moment. Option D adds size to a position one bad day from its stop -- that is not conviction, it is cost-basis cosmetics. Option C is the pro move: nothing has been invalidated, so the trade lives, but the line does not move. Discipline means the rule fires the same way whether you are up, down, or bored."
+        bestIndex: 1,
+        coachNotes: "Option A punts on feelings -- the rule says 50, not close to 50, and panic-selling intact theses is its own slow leak. Option C is how rules die: one exemption becomes ten, always granted at the worst moment. Option D adds size to a position one bad day from its stop -- that is not conviction, it is cost-basis cosmetics. Option B is the pro move: the thesis is intact and nothing has been invalidated, so the trade lives -- but the line stays exactly where you drew it. Discipline means the rule fires the same way whether you are up, down, or bored."
       }
     },
     {
@@ -593,23 +593,23 @@ const season4: Season = {
           question: "Which of these is a THESIS-based reason to exit a winning trade?",
           options: [
             "The position is up 100% and that feels like a lot",
-            "The catalyst fully played out and the move you predicted is now complete",
-            "A red candle printed this morning",
-            "You want to lock in profits before the weekend"
+            "A big red candle printed on the daily chart this morning",
+            "You want to lock in profits before the weekend",
+            "The catalyst fully played out and the move is complete"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "Feelings, candles, and calendars are nerves talking. The trade exists because of a thesis, so the trade ends when the thesis ends -- catalyst done, move complete, story priced. Everything else is managed with a give-back floor, not a panic button."
         },
         {
           id: "s4e6-q3",
           question: "Adding to a position is a professional press -- not a gamble -- when...",
           options: [
-            "The position is up and you feel hot",
+            "New confirming information about the thesis has arrived",
+            "The position is up big and you are feeling hot",
             "The position is down and adding lowers your cost basis",
-            "New confirming information has arrived and the add is sized as its own play inside your risk budget",
-            "The chat room agrees with you"
+            "Several traders you respect agree loudly with the position"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Pressing requires new evidence -- a catalyst landing in stages, a thesis visibly strengthening -- and the add still obeys the 1-2% budget as its own bet. Price going up alone is not information, and averaging down a loser is the same action in the opposite, desperate direction. Same click, completely different trades."
         }
       ],
@@ -621,12 +621,12 @@ const season4: Season = {
         brief: "You bought 2 calls at $2.50 ($500 total) ahead of a government-contracts announcement. Phase one of the contract news just dropped and the calls trade at $5.50 -- up 120%. Two more contract phases are expected over the next three weeks, and your calls have 25 days left.",
         choices: [
           {
-            label: "Sell everything at $5.50. Up 120% -- take the money and run.",
+            label: "Sell everything at $5.50. Up 120% is plenty -- take the money and run.",
             result: "You book a great trade. Then the remaining phases land and the calls run to $9.00. You left $700 on the field with the thesis still mid-play.",
             pnl: 600
           },
           {
-            label: "Hold both contracts with a give-back floor at $4.00, raising the floor as the news plays out.",
+            label: "Hold both contracts with a rising give-back floor, starting at $4.00.",
             result: "Phase two lands and the calls hit $9.00; you raise your floor to $7.00. Phase three underwhelms and tags it. You exit at $7.00 -- a winner that ran, and a floor that worked.",
             pnl: 900
           },
@@ -645,9 +645,9 @@ const season4: Season = {
         situation: "Your calls are up 150% with three weeks to expiry. The catalyst you bought them for -- an FDA decision -- is still a week away. You are checking the position every twenty minutes and your finger is hovering over the sell button.",
         question: "What is the pro move?",
         options: [
-          "Sell everything. Up 150% into a binary event is gambling.",
+          "Sell everything now. Holding a 150% gain into a binary event is gambling.",
           "Hold everything exactly as is and white-knuckle it to the decision.",
-          "Let the thesis decide: the event you paid for has not happened yet, so set a give-back floor that locks a strong win and let the runner see the catalyst.",
+          "Set a give-back floor that locks a strong win and let the runner see the catalyst.",
           "Sell, then buy twice as many cheaper, further out-of-the-money calls to increase the upside."
         ],
         bestIndex: 2,
@@ -693,7 +693,7 @@ const season4: Season = {
           id: "s4e7-q1",
           question: "You buy 2 contracts at $2.50 ($500 total). The option doubles to $5.00 and you sell one contract. What is the status of the trade?",
           options: [
-            "You have banked $500 -- your full initial outlay -- and the runner rides with your starting capital already recovered",
+            "You have banked $500, recovering your full initial outlay",
             "You are still risking $250 of your original money",
             "You locked in a $500 profit and have nothing left in the trade",
             "You must sell the second contract immediately to break even"
@@ -706,8 +706,8 @@ const season4: Season = {
           question: "When does a pro add the second tranche to a scaled entry?",
           options: [
             "Whenever the position is down, to improve the average price",
-            "When the trade confirms -- and the add was already planned inside the total risk budget",
-            "Whenever spare cash is available",
+            "When the trade confirms and the add was already planned",
+            "Whenever spare cash is sitting available in the account",
             "Immediately after entry, to reach full size faster"
           ],
           correctIndex: 1,
@@ -717,12 +717,12 @@ const season4: Season = {
           id: "s4e7-q3",
           question: "What is the honest trade-off of scaling out of winners?",
           options: [
-            "It increases your total risk per trade",
-            "It caps your maximum win versus holding everything to the top, in exchange for consistency and the nerve to hold runners",
-            "It only works in bull markets",
-            "There is no trade-off; scaling out is strictly better"
+            "It increases your total premium at risk on every single trade",
+            "It only works in steadily trending bull markets",
+            "There is no trade-off; scaling out is strictly better",
+            "It caps your maximum win versus riding everything to the top"
           ],
-          correctIndex: 1,
+          correctIndex: 3,
           explanation: "If the trade goes straight to the moon, the scaler makes less than the all-in rider who nailed the exact top -- but nobody nails exact tops repeatedly. The payment you receive is a smoother equity curve and the psychological footing to hold the rest of the move. Over a season, that trade is a steal."
         }
       ],
@@ -739,7 +739,7 @@ const season4: Season = {
             pnl: -120
           },
           {
-            label: "Sell 2 at $3.10 ($620 banked -- stake recovered) and let 2 ride earnings behind a trailing floor.",
+            label: "Sell 2 at $3.10 and let 2 ride earnings behind a trailing floor.",
             result: "The runners spike to $4.80 into the report, and your raised floor at $4.00 stops them out on the post-earnings fade. Banked: $620 plus $800 against $600 spent. A disciplined win on both halves of the catalyst.",
             pnl: 820
           },
@@ -758,7 +758,7 @@ const season4: Season = {
         situation: "Your written plan for a retail stock: $500 total risk budget (2% of the account), entered as a $250 starter before a same-store-sales report, with the other $250 to be added only if the report confirms the turnaround. The report just confirmed it -- sales beat -- and your starter calls are up.",
         question: "What now?",
         options: [
-          "Add the planned $250 second tranche -- the thesis confirmed exactly as scripted.",
+          "Add the planned $250 second tranche, exactly as scripted.",
           "Add $1,000 instead of $250. Confirmation this clean deserves real size.",
           "Skip the add and sell the starter now -- a win is a win.",
           "Skip the add and hold the starter with no further plan."
@@ -806,36 +806,36 @@ const season4: Season = {
           id: "s4e8-q1",
           question: "Your account is down 30%. What gain do you need to break even -- and what does tilt tell you to do about it?",
           options: [
-            "30%; tilt says keep trading normally",
-            "43%; tilt says size up to get it back faster -- which is exactly how the hole gets deeper",
+            "30%; tilt says keep trading at your normal size",
             "43%; tilt says quit trading forever",
+            "43%; tilt says size up to win it back faster",
             "50%; tilt says switch to a brand-new strategy immediately"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "From 70 cents on the dollar, you need about a 43% gain to return to even -- 1 divided by 0.70 is roughly 1.43. The danger is what that number does to a tilted brain: it reads like a case for bigger swings, when oversized swings are what dug the hole. The spiral runs on exactly this misreading."
         },
         {
           id: "s4e8-q2",
           question: "Which of these is a classic revenge-trading tell?",
           options: [
-            "Taking a planned trade from your watchlist at normal size",
-            "Passing on a setup that does not meet your checklist",
+            "Taking a planned trade from your watchlist at your normal size",
             "Taking an oversized position in an unfamiliar ticker right after a loss",
-            "Reviewing your trade log after the close"
+            "Passing on a tempting setup because it does not meet your written checklist",
+            "Reviewing your trade log line by line after the close"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "Unresearched ticker, inflated size, immediately after a loss -- that is the full revenge signature in one trade. The tell underneath all of them: you are trading your P&L instead of a setup. The other three options are what process looks like."
         },
         {
           id: "s4e8-q3",
           question: "When should your circuit-breaker rules be written?",
           options: [
+            "Before any drawdown, while you are calm",
             "In the moment, so they fit the situation",
             "After a blow-up, when the lesson is fresh",
-            "Before any drawdown, while you are calm -- then followed mechanically when triggered",
             "Never; flexibility beats rules in fast markets"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "The tilted version of you will never write the rule and will fight the rule that exists -- which is precisely why the calm version writes it first and makes the consequence automatic. A breaker negotiated in the moment is not a breaker. It is a suggestion, and tilt eats suggestions."
         }
       ],
@@ -874,7 +874,7 @@ const season4: Season = {
           "Trade it at triple size. One good jobs print fixes the whole week.",
           "Trade it at half size as a respectful compromise with the rule.",
           "Switch to futures for the report, since the breaker technically only covers your options trades.",
-          "Stand down. The weekly breaker tripped at -6%; you are flat until Monday, and today's only job is the film review."
+          "Stand down. The weekly breaker tripped; you are flat until Monday."
         ],
         bestIndex: 3,
         coachNotes: "Option A is the spiral in its final form: maximum size, maximum need, minimum judgment. Option B still breaks the rule -- a breaker you can half-follow is not a breaker, it is a suggestion. Option C is loophole brain: same capital, same tilt, different wrapper; the rule is about you, not the instrument. Option D is the entire reason the rule exists -- it works hardest on exactly the days you want to override it. Cold streaks happen inside good process. Spend Friday grading the process: if the rules were followed and the losses were variance, you change nothing, and you show up Monday at full strength."
@@ -925,20 +925,20 @@ const season4: Season = {
         {
           id: "s4e9-q2",
           question: "Your winners are three times the size of your losers (3-to-1 reward-to-risk). What win rate do you need just to break even?",
-          options: ["50%", "33%", "25%", "10%"],
-          correctIndex: 2,
+          options: ["10%", "25%", "33%", "50%"],
+          correctIndex: 1,
           explanation: "Breakeven win rate is 1 divided by 1 plus the reward-to-risk ratio: 1 divided by 4 is 25%. Big asymmetric winners buy you the right to be wrong often -- this is the math that lets trend traders profit while losing most of their trades. Know your number before every play."
         },
         {
           id: "s4e9-q3",
           question: "How can a strategy that wins over 90% of the time still destroy an account?",
           options: [
-            "It cannot -- a 90% win rate guarantees long-term profit",
-            "Commissions eat the difference",
-            "The rare losses are so large they outweigh all the small wins combined -- negative expectancy hiding behind a high win rate",
-            "High win rates only fail in bull markets"
+            "The rare losses are big enough to outweigh all the small wins",
+            "It cannot -- a win rate that high guarantees long-term profit",
+            "Commissions and fees quietly eat the entire edge over time",
+            "Strategies with high win rates only fail during strong bull markets"
           ],
-          correctIndex: 2,
+          correctIndex: 0,
           explanation: "Expectancy weighs size as well as frequency: win $100 95% of the time but lose $4,000 the other 5%, and you expect to lose about $105 per trade. That is the steamroller structure that ended Niederhoffer in 1997. A win rate without the payout numbers attached is a sales pitch, not an edge."
         }
       ],
@@ -975,12 +975,12 @@ const season4: Season = {
         question: "The room is loud and your finger is on the trigger. What is the move?",
         options: [
           "Take it at double size -- conviction is edge.",
-          "Pass, and log why: a 40% win rate at one-to-one odds is minus 20 cents of expectancy per dollar risked. The math said no.",
           "Take it small, just for the entertainment.",
-          "Take it, but plan to cut at -25% to fix the bad odds."
+          "Take it, but plan to cut at -25% to fix the bad odds.",
+          "Pass, and log the trade you did not take."
         ],
-        bestIndex: 1,
-        coachNotes: "Option A doubles a negative number -- conviction does not change the odds, it just raises the stakes. Option C pays real money for entertainment; small negative bets are still subscriptions. Option D feels clever, but a tighter stop also slashes the win rate -- you get stopped on noise before the move -- so the expectancy usually gets worse, not better. Option B is the pro play, and notice it produces nothing to post in the chat: no fill, no screenshot, just edge protected. Passing on bad math is the most profitable trade most traders never learn to make."
+        bestIndex: 3,
+        coachNotes: "Option A doubles a negative number -- conviction does not change the odds, it just raises the stakes. Option B pays real money for entertainment; small negative bets are still subscriptions. Option C feels clever, but a tighter stop also slashes the win rate -- you get stopped on noise before the move -- so the expectancy usually gets worse, not better. Option D is the pro play: a 40% win rate at one-to-one odds is minus 20 cents of expectancy per dollar risked, and the math said no. Notice it produces nothing to post in the chat -- no fill, no screenshot, just edge protected. Passing on bad math is the most profitable trade most traders never learn to make."
       }
     },
     {
@@ -1023,12 +1023,12 @@ const season4: Season = {
           id: "s4e10-q1",
           question: "What is the primary job of a personal circuit breaker?",
           options: [
-            "To predict when the market is about to fall",
-            "To interrupt trading mechanically after defined losses, taking the decision away from a tilted brain",
-            "To maximize profits during winning streaks",
+            "To predict when the next big market drop is coming",
+            "To maximize profits by pressing harder during winning streaks",
+            "To interrupt trading mechanically after defined losses",
             "To replace the need for position sizing rules"
           ],
-          correctIndex: 1,
+          correctIndex: 2,
           explanation: "Breakers do not forecast -- they interrupt. After defined damage, your judgment is statistically compromised, so the rule removes judgment from the equation entirely: trigger hits, trading stops, automatically. It works alongside sizing rules, never instead of them."
         },
         {
@@ -1048,12 +1048,12 @@ const season4: Season = {
           question: "When is the right time to amend your risk playbook?",
           options: [
             "Mid-trade, when you can see the rule is costing you money",
+            "In a calm, scheduled review, one change at a time",
             "The night a breaker trips, while the lesson is fresh",
-            "In a calm, scheduled review with at least a month of data -- one change at a time",
             "Never; the first draft must stand forever"
           ],
-          correctIndex: 2,
-          explanation: "Rules edited mid-trade or mid-drawdown are not amendments -- they are permission slips written by tilt. The playbook evolves, but only in the calm film session, with data, one change at a time. If a change cannot wait for Sunday, that urgency is itself the warning."
+          correctIndex: 1,
+          explanation: "Rules edited mid-trade or mid-drawdown are not amendments -- they are permission slips written by tilt. The playbook evolves, but only in the calm film session, with at least a month of data, one change at a time. If a change cannot wait for Sunday, that urgency is itself the warning."
         }
       ],
       paperTrade: {
@@ -1064,7 +1064,7 @@ const season4: Season = {
         brief: "Monday. Your $18,000 account runs a written playbook: 1.5% per play ($270 max risk) and a daily breaker at two full losses (-$540). The morning trade stopped out: -$270. At 1 pm a clean A+ setup appears in AAPL -- calls at $2.60, and your 50% cut rule puts $130 of planned risk per contract.",
         choices: [
           {
-            label: "Take it: 2 contracts, $260 of planned risk -- inside the per-play budget, breaker not yet tripped.",
+            label: "Take it: 2 contracts, $260 of planned risk -- inside the per-play budget.",
             result: "The setup works and the calls run to $4.20 by the close; you exit per plan, up $320. The day ends green -- but the real win is that both the morning loss and the afternoon win followed the page.",
             pnl: 320
           },
@@ -1089,12 +1089,12 @@ const season4: Season = {
         question: "What do you do with the exception request?",
         options: [
           "Trade it at full size -- rules serve you, not the other way around.",
+          "Deny the exception: you are flat Friday, and the setup goes in the journal.",
           "Trade it at quarter size as a compromise between discipline and opportunity.",
-          "Deny the exception: the breaker is on, you are flat Friday, and the setup goes in the journal. If the analysis was right, there will be evidence for the Sunday review -- and a market open on Monday.",
           "Rewrite the playbook tonight, moving the weekly breaker to -8% so tomorrow's trade is legal."
         ],
-        bestIndex: 2,
-        coachNotes: "Option A is every blown account's last diary entry: this time was different. Option B violates the rule while pretending not to -- breakers are binary by design, because partial breakers select for exactly the trades your tilted brain likes most. Option D is the most corrosive of all: amending rules at night, in a drawdown, to legalize tomorrow's urge -- that is not a playbook, it is a permission slip. Option C is the franchise move. The breaker's entire value is that it holds on the days you most want to override it, and a real edge does not expire over one weekend. Paper trade the Fed setup, grade it Sunday, and show up Monday at full strength. Defense wins championships."
+        bestIndex: 1,
+        coachNotes: "Option A is every blown account's last diary entry: this time was different. Option C violates the rule while pretending not to -- breakers are binary by design, because partial breakers select for exactly the trades your tilted brain likes most. Option D is the most corrosive of all: amending rules at night, in a drawdown, to legalize tomorrow's urge -- that is not a playbook, it is a permission slip. Option B is the franchise move. The breaker's entire value is that it holds on the days you most want to override it, and a real edge does not expire over one weekend -- if the analysis was right, there will be evidence for the Sunday review and a market open on Monday. Paper trade the Fed setup, grade it Sunday, and show up Monday at full strength. Defense wins championships."
       }
     },
   ],
