@@ -106,6 +106,19 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           <Link href={state.profile.onboarded ? "/locker-room" : "/"} className="logo">
             THE <span className="pit">PIT</span>
           </Link>
+          <span
+            style={{
+              fontSize: 8,
+              letterSpacing: "0.04em",
+              color: "rgba(255,255,255,0.28)",
+              marginLeft: 6,
+              alignSelf: "flex-end",
+              marginBottom: 3,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Puma Capital, LLC
+          </span>
           {inApp && ready && state.profile.onboarded && (
             <Link href="/profile" className="topbar-stats">
               <span className="stat-chip">
@@ -143,18 +156,6 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
       )}
-
-      <footer
-        style={{
-          textAlign: "center",
-          padding: inApp ? "18px 16px 92px" : "18px 16px 26px",
-          fontSize: 11,
-          letterSpacing: "0.06em",
-          color: "rgba(255,255,255,0.36)",
-        }}
-      >
-        Puma Capital, LLC
-      </footer>
 
       <EventLayer />
     </>
