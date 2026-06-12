@@ -144,6 +144,18 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </nav>
       )}
 
+      <footer
+        style={{
+          textAlign: "center",
+          padding: inApp ? "18px 16px 92px" : "18px 16px 26px",
+          fontSize: 11,
+          letterSpacing: "0.06em",
+          color: "rgba(255,255,255,0.36)",
+        }}
+      >
+        Puma Capital, LLC
+      </footer>
+
       <EventLayer />
     </>
   );
