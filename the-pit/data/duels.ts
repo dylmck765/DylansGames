@@ -310,5 +310,345 @@ export const duelPool: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation: "The event juice piles into the nearest expiration, and an at-the-money weekly is made up almost entirely of extrinsic value. Once the uncertainty disappears, that one deflates like a balloon someone let go of."
+  },
+  {
+    id: "duel-31",
+    question: "You own 100 shares and sell one call against them. What have you taken on?",
+    options: [
+      "An obligation to sell your 100 shares at the strike if the call is exercised",
+      "A second batch of 100 shares bought at the current market price",
+      "The right to buy another 100 shares whenever you choose to",
+      "Full downside protection on every share you own no matter how far the stock falls"
+    ],
+    correctIndex: 0,
+    explanation: "Selling a call against shares you own is the covered call, where the premium is your payment for agreeing to let the shares go at the strike. You collect income up front, and the trade-off is giving up the gains above that price."
+  },
+  {
+    id: "duel-32",
+    question: "You sell a cash-secured put. What are you on the hook for?",
+    options: [
+      "Nothing, the premium you collect is yours free and clear",
+      "Buying 100 shares at the strike if the stock falls and you get assigned",
+      "Selling 100 shares you do not even own at the strike price",
+      "Delivering the dividend to whoever bought the put from you over the period"
+    ],
+    correctIndex: 1,
+    explanation: "When you sell a put you are agreeing to buy the stock at the strike, so you park the cash to cover it. Traders use this to get paid while waiting to own a stock at a price they actually like."
+  },
+  {
+    id: "duel-33",
+    question: "Why is selling a naked call considered the riskiest basic options trade?",
+    options: [
+      "The premium you collect is usually very small",
+      "Your broker charges extra commission on it",
+      "It can only ever lose the premium you took in and nothing beyond that",
+      "A stock can rise forever, so the loss has no ceiling"
+    ],
+    correctIndex: 3,
+    explanation: "When you sell a call without owning the shares, you have promised to deliver at the strike however high the stock climbs. There is no limit on how far a stock can run, which means the loss on a naked call has no limit either."
+  },
+  {
+    id: "duel-34",
+    question: "You sold a call and it finishes in the money. What most likely happens at expiration?",
+    options: [
+      "The option quietly expires and you keep everything",
+      "You are handed 100 fresh shares to add to your account",
+      "You get assigned and sell 100 shares at the strike",
+      "Your account is frozen until the next trading session opens"
+    ],
+    correctIndex: 2,
+    explanation: "An in-the-money short call gets assigned, so you deliver 100 shares at the strike. If you do not already own them, your broker buys them at the market price and you feel the difference."
+  },
+  {
+    id: "duel-35",
+    question: "How do American-style options differ from European-style?",
+    options: [
+      "American options never expire on a Friday afternoon",
+      "American options can be exercised any day before expiration",
+      "American options trade only on foreign stock exchanges",
+      "American options settle in cash while European ones deliver shares to you"
+    ],
+    correctIndex: 1,
+    explanation: "Most US stock options are American style, so the holder can exercise on any trading day rather than waiting for the end. European style, common on index options, only allows exercise at expiration."
+  },
+  {
+    id: "duel-36",
+    question: "When is a put option in the money?",
+    options: [
+      "When the stock is trading below the strike price",
+      "When the stock is trading above the strike price",
+      "When the stock sits exactly at the strike price",
+      "Whenever implied volatility is higher than it was at the time you bought it"
+    ],
+    correctIndex: 0,
+    explanation: "A put gives you the right to sell at the strike, so it carries real value once the stock drops under that level. The lower the stock goes beneath the strike, the deeper in the money the put sits."
+  },
+  {
+    id: "duel-37",
+    question: "A trader says they 'rolled' an option. What did they do?",
+    options: [
+      "Exercised it early to grab the shares",
+      "Let it expire and walked away from the position",
+      "Closed the current option and opened a new one further out",
+      "Turned the single contract into a spread by selling another strike against it"
+    ],
+    correctIndex: 2,
+    explanation: "Rolling is closing what you hold and reopening a similar position at a later date or a different strike, usually in one motion. People roll to buy more time or to chase a better level when the trade still has legs."
+  },
+  {
+    id: "duel-38",
+    question: "What does open interest tell you that daily volume does not?",
+    options: [
+      "The number of contracts that traded so far today",
+      "The total contracts still open and not yet closed out",
+      "The exact price the very next trade will fill at",
+      "How much implied volatility is baked into the front-month options right now"
+    ],
+    correctIndex: 1,
+    explanation: "Volume counts how many contracts changed hands today. Open interest is the running tally of contracts opened and not yet closed, so it shows how much real positioning is parked in a strike."
+  },
+  {
+    id: "duel-39",
+    question: "A call is deep in the money. What is its delta close to?",
+    options: ["0.00", "0.30", "0.50", "1.00"],
+    correctIndex: 3,
+    explanation: "A deep in-the-money call moves almost dollar for dollar with the stock, so its delta sits up near 1.00. At that point the option behaves a lot like owning the shares outright."
+  },
+  {
+    id: "duel-40",
+    question: "What is true about the delta of a long put?",
+    options: [
+      "It is negative, because the put gains when the stock falls",
+      "It is always exactly positive one",
+      "It is locked at zero until expiration day",
+      "It matches the delta of a call sitting at the very same strike price"
+    ],
+    correctIndex: 0,
+    explanation: "A long put carries negative delta because it profits as the stock drops. A delta around negative 0.40 means the put gains roughly 40 cents for every dollar the stock loses."
+  },
+  {
+    id: "duel-41",
+    question: "You buy the $100 call and sell the $105 call for a net debit of $2.00. What is your max profit per share?",
+    options: ["$2.00", "$5.00", "$3.00", "$105.00"],
+    correctIndex: 2,
+    explanation: "The distance between the strikes is $5.00 and you paid $2.00 to put it on, so the most you can make is the $3.00 left over. You reach that ceiling once the stock closes at or above the higher strike."
+  },
+  {
+    id: "duel-42",
+    question: "You sell a put spread for a credit. What outcome are you rooting for?",
+    options: [
+      "The stock to crash well below both strikes by expiration",
+      "The stock to stay above both strikes so the spread expires worthless",
+      "Implied volatility to spike sharply right after you open it",
+      "Both puts to finish deep in the money by the close on expiration afternoon"
+    ],
+    correctIndex: 1,
+    explanation: "Selling a put spread for a credit lets you keep the money as long as the stock holds above your strikes. You are getting paid to bet the stock will not fall through your level before time runs out."
+  },
+  {
+    id: "duel-43",
+    question: "You own 100 shares and buy a put against them. What did you just set up?",
+    options: [
+      "A covered call that earns you steady income",
+      "A naked position carrying unlimited risk on the downside of the trade",
+      "A way to double your exposure to the same stock",
+      "Insurance that lets you sell at the strike if the stock tanks"
+    ],
+    correctIndex: 3,
+    explanation: "Buying a put on shares you own is a protective put, a floor under your position. You pay the premium for the comfort of knowing you can offload at the strike however ugly things get."
+  },
+  {
+    id: "duel-44",
+    question: "You bought a call at $2.00 and sell it at $3.00. What did you make on one contract?",
+    options: ["$100", "$1", "$1,000", "$300"],
+    correctIndex: 0,
+    explanation: "The option moved $1.00 per share and one contract is 100 shares, so the gain is $100. Always run the option price through that times-100 lens to see the real money involved."
+  },
+  {
+    id: "duel-45",
+    question: "Your call is up nicely with time left. What do most retail traders do to take the profit?",
+    options: [
+      "Exercise it and buy the 100 shares to hold",
+      "Wait for the broker to auto-exercise at expiration",
+      "Sell the contract to close and book the gain",
+      "Convert it into a covered call against newly purchased shares"
+    ],
+    correctIndex: 2,
+    explanation: "Selling to close captures the intrinsic value plus whatever time value is left, and it skips the cash needed to exercise. Exercising early usually throws away the extrinsic value you could have sold instead."
+  },
+  {
+    id: "duel-46",
+    question: "What happens to an option's time value at the moment of expiration?",
+    options: [
+      "It reaches its highest point of the entire contract right at the very end",
+      "It goes to zero, leaving only any intrinsic value behind",
+      "It converts into extra shares of the stock",
+      "It is refunded to the buyer as a small credit back"
+    ],
+    correctIndex: 1,
+    explanation: "Time value exists only because the future is uncertain, and at expiration there is no future left to price. Whatever the option is worth at the buzzer is pure intrinsic value, and an out-of-the-money option is worth nothing."
+  },
+  {
+    id: "duel-47",
+    question: "What is the main appeal of being an option seller?",
+    options: [
+      "Time decay works in your favor every day",
+      "Your potential profit has no upper limit",
+      "You can never be assigned on what you sell",
+      "You pay no premium and carry zero risk of any kind"
+    ],
+    correctIndex: 0,
+    explanation: "Sellers collect the premium up front and let theta chip away at the option's value as the days pass. The catch is that the risk can dwarf the premium, so selling asks for real discipline."
+  },
+  {
+    id: "duel-48",
+    question: "Your short put gets assigned. What lands in your account?",
+    options: [
+      "A cash credit equal to the strike price",
+      "A short position of 100 shares you must buy back",
+      "100 shares of stock that you paid the strike for",
+      "Nothing changes until the contract officially expires later on"
+    ],
+    correctIndex: 2,
+    explanation: "Assignment on a short put means you buy 100 shares at the strike, which is the exact deal you agreed to when you sold it. If you wanted the stock around that price, this is a feature rather than a surprise."
+  },
+  {
+    id: "duel-49",
+    question: "Where is gamma at its largest?",
+    options: [
+      "On deep in-the-money options months from expiry",
+      "On at-the-money options close to expiration",
+      "On far out-of-the-money options with lots of time left",
+      "It stays perfectly constant across every strike and date"
+    ],
+    correctIndex: 1,
+    explanation: "Gamma peaks for at-the-money options near expiration, where a small move in the stock can flip the option's delta in a hurry. That is what makes short-dated at-the-money contracts feel so twitchy."
+  },
+  {
+    id: "duel-50",
+    question: "Which option has more vega, all else equal?",
+    options: [
+      "A weekly option expiring in three days",
+      "They always carry identical vega",
+      "Whichever one happens to be further out of the money right now",
+      "A longer-dated option with months until expiry"
+    ],
+    correctIndex: 3,
+    explanation: "More time until expiration gives volatility more room to do its work, so longer-dated options carry bigger vega. That is why a swing in IV moves the price of a LEAPS far more than it moves a weekly."
+  },
+  {
+    id: "duel-51",
+    question: "An IV rank near 90% is telling you what?",
+    options: [
+      "Current IV is high versus its own past year",
+      "The stock is about 90% likely to go up",
+      "Ninety percent of the options have already expired",
+      "The bid-ask spread is unusually wide on this name today"
+    ],
+    correctIndex: 0,
+    explanation: "IV rank places today's implied volatility against its range over the past year, so 90% means options are pricey by this stock's own history. A high reading like that often nudges traders toward selling premium rather than buying it."
+  },
+  {
+    id: "duel-52",
+    question: "On most stock indexes, downside puts often cost more in IV terms than upside calls. Why?",
+    options: [
+      "Puts are cheaper for market makers to create",
+      "Calls are banned from trading during selloffs",
+      "Investors pay up for crash protection, bidding put IV higher",
+      "It is a glitch in the pricing models that nobody has bothered to fix"
+    ],
+    correctIndex: 2,
+    explanation: "Markets tend to fall faster than they rise, so demand for downside protection runs hot and pushes put volatility above call volatility. Traders call this lopsided shape the volatility skew."
+  },
+  {
+    id: "duel-53",
+    question: "Why favor options on heavily traded stocks over thinly traded ones?",
+    options: [
+      "Liquid options are guaranteed to be profitable trades",
+      "Tight spreads and real volume make getting in and out cheaper",
+      "Thin options always hand you a higher delta",
+      "The exchange waives all commissions on the busiest names every day"
+    ],
+    correctIndex: 1,
+    explanation: "Liquid options come with tight bid-ask spreads and plenty of contracts trading, so you are not bleeding money just getting in and out. On a thin name the spread alone can swallow a chunk of your edge."
+  },
+  {
+    id: "duel-54",
+    question: "You want to buy an option right now at market. Which price do you pay?",
+    options: [
+      "The bid price",
+      "The midpoint of the quote, always",
+      "Whatever price the last trade happened to print at earlier",
+      "The ask price, the higher of the two quotes"
+    ],
+    correctIndex: 3,
+    explanation: "When you buy at market you pay the ask, which is the higher of the two quotes. Selling at market fills at the lower bid, so crossing that gap costs you on every round trip, and many traders work their orders toward the midpoint instead."
+  },
+  {
+    id: "duel-55",
+    question: "You own shares bought at $50 and sell a $55 call for $1.50. Where is your breakeven on the shares now?",
+    options: ["$48.50", "$50.00", "$55.00", "$56.50"],
+    correctIndex: 0,
+    explanation: "The $1.50 of premium you collected lowers your effective cost in the shares from $50 down to $48.50. That cushion is the small bit of downside relief a covered call hands you."
+  },
+  {
+    id: "duel-56",
+    question: "A calendar spread is built by doing what?",
+    options: [
+      "Buying a call and a put at the same strike and date",
+      "Selling a near-term option and buying a longer-dated one at the same strike",
+      "Buying two calls at different strikes in the same week",
+      "Selling shares short while buying a protective call somewhere above the strike"
+    ],
+    correctIndex: 1,
+    explanation: "A calendar sells the near-term option and buys a longer-dated one at the same strike, leaning on the faster decay of the short leg. It does best when the stock hangs around that strike while the front option melts."
+  },
+  {
+    id: "duel-57",
+    question: "You are short an in-the-money call and the stock pays a dividend tomorrow. What is the added risk?",
+    options: [
+      "Your call automatically turns into a put overnight",
+      "Theta stops working for the rest of the contract",
+      "Early assignment, since the holder may exercise to grab the dividend",
+      "Implied volatility is locked and cannot change at all until after the payout date"
+    ],
+    correctIndex: 2,
+    explanation: "Whoever owns an in-the-money call may exercise the day before a dividend to capture it, which leaves the seller assigned early. If you are short calls around an ex-dividend date, that risk is worth respecting."
+  },
+  {
+    id: "duel-58",
+    question: "What is the most you can lose buying a put?",
+    options: [
+      "The premium you paid for it",
+      "The strike price times 100 shares",
+      "Unlimited if the stock keeps falling",
+      "However far the stock happens to rise above your strike"
+    ],
+    correctIndex: 0,
+    explanation: "Like any long option, a bought put can only cost you the premium you put down. Even if the stock rallies and the put goes to zero, your loss stops at what you paid to get in."
+  },
+  {
+    id: "duel-59",
+    question: "You exercise a call you own. What happens?",
+    options: [
+      "You sell 100 shares at the current market price",
+      "You collect the difference in cash and close out",
+      "You receive the dividend the company just declared on the stock",
+      "You buy 100 shares at the strike price"
+    ],
+    correctIndex: 3,
+    explanation: "Exercising a call means you use your right to buy the 100 shares at the strike. For most winning trades selling the contract is cleaner, but exercising is there when you genuinely want to own the stock."
+  },
+  {
+    id: "duel-60",
+    question: "Your account is $3,000 and one trade is showing an $1,800 paper loss. What does that tell you?",
+    options: [
+      "You should add even more here to average your cost down further",
+      "Losses this size are normal and fine to ride out",
+      "The market is simply wrong about your thesis",
+      "Your position was far too large for the account"
+    ],
+    correctIndex: 3,
+    explanation: "A single trade big enough to put 60% of the account at risk was sized wrong from the start. Position sizing is what keeps one bad call from ending your season, and it matters more than any individual pick."
   }
 ];
