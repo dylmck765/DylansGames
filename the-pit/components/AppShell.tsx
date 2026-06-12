@@ -70,7 +70,6 @@ const NAV = [
   { href: "/seasons", label: "Train", ico: "book" },
   { href: "/daily", label: "Daily", ico: "zap" },
   { href: "/leaderboard", label: "Compete", ico: "trophy" },
-  { href: "/community", label: "The Pit", ico: "chat" },
 ];
 
 // Routes that show the full app chrome (ticker + bottom nav).
