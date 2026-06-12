@@ -34,6 +34,7 @@ interface GameApi {
   submitRead: (correct: boolean) => void;
   submitFilm: () => void;
   submitBoss: (correctParts: number) => void;
+  submitMatch: (score: number) => void;
   recordDuel: (won: boolean) => void;
   answerTournament: (week: string, slot: number, correct: boolean) => void;
   finalizeTournament: (week: string, placement: number) => void;
@@ -280,6 +281,19 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     [mutate]
   );
 
+  const submitMatch = useCallback(
+    (score: number) => {
+      mutate((draft, award) => {
+        const d = day(draft);
+        if (d.matchDone) return;
+        d.matchDone = true;
+        d.matchScore = Math.min(1000, Math.max(0, Math.round(score) || 0));
+        award(d.matchScore, "The Match");
+      });
+    },
+    [mutate]
+  );
+
   const recordDuel = useCallback(
     (won: boolean) => {
       mutate((draft, award) => {
@@ -397,6 +411,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     submitRead,
     submitFilm,
     submitBoss,
+    submitMatch,
     recordDuel,
     answerTournament,
     finalizeTournament,

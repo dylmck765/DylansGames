@@ -149,3 +149,36 @@ export interface PlacementQuestion {
   options: string[]; // exactly 4
   correctIndex: number;
 }
+
+// ---- The Match (daily matching game) ----
+
+export type MatchShape =
+  // payoff diagrams (P/L on the vertical, stock price on the horizontal)
+  | "long-call"
+  | "long-put"
+  | "covered-call"
+  | "bull-call-spread"
+  | "bear-put-spread"
+  | "short-put"
+  | "long-straddle"
+  | "iron-condor"
+  // price-action charts
+  | "breakout"
+  | "breakdown"
+  | "uptrend"
+  | "downtrend"
+  | "consolidation"
+  | "double-top"
+  | "double-bottom"
+  | "gap-up";
+
+export interface MatchTile {
+  svg?: MatchShape; // a drawn chart or payoff diagram
+  text?: string; // a label, term, or short meaning
+}
+
+export interface MatchPair {
+  id: string;
+  a: MatchTile; // one face of the pair (often the chart)
+  b: MatchTile; // its mate (often the term or answer)
+}

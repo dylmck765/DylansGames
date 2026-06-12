@@ -6,16 +6,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useGame } from "@/lib/state";
 import { dailyBlitzPool, marketReadPool, filmRoomPool, bossPool } from "@/data/daily-content";
-import { dateKey, pickForDate } from "@/lib/util";
+import { matchPairPool } from "@/data/match-content";
+import { dateKey, pickForDate, pickManyForKey } from "@/lib/util";
+import MatchGame from "@/components/MatchGame";
 
 export default function DailyPage() {
-  const { state, ready, submitBlitz, submitRead, submitFilm, submitBoss } = useGame();
+  const { state, ready, submitBlitz, submitRead, submitFilm, submitBoss, submitMatch } = useGame();
   const today = dateKey();
 
   const blitz = useMemo(() => pickForDate(dailyBlitzPool, today, "blitz"), [today]);
   const read = useMemo(() => pickForDate(marketReadPool, today, "read"), [today]);
   const film = useMemo(() => pickForDate(filmRoomPool, today, "film"), [today]);
   const boss = useMemo(() => pickForDate(bossPool, today, "boss"), [today]);
+  const match = useMemo(() => pickManyForKey(matchPairPool, today, "match", 10), [today]);
 
   if (!ready) return <main className="page" />;
   const day = state.days[today];
@@ -77,6 +80,19 @@ export default function DailyPage() {
           <BankedLine text="Film watched. Lesson logged." />
         ) : (
           <FilmRoomViewer story={film.story} lesson={film.lesson} onDone={submitFilm} />
+        )}
+      </div>
+
+      {/* THE MATCH */}
+      <div className="section-head">
+        <h2>The Match</h2>
+        <span className="pill pill-gold">UP TO 1,000 XP</span>
+      </div>
+      <div className="card card-accent">
+        {day?.matchDone ? (
+          <BankedLine text={`The Match cleared. ${(day.matchScore ?? 0).toLocaleString()} points banked.`} />
+        ) : (
+          <MatchGame pairs={match} seedKey={today} onDone={submitMatch} />
         )}
       </div>
 

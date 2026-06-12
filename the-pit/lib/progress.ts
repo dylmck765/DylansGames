@@ -18,6 +18,8 @@ export interface DayProgress {
   filmDone: boolean;
   bossDone: boolean;
   bossCorrect: number;
+  matchDone: boolean;
+  matchScore: number;
   didQuiz: boolean;
   didPaper: boolean;
   didScenario: boolean;
@@ -137,6 +139,8 @@ export function emptyDayProgress(): DayProgress {
     filmDone: false,
     bossDone: false,
     bossCorrect: 0,
+    matchDone: false,
+    matchScore: 0,
     didQuiz: false,
     didPaper: false,
     didScenario: false,
