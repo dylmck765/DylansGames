@@ -52,6 +52,11 @@ function ChartArt({ shape }: { shape: MatchShape }) {
     case "double-top": body = (<polyline points="8,50 28,18 46,34 64,18 92,52" {...s} />); break;
     case "double-bottom": body = (<polyline points="8,16 28,50 46,32 64,50 92,16" {...s} />); break;
     case "gap-up": body = (<><polyline points="8,48 38,46" {...s} /><polyline points="50,24 92,16" {...s} /></>); break;
+    case "gap-down": body = (<><polyline points="8,18 38,20" {...s} /><polyline points="50,40 92,48" {...s} /></>); break;
+    case "ascending-triangle": body = (<>{ref(24)}<polyline points="8,50 24,26 40,44 56,26 72,38 88,26 92,22" {...s} /></>); break;
+    case "descending-triangle": body = (<>{ref(44)}<polyline points="8,18 24,42 40,26 56,42 72,32 88,42 92,46" {...s} /></>); break;
+    case "short-call": body = (<>{axis}<polyline points="8,34 48,34 92,58" {...s} /></>); break;
+    case "short-straddle": body = (<>{axis}<polyline points="8,54 50,18 92,54" {...s} /></>); break;
   }
   return (
     <svg viewBox="0 0 100 64" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style={{ display: "block" }}>

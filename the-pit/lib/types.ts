@@ -170,7 +170,12 @@ export type MatchShape =
   | "consolidation"
   | "double-top"
   | "double-bottom"
-  | "gap-up";
+  | "gap-up"
+  | "gap-down"
+  | "ascending-triangle"
+  | "descending-triangle"
+  | "short-call"
+  | "short-straddle";
 
 export interface MatchTile {
   svg?: MatchShape; // a drawn chart or payoff diagram

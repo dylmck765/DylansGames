@@ -37,4 +37,33 @@ export const matchPairPool: MatchPair[] = [
   { id: "m-assignment", a: { text: "Assignment" }, b: { text: "Must Deliver" } },
   { id: "m-intrinsic", a: { text: "Intrinsic" }, b: { text: "In The Money" } },
   { id: "m-open-interest", a: { text: "Open Interest" }, b: { text: "Open Contracts" } },
+
+  // More payoff diagrams matched to the strategy
+  { id: "m-short-call", a: { svg: "short-call" }, b: { text: "Short Call" } },
+  { id: "m-short-straddle", a: { svg: "short-straddle" }, b: { text: "Short Straddle" } },
+
+  // More price charts matched to the read
+  { id: "m-gap-down", a: { svg: "gap-down" }, b: { text: "Gap Down" } },
+  { id: "m-asc-triangle", a: { svg: "ascending-triangle" }, b: { text: "Asc. Triangle" } },
+  { id: "m-desc-triangle", a: { svg: "descending-triangle" }, b: { text: "Desc. Triangle" } },
+
+  // More terms matched to their short meaning
+  { id: "m-expiration", a: { text: "Expiration" }, b: { text: "Final Day" } },
+  { id: "m-exercise", a: { text: "Exercise" }, b: { text: "Use The Right" } },
+  { id: "m-extrinsic", a: { text: "Extrinsic" }, b: { text: "Time Value" } },
+  { id: "m-otm", a: { text: "OTM" }, b: { text: "All Time Value" } },
+  { id: "m-bid", a: { text: "Bid" }, b: { text: "Sell Price" } },
+  { id: "m-ask", a: { text: "Ask" }, b: { text: "Buy Price" } },
+  { id: "m-volume", a: { text: "Volume" }, b: { text: "Today's Trades" } },
+  { id: "m-rho", a: { text: "Rho" }, b: { text: "Rate Sensitivity" } },
+  { id: "m-leverage", a: { text: "Leverage" }, b: { text: "More Per Dollar" } },
+  { id: "m-naked", a: { text: "Naked" }, b: { text: "No Shares Behind" } },
+  { id: "m-roll", a: { text: "Roll" }, b: { text: "Move Out In Time" } },
+  { id: "m-breakeven", a: { text: "Breakeven" }, b: { text: "Scratch Price" } },
+  { id: "m-leaps", a: { text: "LEAPS" }, b: { text: "Long Dated" } },
+  { id: "m-liquidity", a: { text: "Liquidity" }, b: { text: "Easy To Trade" } },
+  { id: "m-moneyness", a: { text: "Moneyness" }, b: { text: "Distance To Strike" } },
+  { id: "m-collar", a: { text: "Collar" }, b: { text: "Cap And Floor" } },
+  { id: "m-volatility", a: { text: "Volatility" }, b: { text: "Expected Move" } },
+  { id: "m-hedge", a: { text: "Hedge" }, b: { text: "Offset Risk" } },
 ];
